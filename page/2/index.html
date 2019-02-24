@@ -333,8 +333,39 @@
 2.对大屏幕不友好,会拉长
 </code></pre><h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><pre><code>1.一套代码,多终端适配
 </code></pre><blockquote>
-<p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong><br>| 屏幕分类 | 大小       | 设备       |<br>| ——– | ———- | ———- |<br>| 超小屏幕 | 0~768px    | 手机       |<br>| 小屏幕   | 768~992px  | 平板       |<br>| 中屏幕   | 992~1200px | 老式机     |<br>| 大屏幕   | &gt;1200px    | 笔记本电脑 |</p>
+<p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong></p>
 </blockquote>
+<table>
+<thead>
+<tr>
+<th>屏幕分类</th>
+<th>大小</th>
+<th>设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超小屏幕</td>
+<td>0~768px</td>
+<td>手机</td>
+</tr>
+<tr>
+<td>小屏幕</td>
+<td>768~992px</td>
+<td>平板</td>
+</tr>
+<tr>
+<td>中屏幕</td>
+<td>992~1200px</td>
+<td>老式机</td>
+</tr>
+<tr>
+<td>大屏幕</td>
+<td>&gt;1200px</td>
+<td>笔记本电脑</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rem布局"><a href="#rem布局" class="headerlink" title="rem布局"></a>rem布局</h2><pre><code>1.能适配所有的屏幕
 </code></pre><blockquote>
 <p>rem是个相对单位,相对html根字体大小(16px)<br>em是相对自身父标签的字体大小<br><strong>原理:</strong>以rem为单位,根据html跟字体大小,转化为rem,动态设置不同屏幕的html跟字体大小<br><strong>基准值:</strong> 设计图下的尺寸中html跟字体大小<br><strong>怎么确定基准值是多少:</strong><br>当前屏幕宽 / 设计图尺寸 = html跟字体标签 / 基准值<br><strong>使用媒体查询实现rem适配,性能好,但不能一次性适配所有屏幕</strong><br><strong>使用原生js实现rem适配,可以一次性适配所有屏幕,实时适配,性能不好</strong><br><strong>使用淘宝flexible</strong> 定义的基准值 = 设计图尺寸 / 10</p>
