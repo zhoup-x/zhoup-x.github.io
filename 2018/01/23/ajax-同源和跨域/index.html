@@ -81,7 +81,7 @@
 <meta property="og:site_name" content="zhoup-x的技术博客">
 <meta property="og:description" content="同源同源的条件:     1.协议相同     2.域名相同     3.端口号相同     同时满足三个条件才可成为同源 同源最大特点:     同原网站之间共享cookie 同源策略限制的范围:     1.cookie,localStorage,indexDB     2.DOM     3.ajax请求     非同源网站之间不能共享这些数据 跨域什么是跨域:     往不同源的网页发送请">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:49:02.796Z">
+<meta property="og:updated_time" content="2019-02-24T03:00:40.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源和跨域">
 <meta name="twitter:description" content="同源同源的条件:     1.协议相同     2.域名相同     3.端口号相同     同时满足三个条件才可成为同源 同源最大特点:     同原网站之间共享cookie 同源策略限制的范围:     1.cookie,localStorage,indexDB     2.DOM     3.ajax请求     非同源网站之间不能共享这些数据 跨域什么是跨域:     往不同源的网页发送请">
@@ -341,14 +341,18 @@
 </code></pre><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><pre><code>什么是跨域:
     往不同源的网页发送请求,就是跨域
     因为浏览器有同源策略,ajax请求是可以出去的,但是响应的数据被浏览器拦截了,导致请求不成功
-</code></pre><h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><pre><code>原理: 因为script,img,link这些标签不受同源策略的影响,jsonp就是利用了script标签不受同源的影响,将php文件写在src中,给后台发送请求的时候,把声明的函数名拼接在url后面,发送给服务器,服务器返回这个函数的调用,他把返回的数据当做实参传进函数调用,响应完成后,在响应的数据里就能拿到返回的数据了
+</code></pre><h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><pre><code>原理: 因为script,img,link这些标签不受同源策略的影响,
+jsonp就是利用了script标签不受同源的影响,
+将php文件写在src中,
+给后台发送请求的时候,把声明的函数名拼接在url后面,发送给服务器,
+服务器返回这个函数的调用,他把返回的数据当做实参传进函数调用,
+响应完成后,在响应的数据里就能拿到返回的数据了
 </code></pre><p><strong> jsonp只支持get请求,且要后台配合 </strong></p>
 <h2 id="跨域资源共享"><a href="#跨域资源共享" class="headerlink" title="跨域资源共享"></a>跨域资源共享</h2><pre><code>CORS ie10+支持
 在请求头 中添加origin字段,指定域名 或 *:允许所有域名访问
 jsonp兼容性好,仅支持get请求,使用麻烦
 cors是浏览器支持,使用简单,不限制请求类型
-</code></pre><p>​    </p>
-
+</code></pre>
       
     </div>
     
