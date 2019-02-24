@@ -329,11 +329,13 @@
       
         
           
-            <p>##新增功能</p>
-<p>###formData管理表单数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化 <span class="keyword">var</span> formdata = <span class="keyword">new</span> FormData(form)  form-&gt;表单的dom对象</span><br><span class="line"><span class="number">2.</span>除表单外还有其他数据想上传	formdata.append(<span class="string">"键"</span>,<span class="string">"值"</span>)</span><br><span class="line"><span class="number">3.</span>使用formdata必须用post请求,不用设置请求头 xhr.open(<span class="string">"post"</span>,<span class="string">"url地址"</span>)</span><br><span class="line"><span class="number">4.</span>把formdata放到send小括号中 xhr.send(formdata)</span><br></pre></td></tr></table></figure></p>
-<p>###文件上传<br>    要把选中的文件上传给服务器<br>    和使用formData管理 表单数据一样,只不过不用传入表单的dom对象,第二步是把上传文件的文件对象,添加到formdata中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">formdata.append(<span class="string">"file"</span>,fileInp.files[<span class="number">0</span>])</span><br><span class="line">fileInp:上传文件的表单项dom对象.有个files对象,是个伪数组,第<span class="number">0</span>项是需要的文件对象</span><br></pre></td></tr></table></figure></p>
-<p>###显示文件进度信息<br>    监听文件上传事件: upload.onprogress   <strong>注:这个事件必须写在send之前</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upload.onprogress = <span class="function"><span class="keyword">function</span> (<span class="params"> e </span>)</span>&#123;</span><br><span class="line">       <span class="comment">// e.loaded 已经上传了多少字节</span></span><br><span class="line">       <span class="comment">// e.total 总共有多少字节</span></span><br><span class="line">       <span class="comment">// toFixed(2)保留小数点后两位 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###timeout设置超时<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.timeout = <span class="number">3000</span>;</span><br><span class="line"><span class="comment">// 监听超时的事件</span></span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;		</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h2 id="新增功能"><a href="#新增功能" class="headerlink" title="新增功能"></a>新增功能</h2><h3 id="formData管理表单数据"><a href="#formData管理表单数据" class="headerlink" title="formData管理表单数据"></a>formData管理表单数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化 <span class="keyword">var</span> formdata = <span class="keyword">new</span> FormData(form)  form-&gt;表单的dom对象</span><br><span class="line"><span class="number">2.</span>除表单外还有其他数据想上传	formdata.append(<span class="string">"键"</span>,<span class="string">"值"</span>)</span><br><span class="line"><span class="number">3.</span>使用formdata必须用post请求,不用设置请求头 xhr.open(<span class="string">"post"</span>,<span class="string">"url地址"</span>)</span><br><span class="line"><span class="number">4.</span>把formdata放到send小括号中 xhr.send(formdata)</span><br></pre></td></tr></table></figure>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><pre><code>要把选中的文件上传给服务器
+和使用formData管理 表单数据一样,只不过不用传入表单的dom对象,第二步是把上传文件的文件对象,添加到formdata中
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">formdata.append(<span class="string">"file"</span>,fileInp.files[<span class="number">0</span>])</span><br><span class="line">fileInp:上传文件的表单项dom对象.有个files对象,是个伪数组,第<span class="number">0</span>项是需要的文件对象</span><br></pre></td></tr></table></figure>
+<h3 id="显示文件进度信息"><a href="#显示文件进度信息" class="headerlink" title="显示文件进度信息"></a>显示文件进度信息</h3><pre><code>监听文件上传事件: upload.onprogress   **注:这个事件必须写在send之前**
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upload.onprogress = <span class="function"><span class="keyword">function</span> (<span class="params"> e </span>)</span>&#123;</span><br><span class="line">       <span class="comment">// e.loaded 已经上传了多少字节</span></span><br><span class="line">       <span class="comment">// e.total 总共有多少字节</span></span><br><span class="line">       <span class="comment">// toFixed(2)保留小数点后两位 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="timeout设置超时"><a href="#timeout设置超时" class="headerlink" title="timeout设置超时"></a>timeout设置超时</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.timeout = <span class="number">3000</span>;</span><br><span class="line"><span class="comment">// 监听超时的事件</span></span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;		</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -921,13 +923,28 @@
       
         
           
-            <p>##同源<br>    同源的条件:<br>        1.协议相同<br>        2.域名相同<br>        3.端口号相同<br>        同时满足三个条件才可成为同源<br>    同源最大特点:<br>        同原网站之间共享cookie<br>    同源策略限制的范围:<br>        1.cookie,localStorage,indexDB<br>        2.DOM<br>        3.ajax请求<br>        非同源网站之间不能共享这些数据</p>
-<p>##跨域<br>    什么是跨域:<br>        往不同源的网页发送请求,就是跨域<br>        因为浏览器有同源策略,ajax请求是可以出去的,但是响应的数据被浏览器拦截了,导致请求不成功</p>
-<p>##jsonp</p>
-<pre><code>原理: 因为script,img,link这些标签不受同源策略的影响,jsonp就是利用了script标签不受同源的影响,将php文件写在src中,给后台发送请求的时候,把声明的函数名拼接在url后面,发送给服务器,服务器返回这个函数的调用,他把返回的数据当做实参传进函数调用,响应完成后,在响应的数据里就能拿到返回的数据了
-</code></pre><p><strong>jsonp只支持get请求,且要后台配合</strong></p>
-<p>##跨域资源共享<br>    CORS ie10+支持<br>    在请求头 中添加origin字段,指定域名 或 *:允许所有域名访问<br>    jsonp兼容性好,仅支持get请求,使用麻烦<br>    cors是浏览器支持,使用简单,不限制请求类型</p>
-<p>​    </p>
+            <h2 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h2><pre><code>同源的条件:
+    1.协议相同
+    2.域名相同
+    3.端口号相同
+    同时满足三个条件才可成为同源
+同源最大特点:
+    同原网站之间共享cookie
+同源策略限制的范围:
+    1.cookie,localStorage,indexDB
+    2.DOM
+    3.ajax请求
+    非同源网站之间不能共享这些数据
+</code></pre><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><pre><code>什么是跨域:
+    往不同源的网页发送请求,就是跨域
+    因为浏览器有同源策略,ajax请求是可以出去的,但是响应的数据被浏览器拦截了,导致请求不成功
+</code></pre><h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><pre><code>原理: 因为script,img,link这些标签不受同源策略的影响,jsonp就是利用了script标签不受同源的影响,将php文件写在src中,给后台发送请求的时候,把声明的函数名拼接在url后面,发送给服务器,服务器返回这个函数的调用,他把返回的数据当做实参传进函数调用,响应完成后,在响应的数据里就能拿到返回的数据了
+</code></pre><p><strong> jsonp只支持get请求,且要后台配合 </strong></p>
+<h2 id="跨域资源共享"><a href="#跨域资源共享" class="headerlink" title="跨域资源共享"></a>跨域资源共享</h2><pre><code>CORS ie10+支持
+在请求头 中添加origin字段,指定域名 或 *:允许所有域名访问
+jsonp兼容性好,仅支持get请求,使用麻烦
+cors是浏览器支持,使用简单,不限制请求类型
+</code></pre><p>​    </p>
 
           
         
@@ -1220,8 +1237,30 @@
         
           
             <p>css预处理器<br>为了代码的可复用性,可维护性<br>less文件需要编译</p>
-<p>##语法<br>    1.注释<br>        /**/ 会被编译到css中去<br>        //    不会被编译到css中去<br>    2.变量<br>        声明    @变量名:变量值<br>    3.混入类<br>        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用<br>    4.函数<br>        .类()<br>        函数不会被编译到css中去<br>        函数可以调用,可传参<br>        函数有参数必须传参,不设参数要有默认值<br>    5.less嵌套<br>        后代选择器    直接嵌套编写<br>        子代选择器    加上&gt;<br>        交集选择器    &amp;表示自己<br>        伪元素选择器    &amp;:<br>    6.导入<br>        @impoprt “文件名”    文件后缀名可省略<br>        用于大型项目的模块划分<br>    7.less运算<br>        加减乘除<br>        内置运算</p>
-
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre><code>1.注释
+    /**/ 会被编译到css中去
+    //    不会被编译到css中去
+2.变量
+    声明    @变量名:变量值
+3.混入类
+    可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用
+4.函数
+    .类()
+    函数不会被编译到css中去
+    函数可以调用,可传参
+    函数有参数必须传参,不设参数要有默认值
+5.less嵌套
+    后代选择器    直接嵌套编写
+    子代选择器    加上&gt;
+    交集选择器    &amp;表示自己
+    伪元素选择器    &amp;:
+6.导入
+    @impoprt &quot;文件名&quot;    文件后缀名可省略
+    用于大型项目的模块划分
+7.less运算
+    加减乘除
+    内置运算
+</code></pre>
           
         
       
@@ -1366,13 +1405,15 @@
       
         
           
-            <p>##form和ajax区别<br>    0.都可以给后台发送请求<br>    1.form发出去的请求是同步的,ajax是异步的<br>    2.form发出请求后,页面会发生跳转,ajax不会发出跳转</p>
-<p>##js原生实现ajax发送请求</p>
-<p>###get请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure></p>
-<p>###post请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>###共有的最后一步<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-<p>##get请求和post请求的区别:<br>        1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制<br>        2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制</p>
-
+            <h2 id="form和ajax区别"><a href="#form和ajax区别" class="headerlink" title="form和ajax区别"></a>form和ajax区别</h2><pre><code>0.都可以给后台发送请求
+1.form发出去的请求是同步的,ajax是异步的
+2.form发出请求后,页面会发生跳转,ajax不会发出跳转
+</code></pre><h2 id="js原生实现ajax发送请求"><a href="#js原生实现ajax发送请求" class="headerlink" title="js原生实现ajax发送请求"></a>js原生实现ajax发送请求</h2><h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="共有的最后一步"><a href="#共有的最后一步" class="headerlink" title="共有的最后一步"></a>共有的最后一步</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="get请求和post请求的区别"><a href="#get请求和post请求的区别" class="headerlink" title="get请求和post请求的区别:"></a>get请求和post请求的区别:</h2><pre><code>1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制
+2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制
+</code></pre>
           
         
       
@@ -1517,10 +1558,32 @@
       
         
           
-            <p>###1.原生App<br>    直接基于操作系统进行开发的应用程序<br>    优点:<br>        1.运行在操作系统送,性能好<br>        2.可访问手机的硬件设备<br>        3.可以离线访问<br>    缺点:<br>        1.成本高<br>        2.跨平台性差<br>        3.更新维护麻烦</p>
-<p>###2.webApp<br>    直接运行在浏览器中,使用html/css/js开发<br>    优点:<br>        1.跨平台性好,只要游浏览器就可以运行<br>        2.成本低<br>        3.更新维护方便<br>    缺点:<br>        1.依赖网络,不能离线访问<br>        2.性能相对来说差<br>        3.不能直接访问手机硬件设备</p>
-<p>###3.混合App<br>    结合,webApp外层套了一个原生App的壳<br>    优点:<br>        1.跨平台性好<br>        2.成本低<br>        3.可直接访问手机硬件设备<br>    缺点:<br>        要更新版本</p>
-<p><strong>一般开发流程:</strong><br>    webApp —(套个壳)&gt;&gt; 混合App —(高性能)&gt;&gt; 原生App</p>
+            <h3 id="1-原生App"><a href="#1-原生App" class="headerlink" title="1.原生App"></a>1.原生App</h3><pre><code>直接基于操作系统进行开发的应用程序
+优点:
+    1.运行在操作系统送,性能好
+    2.可访问手机的硬件设备
+    3.可以离线访问
+缺点:
+    1.成本高
+    2.跨平台性差
+    3.更新维护麻烦
+</code></pre><h3 id="2-webApp"><a href="#2-webApp" class="headerlink" title="2.webApp"></a>2.webApp</h3><pre><code>直接运行在浏览器中,使用html/css/js开发
+优点: 
+    1.跨平台性好,只要游浏览器就可以运行
+    2.成本低
+    3.更新维护方便
+缺点:
+    1.依赖网络,不能离线访问
+    2.性能相对来说差
+    3.不能直接访问手机硬件设备
+</code></pre><h3 id="3-混合App"><a href="#3-混合App" class="headerlink" title="3.混合App"></a>3.混合App</h3><pre><code>结合,webApp外层套了一个原生App的壳
+优点:
+    1.跨平台性好
+    2.成本低
+    3.可直接访问手机硬件设备
+缺点:
+    要更新版本
+</code></pre><p><strong>一般开发流程:</strong><br>    webApp —(套个壳)&gt;&gt; 混合App —(高性能)&gt;&gt; 原生App</p>
 
           
         
@@ -1666,9 +1729,10 @@
       
         
           
-            <p>###设备无关像素<br>    就是css像素,是 乔布斯提出的</p>
-<p>##dpr    设备像素比<br>    dpr = 物理像素 / css像素<br>    获取dpr    <code>window.devicePixelRatio</code></p>
-
+            <h3 id="设备无关像素"><a href="#设备无关像素" class="headerlink" title="设备无关像素"></a>设备无关像素</h3><pre><code>就是css像素,是 乔布斯提出的
+</code></pre><h2 id="dpr-设备像素比"><a href="#dpr-设备像素比" class="headerlink" title="dpr    设备像素比"></a>dpr    设备像素比</h2><pre><code>dpr = 物理像素 / css像素
+获取dpr    `window.devicePixelRatio`
+</code></pre>
           
         
       

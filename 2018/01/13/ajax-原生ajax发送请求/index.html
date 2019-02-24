@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="##form和ajax区别    0.都可以给后台发送请求    1.form发出去的请求是同步的,ajax是异步的    2.form发出请求后,页面会发生跳转,ajax不会发出跳转 ##js原生实现ajax发送请求 ###get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get">
+<meta name="description" content="form和ajax区别0.都可以给后台发送请求 1.form发出去的请求是同步的,ajax是异步的 2.form发出请求后,页面会发生跳转,ajax不会发出跳转 js原生实现ajax发送请求get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get&apos;,&apos;demo.php?name=z">
 <meta name="keywords" content="ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原生ajax发送请求">
 <meta property="og:url" content="http://yoursite.com/2018/01/13/ajax-原生ajax发送请求/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="##form和ajax区别    0.都可以给后台发送请求    1.form发出去的请求是同步的,ajax是异步的    2.form发出请求后,页面会发生跳转,ajax不会发出跳转 ##js原生实现ajax发送请求 ###get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get">
+<meta property="og:description" content="form和ajax区别0.都可以给后台发送请求 1.form发出去的请求是同步的,ajax是异步的 2.form发出请求后,页面会发生跳转,ajax不会发出跳转 js原生实现ajax发送请求get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get&apos;,&apos;demo.php?name=z">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:35:03.068Z">
+<meta property="og:updated_time" content="2019-02-24T02:49:26.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生ajax发送请求">
-<meta name="twitter:description" content="##form和ajax区别    0.都可以给后台发送请求    1.form发出去的请求是同步的,ajax是异步的    2.form发出请求后,页面会发生跳转,ajax不会发出跳转 ##js原生实现ajax发送请求 ###get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get">
+<meta name="twitter:description" content="form和ajax区别0.都可以给后台发送请求 1.form发出去的请求是同步的,ajax是异步的 2.form发出请求后,页面会发生跳转,ajax不会发出跳转 js原生实现ajax发送请求get请求1234567891.实例化xmlhttprequest对象	var xhr = new XMLHttpRequest()2.设置请求行	xhr.open(&apos;get&apos;,&apos;demo.php?name=z">
 
 
 
@@ -326,13 +326,15 @@
       
 
       
-        <p>##form和ajax区别<br>    0.都可以给后台发送请求<br>    1.form发出去的请求是同步的,ajax是异步的<br>    2.form发出请求后,页面会发生跳转,ajax不会发出跳转</p>
-<p>##js原生实现ajax发送请求</p>
-<p>###get请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure></p>
-<p>###post请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>###共有的最后一步<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-<p>##get请求和post请求的区别:<br>        1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制<br>        2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制</p>
-
+        <h2 id="form和ajax区别"><a href="#form和ajax区别" class="headerlink" title="form和ajax区别"></a>form和ajax区别</h2><pre><code>0.都可以给后台发送请求
+1.form发出去的请求是同步的,ajax是异步的
+2.form发出请求后,页面会发生跳转,ajax不会发出跳转
+</code></pre><h2 id="js原生实现ajax发送请求"><a href="#js原生实现ajax发送请求" class="headerlink" title="js原生实现ajax发送请求"></a>js原生实现ajax发送请求</h2><h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="共有的最后一步"><a href="#共有的最后一步" class="headerlink" title="共有的最后一步"></a>共有的最后一步</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="get请求和post请求的区别"><a href="#get请求和post请求的区别" class="headerlink" title="get请求和post请求的区别:"></a>get请求和post请求的区别:</h2><pre><code>1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制
+2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制
+</code></pre>
       
     </div>
     
@@ -441,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -502,6 +513,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#form和ajax区别"><span class="nav-number">1.</span> <span class="nav-text">form和ajax区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js原生实现ajax发送请求"><span class="nav-number">2.</span> <span class="nav-text">js原生实现ajax发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求"><span class="nav-number">2.1.</span> <span class="nav-text">get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post请求"><span class="nav-number">2.2.</span> <span class="nav-text">post请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共有的最后一步"><span class="nav-number">2.3.</span> <span class="nav-text">共有的最后一步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get请求和post请求的区别"><span class="nav-number">3.</span> <span class="nav-text">get请求和post请求的区别:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

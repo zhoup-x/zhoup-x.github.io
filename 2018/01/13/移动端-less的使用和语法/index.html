@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 ##语法    1.注释        /**/ 会被编译到css中去        //    不会被编译到css中去    2.变量        声明    @变量名:变量值    3.混入类        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用    4.函数        .类()        函数不">
+<meta name="description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 语法1.注释     /**/ 会被编译到css中去     //    不会被编译到css中去 2.变量     声明    @变量名:变量值 3.混入类     可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用 4.函数     .类()     函数不会被编译到css中去     函数可以调用,可传参     函数有">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="less基本使用">
 <meta property="og:url" content="http://yoursite.com/2018/01/13/移动端-less的使用和语法/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 ##语法    1.注释        /**/ 会被编译到css中去        //    不会被编译到css中去    2.变量        声明    @变量名:变量值    3.混入类        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用    4.函数        .类()        函数不">
+<meta property="og:description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 语法1.注释     /**/ 会被编译到css中去     //    不会被编译到css中去 2.变量     声明    @变量名:变量值 3.混入类     可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用 4.函数     .类()     函数不会被编译到css中去     函数可以调用,可传参     函数有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:19:49.464Z">
+<meta property="og:updated_time" content="2019-02-24T02:51:39.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="less基本使用">
-<meta name="twitter:description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 ##语法    1.注释        /**/ 会被编译到css中去        //    不会被编译到css中去    2.变量        声明    @变量名:变量值    3.混入类        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用    4.函数        .类()        函数不">
+<meta name="twitter:description" content="css预处理器为了代码的可复用性,可维护性less文件需要编译 语法1.注释     /**/ 会被编译到css中去     //    不会被编译到css中去 2.变量     声明    @变量名:变量值 3.混入类     可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用 4.函数     .类()     函数不会被编译到css中去     函数可以调用,可传参     函数有">
 
 
 
@@ -327,8 +327,30 @@
 
       
         <p>css预处理器<br>为了代码的可复用性,可维护性<br>less文件需要编译</p>
-<p>##语法<br>    1.注释<br>        /**/ 会被编译到css中去<br>        //    不会被编译到css中去<br>    2.变量<br>        声明    @变量名:变量值<br>    3.混入类<br>        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用<br>    4.函数<br>        .类()<br>        函数不会被编译到css中去<br>        函数可以调用,可传参<br>        函数有参数必须传参,不设参数要有默认值<br>    5.less嵌套<br>        后代选择器    直接嵌套编写<br>        子代选择器    加上&gt;<br>        交集选择器    &amp;表示自己<br>        伪元素选择器    &amp;:<br>    6.导入<br>        @impoprt “文件名”    文件后缀名可省略<br>        用于大型项目的模块划分<br>    7.less运算<br>        加减乘除<br>        内置运算</p>
-
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre><code>1.注释
+    /**/ 会被编译到css中去
+    //    不会被编译到css中去
+2.变量
+    声明    @变量名:变量值
+3.混入类
+    可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用
+4.函数
+    .类()
+    函数不会被编译到css中去
+    函数可以调用,可传参
+    函数有参数必须传参,不设参数要有默认值
+5.less嵌套
+    后代选择器    直接嵌套编写
+    子代选择器    加上&gt;
+    交集选择器    &amp;表示自己
+    伪元素选择器    &amp;:
+6.导入
+    @impoprt &quot;文件名&quot;    文件后缀名可省略
+    用于大型项目的模块划分
+7.less运算
+    加减乘除
+    内置运算
+</code></pre>
       
     </div>
     
@@ -437,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +529,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

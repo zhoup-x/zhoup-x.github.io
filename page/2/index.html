@@ -329,13 +329,14 @@
       
         
           
-            <p>##流式布局<br>    1.高度写死,宽度自适应(宽度百分比)<br>    2.对大屏幕不友好,会拉长</p>
-<p>##响应式布局<br>    1.一套代码,多终端适配</p>
-<blockquote>
+            <h2 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h2><pre><code>1.高度写死,宽度自适应(宽度百分比)
+2.对大屏幕不友好,会拉长
+</code></pre><h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><pre><code>1.一套代码,多终端适配
+</code></pre><blockquote>
 <p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong><br>| 屏幕分类 | 大小       | 设备       |<br>| ——– | ———- | ———- |<br>| 超小屏幕 | 0~768px    | 手机       |<br>| 小屏幕   | 768~992px  | 平板       |<br>| 中屏幕   | 992~1200px | 老式机     |<br>| 大屏幕   | &gt;1200px    | 笔记本电脑 |</p>
 </blockquote>
-<p>##rem布局<br>    1.能适配所有的屏幕</p>
-<blockquote>
+<h2 id="rem布局"><a href="#rem布局" class="headerlink" title="rem布局"></a>rem布局</h2><pre><code>1.能适配所有的屏幕
+</code></pre><blockquote>
 <p>rem是个相对单位,相对html根字体大小(16px)<br>em是相对自身父标签的字体大小<br><strong>原理:</strong>以rem为单位,根据html跟字体大小,转化为rem,动态设置不同屏幕的html跟字体大小<br><strong>基准值:</strong> 设计图下的尺寸中html跟字体大小<br><strong>怎么确定基准值是多少:</strong><br>当前屏幕宽 / 设计图尺寸 = html跟字体标签 / 基准值<br><strong>使用媒体查询实现rem适配,性能好,但不能一次性适配所有屏幕</strong><br><strong>使用原生js实现rem适配,可以一次性适配所有屏幕,实时适配,性能不好</strong><br><strong>使用淘宝flexible</strong> 定义的基准值 = 设计图尺寸 / 10</p>
 </blockquote>
 
@@ -483,16 +484,13 @@
       
         
           
-            <p>###ie678不支持css3媒体查询</p>
-<blockquote>
+            <h3 id="ie678不支持css3媒体查询"><a href="#ie678不支持css3媒体查询" class="headerlink" title="ie678不支持css3媒体查询"></a>ie678不支持css3媒体查询</h3><blockquote>
 <p>使用respond.js这个插件(底层是js监听屏幕变化)</p>
 </blockquote>
-<p>###ie678不支持h5语义化标签</p>
-<blockquote>
+<h3 id="ie678不支持h5语义化标签"><a href="#ie678不支持h5语义化标签" class="headerlink" title="ie678不支持h5语义化标签"></a>ie678不支持h5语义化标签</h3><blockquote>
 <p>解决:底层— 手动创建标签并将其转化为块级元素<br>一般使用html5shiv插件</p>
 </blockquote>
-<p>###条件注释</p>
-<blockquote>
+<h3 id="条件注释"><a href="#条件注释" class="headerlink" title="条件注释"></a>条件注释</h3><blockquote>
 <p>只有ie认识,且是ie9以下才认识,专门用来解决ie兼容性问题</p>
 </blockquote>
 
@@ -640,9 +638,9 @@
       
         
           
-            <p>##JSON<br>    全名:js对象标记法</p>
-<p>###JSON对象和JS对象区别<br>    JSON对象的属性名必须加双引号</p>
-<p>###JSON字符串和JS对象的转化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JS -&gt; <span class="built_in">JSON</span>   <span class="built_in">JSON</span>.stringify(JS对象)</span><br><span class="line"><span class="built_in">JSON</span> -&gt; JS	 <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>字符串)</span><br></pre></td></tr></table></figure></p>
+            <h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><pre><code>全名:js对象标记法
+</code></pre><h3 id="JSON对象和JS对象区别"><a href="#JSON对象和JS对象区别" class="headerlink" title="JSON对象和JS对象区别"></a>JSON对象和JS对象区别</h3><pre><code>JSON对象的属性名必须加双引号
+</code></pre><h3 id="JSON字符串和JS对象的转化"><a href="#JSON字符串和JS对象的转化" class="headerlink" title="JSON字符串和JS对象的转化"></a>JSON字符串和JS对象的转化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JS -&gt; <span class="built_in">JSON</span>   <span class="built_in">JSON</span>.stringify(JS对象)</span><br><span class="line"><span class="built_in">JSON</span> -&gt; JS	 <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>字符串)</span><br></pre></td></tr></table></figure>
 
           
         
@@ -788,13 +786,19 @@
       
         
           
-            <p>###浏览器解析渲染的步骤<br>    1.浏览器解析html,生成DOM树<br>    2.解析css,生成样式结构体<br>    3.DOM树和样式结构体结合,构建渲染树<br>    4.先布局<br>    5.再渲染</p>
-<p>###回流<br>    重新布局<br>    发生在第4阶段–布局阶段</p>
-<blockquote>
+            <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
+2.解析css,生成样式结构体
+3.DOM树和样式结构体结合,构建渲染树
+4.先布局
+5.再渲染
+</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
+发生在第4阶段--布局阶段
+</code></pre><blockquote>
 <p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
 </blockquote>
-<p>###重绘<br>    重新绘制渲染<br>    发生在第5阶段–渲染阶段</p>
-<blockquote>
+<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
+发生在第5阶段--渲染阶段
+</code></pre><blockquote>
 <p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
 </blockquote>
 <p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>

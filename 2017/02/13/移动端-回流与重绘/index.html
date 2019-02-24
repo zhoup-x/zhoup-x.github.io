@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
+<meta name="description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
 <meta name="keywords" content="浏览器机制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回流与重绘">
 <meta property="og:url" content="http://yoursite.com/2017/02/13/移动端-回流与重绘/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
+<meta property="og:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:23:12.030Z">
+<meta property="og:updated_time" content="2019-02-24T02:52:24.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回流与重绘">
-<meta name="twitter:description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
+<meta name="twitter:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
 
 
 
@@ -326,13 +326,19 @@
       
 
       
-        <p>###浏览器解析渲染的步骤<br>    1.浏览器解析html,生成DOM树<br>    2.解析css,生成样式结构体<br>    3.DOM树和样式结构体结合,构建渲染树<br>    4.先布局<br>    5.再渲染</p>
-<p>###回流<br>    重新布局<br>    发生在第4阶段–布局阶段</p>
-<blockquote>
+        <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
+2.解析css,生成样式结构体
+3.DOM树和样式结构体结合,构建渲染树
+4.先布局
+5.再渲染
+</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
+发生在第4阶段--布局阶段
+</code></pre><blockquote>
 <p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
 </blockquote>
-<p>###重绘<br>    重新绘制渲染<br>    发生在第5阶段–渲染阶段</p>
-<blockquote>
+<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
+发生在第5阶段--渲染阶段
+</code></pre><blockquote>
 <p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
 </blockquote>
 <p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
@@ -442,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,6 +518,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染的步骤"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析渲染的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回流"><span class="nav-number">2.</span> <span class="nav-text">回流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘"><span class="nav-number">3.</span> <span class="nav-text">重绘</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
