@@ -236,153 +236,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/js-数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/24/js-数据类型/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-24T19:39:48+08:00">
-                2019-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
-5种简单数据类型
-    1.number
-    2.string
-    3.boolean
-    4.null
-    5.undefined
-1种复杂数据类型
-    1.object
-es6新增了一个symbol数据类型
-所以现在是7种数据类型
-number,string,boolean,null,undefined,object,symbol
-</code></pre><h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><pre><code>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢
-其实这是一个历史遗留问题
-在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值
-后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在
-</code></pre><h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><pre><code>undefined: 一个变量,只声明,未赋值
-null: 表示一个空对象指针
-</code></pre><h3 id="undefined-null"><a href="#undefined-null" class="headerlink" title="undefined == null"></a>undefined == null</h3><blockquote>
-<p>在没了解到这个之前,我们很容易的想到  undefined转换成布尔值是false,null转换成布尔值也是false,所以undefined == null, 其实这种想法是不对的<br>在javascript规范中提到:<br><strong>在比较相等性之前,不能将null和undefined转换成其他值,并且规定null和undefined是相等的</strong><br>为什么呢,因为规范认为,既然undefined和null的行为很相似,都表示一个无效的值,那么他们所代表的内容也有相似性,所以有undefined == null<br><strong>undefined === null  =&gt; false 数据类型不一样</strong></p>
-</blockquote>
-<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><blockquote>
-<p>属于number类型,代表非数值 Not a Number<br>NaN与任何是都不相等,包括和NaN自身</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/ajax-XMLHttpRequest2.0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1774,6 +1627,154 @@ cors是浏览器支持,使用简单,不限制请求类型
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/23/移动端-dpr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/23/移动端-dpr/" itemprop="url">dpr-设备像素比</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T23:53:50+08:00">
+                2017-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="设备无关像素"><a href="#设备无关像素" class="headerlink" title="设备无关像素"></a>设备无关像素</h3><pre><code>就是css像素,是 乔布斯提出的
+</code></pre><h2 id="dpr-设备像素比"><a href="#dpr-设备像素比" class="headerlink" title="dpr    设备像素比"></a>dpr    设备像素比</h2><pre><code>dpr = 物理像素 / css像素
+获取dpr    `window.devicePixelRatio`
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1835,7 +1836,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1846,7 +1847,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
