@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="浏览器机制,">
+  <meta name="keywords" content="条件语句,">
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
-<meta name="keywords" content="浏览器机制">
+<meta name="description" content="if 太常用太简单,不说了  switch123456789switch( n )&amp;#123;       case 1:       	执行代码块1       	break       case 2:       	执行代码块2       	break       default: n 与case1 case2不同执行的代码块&amp;#125;  原理: n的值会与每个case的值作比较,如果匹配">
+<meta name="keywords" content="条件语句">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回流与重绘">
-<meta property="og:url" content="http://yoursite.com/2017/02/13/移动端-回流与重绘/index.html">
+<meta property="og:title" content="if,switch,while,continue,break,for">
+<meta property="og:url" content="http://yoursite.com/2017/05/23/js-语句/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta property="og:description" content="if 太常用太简单,不说了  switch123456789switch( n )&amp;#123;       case 1:       	执行代码块1       	break       case 2:       	执行代码块2       	break       default: n 与case1 case2不同执行的代码块&amp;#125;  原理: n的值会与每个case的值作比较,如果匹配">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:52:24.354Z">
+<meta property="og:updated_time" content="2019-02-24T12:56:30.990Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回流与重绘">
-<meta name="twitter:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta name="twitter:title" content="if,switch,while,continue,break,for">
+<meta name="twitter:description" content="if 太常用太简单,不说了  switch123456789switch( n )&amp;#123;       case 1:       	执行代码块1       	break       case 2:       	执行代码块2       	break       default: n 与case1 case2不同执行的代码块&amp;#125;  原理: n的值会与每个case的值作比较,如果匹配">
 
 
 
@@ -114,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+  <link rel="canonical" href="http://yoursite.com/2017/05/23/js-语句/">
 
 
 
 
 
-  <title>回流与重绘 | zhou-p的技术博客</title>
+  <title>if,switch,while,continue,break,for | zhou-p的技术博客</title>
   
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/js-语句/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">回流与重绘</h1>
+          <h1 class="post-title" itemprop="name headline">if,switch,while,continue,break,for</h1>
         
 
         <div class="post-meta">
@@ -266,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
-                2017-02-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T22:08:41+08:00">
+                2017-05-23
               </time>
             
 
@@ -289,8 +289,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -326,23 +326,22 @@
       
 
       
-        <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
-2.解析css,生成样式结构体
-3.DOM树和样式结构体结合,构建渲染树
-4.先布局
-5.再渲染
-</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
-发生在第4阶段--布局阶段
-</code></pre><blockquote>
-<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
+        <h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><blockquote>
+<p>太常用太简单,不说了</p>
 </blockquote>
-<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
-发生在第5阶段--渲染阶段
-</code></pre><blockquote>
-<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>( n )&#123;</span><br><span class="line">       <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">       	执行代码块<span class="number">1</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">       	执行代码块<span class="number">2</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">default</span>: n 与case1 case2不同执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原理: n的值会与每个case的值作比较,如果匹配,会执行相应的代码块,否则不会执行,往下继续运行<br>每句结束必须要break</p>
 </blockquote>
-<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
-<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
+<h3 id="while-和-do-while"><a href="#while-和-do-while" class="headerlink" title="while 和 do while"></a>while 和 do while</h3><blockquote>
+<p>语法: while(条件){  循环体  }<br>    do { 循环体 } while (条件)<br>do while 和 while 不同的是. 他会保证让循环体至少会执行一次, 因为他是先执行代码然后在判断条件</p>
+</blockquote>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><blockquote>
+<p>太常用太简单,不说了</p>
+</blockquote>
+<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><blockquote>
+<p>break是彻底结束当前循环,直接执行循环体后面的代码<br>continue是逃过本次循环,然后整个循环体会继续执行</p>
+</blockquote>
 
       
     </div>
@@ -372,7 +371,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器机制/" rel="tag"><i class="fa fa-tag"></i> 浏览器机制</a>
+            <a href="/tags/条件语句/" rel="tag"><i class="fa fa-tag"></i> 条件语句</a>
           
         </div>
       
@@ -385,14 +384,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/05/22/js-数据类型/" rel="next" title="js数据类型">
+                <i class="fa fa-chevron-left"></i> js数据类型
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/22/js-数据类型/" rel="prev" title="js数据类型">
-                js数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/24/js-数组/" rel="prev" title="数组">
+                数组 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染的步骤"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析渲染的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回流"><span class="nav-number">2.</span> <span class="nav-text">回流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘"><span class="nav-number">3.</span> <span class="nav-text">重绘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">2.</span> <span class="nav-text">switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-和-do-while"><span class="nav-number">3.</span> <span class="nav-text">while 和 do while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-number">4.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break和continue"><span class="nav-number">5.</span> <span class="nav-text">break和continue</span></a></li></ol></div>
             
 
           </div>
