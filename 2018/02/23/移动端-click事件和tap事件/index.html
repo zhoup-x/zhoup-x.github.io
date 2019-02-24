@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="事件,">
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="前端攻城狮">
-<meta property="og:type" content="website">
-<meta property="og:title" content="&#39;tags&#39;">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="对于移动端来讲,click事件会有300ms延迟  原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕  解决方案:    1.设置视口,禁用用户缩放    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件">
+<meta name="keywords" content="事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="click事件300ms延迟">
+<meta property="og:url" content="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:description" content="对于移动端来讲,click事件会有300ms延迟  原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕  解决方案:    1.设置视口,禁用用户缩放    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T15:00:34.848Z">
+<meta property="og:updated_time" content="2019-02-24T02:14:40.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;tags&#39;">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="click事件300ms延迟">
+<meta name="twitter:description" content="对于移动端来讲,click事件会有300ms延迟  原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕  解决方案:    1.设置视口,禁用用户缩放    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件">
 
 
 
@@ -113,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/">
 
 
 
 
 
-  <title>'tags' | zhoup-x的技术博客</title>
+  <title>click事件300ms延迟 | zhoup-x的技术博客</title>
   
 
 
@@ -224,40 +225,186 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">'tags'</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                9 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ajax/" style="font-size: 21px; color: #6f6f6f">ajax</a> <a href="/tags/css/" style="font-size: 30px; color: #111">css</a> <a href="/tags/http/" style="font-size: 21px; color: #6f6f6f">http</a> <a href="/tags/json/" style="font-size: 12px; color: #ccc">json</a> <a href="/tags/事件/" style="font-size: 12px; color: #ccc">事件</a> <a href="/tags/像素/" style="font-size: 12px; color: #ccc">像素</a> <a href="/tags/兼容性/" style="font-size: 12px; color: #ccc">兼容性</a> <a href="/tags/浏览器机制/" style="font-size: 12px; color: #ccc">浏览器机制</a> <a href="/tags/移动端/" style="font-size: 21px; color: #6f6f6f">移动端</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">click事件300ms延迟</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T12:13:30+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>对于移动端来讲,click事件会有300ms延迟</p>
+<blockquote>
+<p>原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕</p>
+</blockquote>
+<p>解决方案:<br>    1.设置视口,禁用用户缩放<br>    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件</p>
+
       
     </div>
     
     
     
+
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/事件/" rel="tag"><i class="fa fa-tag"></i> 事件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/13/移动端-reset和normalize格式化css的区别/" rel="next" title="reset和normalize的区别">
+                <i class="fa fa-chevron-left"></i> reset和normalize的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/13/ajax-XMLHttpRequest2.0/" rel="prev" title="XMLHttpRequest2.0新增">
+                XMLHttpRequest2.0新增 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

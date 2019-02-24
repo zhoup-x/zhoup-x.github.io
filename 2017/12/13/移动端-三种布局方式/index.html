@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="css,">
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="前端攻城狮">
-<meta property="og:type" content="website">
-<meta property="og:title" content="&#39;tags&#39;">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="##流式布局    1.高度写死,宽度自适应(宽度百分比)    2.对大屏幕不友好,会拉长 ##响应式布局    1.一套代码,多终端适配  原理:动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配屏幕大小分类:| 屏幕分类 | 大小       | 设备       || ——– | ———- | ———- || 超小屏幕 | 0~768px    | 手机">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三种布局方式">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/移动端-三种布局方式/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:description" content="##流式布局    1.高度写死,宽度自适应(宽度百分比)    2.对大屏幕不友好,会拉长 ##响应式布局    1.一套代码,多终端适配  原理:动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配屏幕大小分类:| 屏幕分类 | 大小       | 设备       || ——– | ———- | ———- || 超小屏幕 | 0~768px    | 手机">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T15:00:34.848Z">
+<meta property="og:updated_time" content="2019-02-24T02:24:03.091Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;tags&#39;">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="三种布局方式">
+<meta name="twitter:description" content="##流式布局    1.高度写死,宽度自适应(宽度百分比)    2.对大屏幕不友好,会拉长 ##响应式布局    1.一套代码,多终端适配  原理:动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配屏幕大小分类:| 屏幕分类 | 大小       | 设备       || ——– | ———- | ———- || 超小屏幕 | 0~768px    | 手机">
 
 
 
@@ -113,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2017/12/13/移动端-三种布局方式/">
 
 
 
 
 
-  <title>'tags' | zhoup-x的技术博客</title>
+  <title>三种布局方式 | zhoup-x的技术博客</title>
   
 
 
@@ -224,40 +225,190 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/移动端-三种布局方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">'tags'</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                9 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ajax/" style="font-size: 21px; color: #6f6f6f">ajax</a> <a href="/tags/css/" style="font-size: 30px; color: #111">css</a> <a href="/tags/http/" style="font-size: 21px; color: #6f6f6f">http</a> <a href="/tags/json/" style="font-size: 12px; color: #ccc">json</a> <a href="/tags/事件/" style="font-size: 12px; color: #ccc">事件</a> <a href="/tags/像素/" style="font-size: 12px; color: #ccc">像素</a> <a href="/tags/兼容性/" style="font-size: 12px; color: #ccc">兼容性</a> <a href="/tags/浏览器机制/" style="font-size: 12px; color: #ccc">浏览器机制</a> <a href="/tags/移动端/" style="font-size: 21px; color: #6f6f6f">移动端</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">三种布局方式</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T20:10:33+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>##流式布局<br>    1.高度写死,宽度自适应(宽度百分比)<br>    2.对大屏幕不友好,会拉长</p>
+<p>##响应式布局<br>    1.一套代码,多终端适配</p>
+<blockquote>
+<p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong><br>| 屏幕分类 | 大小       | 设备       |<br>| ——– | ———- | ———- |<br>| 超小屏幕 | 0~768px    | 手机       |<br>| 小屏幕   | 768~992px  | 平板       |<br>| 中屏幕   | 992~1200px | 老式机     |<br>| 大屏幕   | &gt;1200px    | 笔记本电脑 |</p>
+</blockquote>
+<p>##rem布局<br>    1.能适配所有的屏幕</p>
+<blockquote>
+<p>rem是个相对单位,相对html根字体大小(16px)<br>em是相对自身父标签的字体大小<br><strong>原理:</strong>以rem为单位,根据html跟字体大小,转化为rem,动态设置不同屏幕的html跟字体大小<br><strong>基准值:</strong> 设计图下的尺寸中html跟字体大小<br><strong>怎么确定基准值是多少:</strong><br>当前屏幕宽 / 设计图尺寸 = html跟字体标签 / 基准值<br><strong>使用媒体查询实现rem适配,性能好,但不能一次性适配所有屏幕</strong><br><strong>使用原生js实现rem适配,可以一次性适配所有屏幕,实时适配,性能不好</strong><br><strong>使用淘宝flexible</strong> 定义的基准值 = 设计图尺寸 / 10</p>
+</blockquote>
+
       
     </div>
     
     
     
+
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/03/移动端-h5c3的兼容性问题及解决/" rel="next" title="h5c3兼容性问题及解决">
+                <i class="fa fa-chevron-left"></i> h5c3兼容性问题及解决
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/23/移动端-dpr/" rel="prev" title="dpr-设备像素比">
+                dpr-设备像素比 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/第三篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/ajax-XMLHttpRequest2.0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="by zhoyy">
@@ -255,7 +255,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/第三篇/" itemprop="url">rem布局</a></h1>
+                <a class="post-title-link" href="/2018/05/13/ajax-XMLHttpRequest2.0/" itemprop="url">XMLHttpRequest2.0新增</a></h1>
         
 
         <div class="post-meta">
@@ -267,7 +267,157 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T00:00:00+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-13T00:10:24+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##新增功能</p>
+<p>###formData管理表单数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化 <span class="keyword">var</span> formdata = <span class="keyword">new</span> FormData(form)  form-&gt;表单的dom对象</span><br><span class="line"><span class="number">2.</span>除表单外还有其他数据想上传	formdata.append(<span class="string">"键"</span>,<span class="string">"值"</span>)</span><br><span class="line"><span class="number">3.</span>使用formdata必须用post请求,不用设置请求头 xhr.open(<span class="string">"post"</span>,<span class="string">"url地址"</span>)</span><br><span class="line"><span class="number">4.</span>把formdata放到send小括号中 xhr.send(formdata)</span><br></pre></td></tr></table></figure></p>
+<p>###文件上传<br>    要把选中的文件上传给服务器<br>    和使用formData管理 表单数据一样,只不过不用传入表单的dom对象,第二步是把上传文件的文件对象,添加到formdata中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">formdata.append(<span class="string">"file"</span>,fileInp.files[<span class="number">0</span>])</span><br><span class="line">fileInp:上传文件的表单项dom对象.有个files对象,是个伪数组,第<span class="number">0</span>项是需要的文件对象</span><br></pre></td></tr></table></figure></p>
+<p>###显示文件进度信息<br>    监听文件上传事件: upload.onprogress   <strong>注:这个事件必须写在send之前</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upload.onprogress = <span class="function"><span class="keyword">function</span> (<span class="params"> e </span>)</span>&#123;</span><br><span class="line">       <span class="comment">// e.loaded 已经上传了多少字节</span></span><br><span class="line">       <span class="comment">// e.total 总共有多少字节</span></span><br><span class="line">       <span class="comment">// toFixed(2)保留小数点后两位 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###timeout设置超时<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.timeout = <span class="number">3000</span>;</span><br><span class="line"><span class="comment">// 监听超时的事件</span></span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;		</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/移动端-click事件和tap事件/" itemprop="url">click事件300ms延迟</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T12:13:30+08:00">
                 2018-02-23
               </time>
             
@@ -329,7 +479,11 @@
       
         
           
-            <p>rem布局rem布局rem布局rem布局</p>
+            <p>对于移动端来讲,click事件会有300ms延迟</p>
+<blockquote>
+<p>原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕</p>
+</blockquote>
+<p>解决方案:<br>    1.设置视口,禁用用户缩放<br>    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件</p>
 
           
         
@@ -382,7 +536,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/第一篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/移动端-reset和normalize格式化css的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="by zhoyy">
@@ -401,7 +555,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/第一篇/" itemprop="url">作用域</a></h1>
+                <a class="post-title-link" href="/2018/02/13/移动端-reset和normalize格式化css的区别/" itemprop="url">reset和normalize的区别</a></h1>
         
 
         <div class="post-meta">
@@ -413,8 +567,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T00:00:00+08:00">
-                2018-02-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T21:13:23+08:00">
+                2018-02-13
               </time>
             
 
@@ -436,8 +590,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -475,7 +629,7 @@
       
         
           
-            <p>作用域作用域作用域作用域作用域</p>
+            <p>reset.css<br>    将浏览器所有的默认样式都覆盖<br>normalize<br>    保留了许多浏览器的默认样式,如果有需要,再手动配置,更推荐这种方法</p>
 
           
         
@@ -528,7 +682,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/23/第二篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/ajax-同源和跨域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="by zhoyy">
@@ -547,7 +701,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/23/第二篇/" itemprop="url">定时器</a></h1>
+                <a class="post-title-link" href="/2018/01/23/ajax-同源和跨域/" itemprop="url">同源和跨域</a></h1>
         
 
         <div class="post-meta">
@@ -559,8 +713,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-23T00:00:00+08:00">
-                2017-02-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T10:24:35+08:00">
+                2018-01-23
               </time>
             
 
@@ -582,8 +736,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
                   </a>
                 </span>
 
@@ -621,7 +775,13 @@
       
         
           
-            <p>定时器定时器定时器定时器定时器</p>
+            <p>##同源<br>    同源的条件:<br>        1.协议相同<br>        2.域名相同<br>        3.端口号相同<br>        同时满足三个条件才可成为同源<br>    同源最大特点:<br>        同原网站之间共享cookie<br>    同源策略限制的范围:<br>        1.cookie,localStorage,indexDB<br>        2.DOM<br>        3.ajax请求<br>        非同源网站之间不能共享这些数据</p>
+<p>##跨域<br>    什么是跨域:<br>        往不同源的网页发送请求,就是跨域<br>        因为浏览器有同源策略,ajax请求是可以出去的,但是响应的数据被浏览器拦截了,导致请求不成功</p>
+<p>##jsonp</p>
+<pre><code>原理: 因为script,img,link这些标签不受同源策略的影响,jsonp就是利用了script标签不受同源的影响,将php文件写在src中,给后台发送请求的时候,把声明的函数名拼接在url后面,发送给服务器,服务器返回这个函数的调用,他把返回的数据当做实参传进函数调用,响应完成后,在响应的数据里就能拿到返回的数据了
+</code></pre><p><strong>jsonp只支持get请求,且要后台配合</strong></p>
+<p>##跨域资源共享<br>    CORS ie10+支持<br>    在请求头 中添加origin字段,指定域名 或 *:允许所有域名访问<br>    jsonp兼容性好,仅支持get请求,使用麻烦<br>    cors是浏览器支持,使用简单,不限制请求类型</p>
+<p>​    </p>
 
           
         
@@ -674,7 +834,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/02/23/第五篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-pc端和移动端有什么区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="by zhoyy">
@@ -693,7 +853,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/02/23/第五篇/" itemprop="url">express</a></h1>
+                <a class="post-title-link" href="/2018/01/13/移动端-pc端和移动端有什么区别/" itemprop="url">pc和移动端区别</a></h1>
         
 
         <div class="post-meta">
@@ -705,8 +865,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-23T00:20:00+08:00">
-                2014-02-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:55:53+08:00">
+                2018-01-13
               </time>
             
 
@@ -728,8 +888,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">node.js</span>
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
                   </a>
                 </span>
 
@@ -767,7 +927,7 @@
       
         
           
-            <p>express express express express express</p>
+            <p>1.屏幕尺寸<br>    pc端 有版心<br>    移动端 百分比适配<br>2.浏览器兼容<br>    pc端 h5c3支持较好<br>    移动端 前缀-webkit-</p>
 
           
         
@@ -820,7 +980,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2010/02/23/第四篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-less的使用和语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="by zhoyy">
@@ -839,7 +999,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2010/02/23/第四篇/" itemprop="url">vue组件传值</a></h1>
+                <a class="post-title-link" href="/2018/01/13/移动端-less的使用和语法/" itemprop="url">less基本使用</a></h1>
         
 
         <div class="post-meta">
@@ -851,8 +1011,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-02-23T05:00:00+08:00">
-                2010-02-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:50:33+08:00">
+                2018-01-13
               </time>
             
 
@@ -874,8 +1034,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -913,7 +1073,609 @@
       
         
           
-            <p>vue组件传值vue组件传值vue组件传值vue组件传值vue组件传值vue组件传值</p>
+            <p>css预处理器<br>为了代码的可复用性,可维护性<br>less文件需要编译</p>
+<p>##语法<br>    1.注释<br>        /**/ 会被编译到css中去<br>        //    不会被编译到css中去<br>    2.变量<br>        声明    @变量名:变量值<br>    3.混入类<br>        可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用<br>    4.函数<br>        .类()<br>        函数不会被编译到css中去<br>        函数可以调用,可传参<br>        函数有参数必须传参,不设参数要有默认值<br>    5.less嵌套<br>        后代选择器    直接嵌套编写<br>        子代选择器    加上&gt;<br>        交集选择器    &amp;表示自己<br>        伪元素选择器    &amp;:<br>    6.导入<br>        @impoprt “文件名”    文件后缀名可省略<br>        用于大型项目的模块划分<br>    7.less运算<br>        加减乘除<br>        内置运算</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/ajax-原生ajax发送请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/13/ajax-原生ajax发送请求/" itemprop="url">原生ajax发送请求</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T13:00:20+08:00">
+                2018-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##form和ajax区别<br>    0.都可以给后台发送请求<br>    1.form发出去的请求是同步的,ajax是异步的<br>    2.form发出请求后,页面会发生跳转,ajax不会发出跳转</p>
+<p>##js原生实现ajax发送请求</p>
+<p>###get请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure></p>
+<p>###post请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>###共有的最后一步<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##get请求和post请求的区别:<br>        1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制<br>        2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/移动端-三种移动开发分类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/10/移动端-三种移动开发分类/" itemprop="url">三种移动开发分类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-10T12:50:33+08:00">
+                2018-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###1.原生App<br>    直接基于操作系统进行开发的应用程序<br>    优点:<br>        1.运行在操作系统送,性能好<br>        2.可访问手机的硬件设备<br>        3.可以离线访问<br>    缺点:<br>        1.成本高<br>        2.跨平台性差<br>        3.更新维护麻烦</p>
+<p>###2.webApp<br>    直接运行在浏览器中,使用html/css/js开发<br>    优点:<br>        1.跨平台性好,只要游浏览器就可以运行<br>        2.成本低<br>        3.更新维护方便<br>    缺点:<br>        1.依赖网络,不能离线访问<br>        2.性能相对来说差<br>        3.不能直接访问手机硬件设备</p>
+<p>###3.混合App<br>    结合,webApp外层套了一个原生App的壳<br>    优点:<br>        1.跨平台性好<br>        2.成本低<br>        3.可直接访问手机硬件设备<br>    缺点:<br>        要更新版本</p>
+<p><strong>一般开发流程:</strong><br>    webApp —(套个壳)&gt;&gt; 混合App —(高性能)&gt;&gt; 原生App</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/23/移动端-dpr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/23/移动端-dpr/" itemprop="url">dpr-设备像素比</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T23:53:50+08:00">
+                2017-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###设备无关像素<br>    就是css像素,是 乔布斯提出的</p>
+<p>##dpr    设备像素比<br>    dpr = 物理像素 / css像素<br>    获取dpr    <code>window.devicePixelRatio</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/移动端-三种布局方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/13/移动端-三种布局方式/" itemprop="url">三种布局方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T20:10:33+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##流式布局<br>    1.高度写死,宽度自适应(宽度百分比)<br>    2.对大屏幕不友好,会拉长</p>
+<p>##响应式布局<br>    1.一套代码,多终端适配</p>
+<blockquote>
+<p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong><br>| 屏幕分类 | 大小       | 设备       |<br>| ——– | ———- | ———- |<br>| 超小屏幕 | 0~768px    | 手机       |<br>| 小屏幕   | 768~992px  | 平板       |<br>| 中屏幕   | 992~1200px | 老式机     |<br>| 大屏幕   | &gt;1200px    | 笔记本电脑 |</p>
+</blockquote>
+<p>##rem布局<br>    1.能适配所有的屏幕</p>
+<blockquote>
+<p>rem是个相对单位,相对html根字体大小(16px)<br>em是相对自身父标签的字体大小<br><strong>原理:</strong>以rem为单位,根据html跟字体大小,转化为rem,动态设置不同屏幕的html跟字体大小<br><strong>基准值:</strong> 设计图下的尺寸中html跟字体大小<br><strong>怎么确定基准值是多少:</strong><br>当前屏幕宽 / 设计图尺寸 = html跟字体标签 / 基准值<br><strong>使用媒体查询实现rem适配,性能好,但不能一次性适配所有屏幕</strong><br><strong>使用原生js实现rem适配,可以一次性适配所有屏幕,实时适配,性能不好</strong><br><strong>使用淘宝flexible</strong> 定义的基准值 = 设计图尺寸 / 10</p>
+</blockquote>
 
           
         
@@ -956,6 +1718,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -999,7 +1765,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1010,7 +1776,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1021,7 +1787,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

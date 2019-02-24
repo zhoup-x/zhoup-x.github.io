@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="浏览器机制,">
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="前端攻城狮">
-<meta property="og:type" content="website">
-<meta property="og:title" content="&#39;tags&#39;">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
+<meta name="keywords" content="浏览器机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回流与重绘">
+<meta property="og:url" content="http://yoursite.com/2017/02/13/移动端-回流与重绘/index.html">
 <meta property="og:site_name" content="zhoup-x的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T15:00:34.848Z">
+<meta property="og:updated_time" content="2019-02-24T02:23:12.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;tags&#39;">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="回流与重绘">
+<meta name="twitter:description" content="###浏览器解析渲染的步骤    1.浏览器解析html,生成DOM树    2.解析css,生成样式结构体    3.DOM树和样式结构体结合,构建渲染树    4.先布局    5.再渲染 ###回流    重新布局    发生在第4阶段–布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  ###重绘    重新绘制渲染    发生在第5阶段–渲染阶段  触发重绘:">
 
 
 
@@ -113,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
 
 
 
 
 
-  <title>'tags' | zhoup-x的技术博客</title>
+  <title>回流与重绘 | zhoup-x的技术博客</title>
   
 
 
@@ -224,40 +225,188 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="by zhoyy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhoup-x的技术博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">'tags'</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                9 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ajax/" style="font-size: 21px; color: #6f6f6f">ajax</a> <a href="/tags/css/" style="font-size: 30px; color: #111">css</a> <a href="/tags/http/" style="font-size: 21px; color: #6f6f6f">http</a> <a href="/tags/json/" style="font-size: 12px; color: #ccc">json</a> <a href="/tags/事件/" style="font-size: 12px; color: #ccc">事件</a> <a href="/tags/像素/" style="font-size: 12px; color: #ccc">像素</a> <a href="/tags/兼容性/" style="font-size: 12px; color: #ccc">兼容性</a> <a href="/tags/浏览器机制/" style="font-size: 12px; color: #ccc">浏览器机制</a> <a href="/tags/移动端/" style="font-size: 21px; color: #6f6f6f">移动端</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">回流与重绘</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
+                2017-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>###浏览器解析渲染的步骤<br>    1.浏览器解析html,生成DOM树<br>    2.解析css,生成样式结构体<br>    3.DOM树和样式结构体结合,构建渲染树<br>    4.先布局<br>    5.再渲染</p>
+<p>###回流<br>    重新布局<br>    发生在第4阶段–布局阶段</p>
+<blockquote>
+<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
+</blockquote>
+<p>###重绘<br>    重新绘制渲染<br>    发生在第5阶段–渲染阶段</p>
+<blockquote>
+<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
+</blockquote>
+<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
+<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
+
       
     </div>
     
     
     
+
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器机制/" rel="tag"><i class="fa fa-tag"></i> 浏览器机制</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/20/ajax-json/" rel="prev" title="JSON">
+                JSON <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
