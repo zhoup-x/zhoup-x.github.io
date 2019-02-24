@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="浏览器机制,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -73,18 +73,17 @@
 
 
 
-<meta name="description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
-<meta name="keywords" content="浏览器机制">
+<meta name="description" content="js数据类型js有6种数据类型 5种简单数据类型     1.number     2.string     3.boolean     4.null     5.undefined 1种复杂数据类型     1.object es6新增了一个symbol数据类型 所以现在是7种数据类型 number,string,boolean,null,undefined,object,symbol 为什么t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回流与重绘">
-<meta property="og:url" content="http://yoursite.com/2017/02/13/移动端-回流与重绘/index.html">
+<meta property="og:title" content="zhou-p的技术博客">
+<meta property="og:url" content="http://yoursite.com/2019/02/24/js-数据类型/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta property="og:description" content="js数据类型js有6种数据类型 5种简单数据类型     1.number     2.string     3.boolean     4.null     5.undefined 1种复杂数据类型     1.object es6新增了一个symbol数据类型 所以现在是7种数据类型 number,string,boolean,null,undefined,object,symbol 为什么t">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:52:24.354Z">
+<meta property="og:updated_time" content="2019-02-24T12:31:33.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回流与重绘">
-<meta name="twitter:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta name="twitter:title" content="zhou-p的技术博客">
+<meta name="twitter:description" content="js数据类型js有6种数据类型 5种简单数据类型     1.number     2.string     3.boolean     4.null     5.undefined 1种复杂数据类型     1.object es6新增了一个symbol数据类型 所以现在是7种数据类型 number,string,boolean,null,undefined,object,symbol 为什么t">
 
 
 
@@ -114,13 +113,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/24/js-数据类型/">
 
 
 
 
 
-  <title>回流与重绘 | zhou-p的技术博客</title>
+  <title> | zhou-p的技术博客</title>
   
 
 
@@ -237,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/js-数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">回流与重绘</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -266,8 +265,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
-                2017-02-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-24T19:39:48+08:00">
+                2019-02-24
               </time>
             
 
@@ -276,28 +275,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -326,23 +303,30 @@
       
 
       
-        <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
-2.解析css,生成样式结构体
-3.DOM树和样式结构体结合,构建渲染树
-4.先布局
-5.再渲染
-</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
-发生在第4阶段--布局阶段
-</code></pre><blockquote>
-<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
+        <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
+5种简单数据类型
+    1.number
+    2.string
+    3.boolean
+    4.null
+    5.undefined
+1种复杂数据类型
+    1.object
+es6新增了一个symbol数据类型
+所以现在是7种数据类型
+number,string,boolean,null,undefined,object,symbol
+</code></pre><h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><pre><code>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢
+其实这是一个历史遗留问题
+在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值
+后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在
+</code></pre><h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><pre><code>undefined: 一个变量,只声明,未赋值
+null: 表示一个空对象指针
+</code></pre><h3 id="undefined-null"><a href="#undefined-null" class="headerlink" title="undefined == null"></a>undefined == null</h3><blockquote>
+<p>在没了解到这个之前,我们很容易的想到  undefined转换成布尔值是false,null转换成布尔值也是false,所以undefined == null, 其实这种想法是不对的<br>在javascript规范中提到:<br><strong>在比较相等性之前,不能将null和undefined转换成其他值,并且规定null和undefined是相等的</strong><br>为什么呢,因为规范认为,既然undefined和null的行为很相似,都表示一个无效的值,那么他们所代表的内容也有相似性,所以有undefined == null<br><strong>undefined === null  =&gt; false 数据类型不一样</strong></p>
 </blockquote>
-<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
-发生在第5阶段--渲染阶段
-</code></pre><blockquote>
-<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><blockquote>
+<p>属于number类型,代表非数值 Not a Number<br>NaN与任何是都不相等,包括和NaN自身</p>
 </blockquote>
-<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
-<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
 
       
     </div>
@@ -370,12 +354,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/浏览器机制/" rel="tag"><i class="fa fa-tag"></i> 浏览器机制</a>
-          
-        </div>
-      
 
       
       
@@ -385,15 +363,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/13/ajax-XMLHttpRequest2.0/" rel="next" title="XMLHttpRequest2.0新增">
+                <i class="fa fa-chevron-left"></i> XMLHttpRequest2.0新增
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/20/ajax-json/" rel="prev" title="JSON">
-                JSON <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染的步骤"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析渲染的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回流"><span class="nav-number">2.</span> <span class="nav-text">回流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘"><span class="nav-number">3.</span> <span class="nav-text">重绘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js数据类型"><span class="nav-number">1.</span> <span class="nav-text">js数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么typeof-null-‘object’"><span class="nav-number">2.</span> <span class="nav-text">为什么typeof null === ‘object’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined和null"><span class="nav-number">3.</span> <span class="nav-text">undefined和null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined-null"><span class="nav-number">4.</span> <span class="nav-text">undefined == null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">5.</span> <span class="nav-text">NaN</span></a></li></ol></div>
             
 
           </div>
