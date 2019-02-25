@@ -236,6 +236,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/23/移动端-dpr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/23/移动端-dpr/" itemprop="url">dpr-设备像素比</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T23:53:50+08:00">
+                2017-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="设备无关像素"><a href="#设备无关像素" class="headerlink" title="设备无关像素"></a>设备无关像素</h3><pre><code>就是css像素,是 乔布斯提出的
+</code></pre><h2 id="dpr-设备像素比"><a href="#dpr-设备像素比" class="headerlink" title="dpr    设备像素比"></a>dpr    设备像素比</h2><pre><code>dpr = 物理像素 / css像素
+获取dpr    `window.devicePixelRatio`
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/移动端-三种布局方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -830,7 +978,10 @@
 <h3 id="截取数组"><a href="#截取数组" class="headerlink" title="截取数组"></a>截取数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.slice(<span class="number">0</span>,<span class="number">2</span>) </span><br><span class="line">newArr =&gt; 返回截取的内容,从下标第<span class="number">0</span>项,截取长度<span class="number">2</span>,返回一个新数组 =&gt; [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">const</span> n2 = arr.slice(<span class="number">2</span>) <span class="comment">// =&gt; 从下标第2项,截取到最后 =&gt; [2,3,4]</span></span><br><span class="line"><span class="keyword">const</span> n3 = arr.slice()	<span class="comment">// =&gt; 截取全部 =&gt; [0,1,2,3,4]</span></span><br></pre></td></tr></table></figure>
 <h3 id="数组splice方法"><a href="#数组splice方法" class="headerlink" title="数组splice方法"></a>数组splice方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 1.删除</span></span><br><span class="line">arr.splice(起始下标,删几个)</span><br><span class="line">	arr.splice(<span class="number">2</span>,<span class="number">2</span>) <span class="comment">// [1,2,5]</span></span><br><span class="line"><span class="comment">// 2.替换</span></span><br><span class="line">arr.splice(起始下标,删几个,替换的内容)</span><br><span class="line">	arr.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>) <span class="comment">// [1,'a',4,5]</span></span><br><span class="line"><span class="comment">// 3.添加 (注意添加到的位置)</span></span><br><span class="line">arr.splice(起始下标,<span class="number">0</span>,添加的内容)</span><br><span class="line">	arr.splice(<span class="number">3</span>,<span class="number">0</span>,<span class="string">'b'</span>) <span class="comment">// [1,2,3,'b',4,5]</span></span><br></pre></td></tr></table></figure>
 <h3 id="清空数组的几种方式"><a href="#清空数组的几种方式" class="headerlink" title="清空数组的几种方式"></a>清空数组的几种方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(<span class="number">0</span>,arr.length) <span class="comment">// 从下标0开始,删除数组的长度个,即删除全部</span></span><br><span class="line">arr.length = <span class="number">0</span> <span class="comment">// 将数组长度赋值为0</span></span><br><span class="line">arr = [] <span class="comment">// 将数组赋值为一个空数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><blockquote>
+<p>冒泡排序    </p>
+</blockquote>
+
           
         
       
@@ -1411,7 +1562,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

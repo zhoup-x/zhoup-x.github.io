@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="js,数组,">
+  <meta name="keywords" content="数组,js,">
 
 
 
@@ -74,14 +74,14 @@
 
 
 <meta name="description" content="数组合并的方法es51234var a1 = [1,2]var a2 = [3,4]var a = a1.concat(a2)a =&amp;gt; [1,2,3,4] es61234const a1 = [1,2]const a2 = [3,4]const a = [ ...a1 , ...a2 ]a =&amp;gt; [1,2,3,4] 数组去重的方法es512345678910var arr = [1,1">
-<meta name="keywords" content="js,数组">
+<meta name="keywords" content="数组,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组">
 <meta property="og:url" content="http://yoursite.com/2017/05/24/js-数组/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
 <meta property="og:description" content="数组合并的方法es51234var a1 = [1,2]var a2 = [3,4]var a = a1.concat(a2)a =&amp;gt; [1,2,3,4] es61234const a1 = [1,2]const a2 = [3,4]const a = [ ...a1 , ...a2 ]a =&amp;gt; [1,2,3,4] 数组去重的方法es512345678910var arr = [1,1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T15:19:52.599Z">
+<meta property="og:updated_time" content="2019-02-25T02:55:06.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组">
 <meta name="twitter:description" content="数组合并的方法es51234var a1 = [1,2]var a2 = [3,4]var a = a1.concat(a2)a =&amp;gt; [1,2,3,4] es61234const a1 = [1,2]const a2 = [3,4]const a = [ ...a1 , ...a2 ]a =&amp;gt; [1,2,3,4] 数组去重的方法es512345678910var arr = [1,1">
@@ -339,7 +339,10 @@
 <h3 id="截取数组"><a href="#截取数组" class="headerlink" title="截取数组"></a>截取数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.slice(<span class="number">0</span>,<span class="number">2</span>) </span><br><span class="line">newArr =&gt; 返回截取的内容,从下标第<span class="number">0</span>项,截取长度<span class="number">2</span>,返回一个新数组 =&gt; [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">const</span> n2 = arr.slice(<span class="number">2</span>) <span class="comment">// =&gt; 从下标第2项,截取到最后 =&gt; [2,3,4]</span></span><br><span class="line"><span class="keyword">const</span> n3 = arr.slice()	<span class="comment">// =&gt; 截取全部 =&gt; [0,1,2,3,4]</span></span><br></pre></td></tr></table></figure>
 <h3 id="数组splice方法"><a href="#数组splice方法" class="headerlink" title="数组splice方法"></a>数组splice方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 1.删除</span></span><br><span class="line">arr.splice(起始下标,删几个)</span><br><span class="line">	arr.splice(<span class="number">2</span>,<span class="number">2</span>) <span class="comment">// [1,2,5]</span></span><br><span class="line"><span class="comment">// 2.替换</span></span><br><span class="line">arr.splice(起始下标,删几个,替换的内容)</span><br><span class="line">	arr.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>) <span class="comment">// [1,'a',4,5]</span></span><br><span class="line"><span class="comment">// 3.添加 (注意添加到的位置)</span></span><br><span class="line">arr.splice(起始下标,<span class="number">0</span>,添加的内容)</span><br><span class="line">	arr.splice(<span class="number">3</span>,<span class="number">0</span>,<span class="string">'b'</span>) <span class="comment">// [1,2,3,'b',4,5]</span></span><br></pre></td></tr></table></figure>
 <h3 id="清空数组的几种方式"><a href="#清空数组的几种方式" class="headerlink" title="清空数组的几种方式"></a>清空数组的几种方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(<span class="number">0</span>,arr.length) <span class="comment">// 从下标0开始,删除数组的长度个,即删除全部</span></span><br><span class="line">arr.length = <span class="number">0</span> <span class="comment">// 将数组长度赋值为0</span></span><br><span class="line">arr = [] <span class="comment">// 将数组赋值为一个空数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><blockquote>
+<p>冒泡排序    </p>
+</blockquote>
+
       
     </div>
     
@@ -368,9 +371,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
             <a href="/tags/数组/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
         </div>
       
@@ -475,7 +478,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
