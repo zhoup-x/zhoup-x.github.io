@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="this,js,">
+  <meta name="keywords" content="js,this,">
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="this的指向 1.直接打印this会怎样1234&amp;gt;	console.log(this)&amp;gt;	// 浏览器 =&amp;gt; window&amp;gt;	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn">
-<meta name="keywords" content="this,js">
+<meta name="description" content="this的指向 1.直接打印this会怎样1234	console.log(this)	// 浏览器 =&amp;gt; window	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn()&amp;gt; // 浏览">
+<meta name="keywords" content="js,this">
 <meta property="og:type" content="article">
 <meta property="og:title" content="this的指向">
 <meta property="og:url" content="http://yoursite.com/2017/10/03/js-this/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="this的指向 1.直接打印this会怎样1234&amp;gt;	console.log(this)&amp;gt;	// 浏览器 =&amp;gt; window&amp;gt;	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn">
+<meta property="og:description" content="this的指向 1.直接打印this会怎样1234	console.log(this)	// 浏览器 =&amp;gt; window	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn()&amp;gt; // 浏览">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T03:59:47.554Z">
+<meta property="og:updated_time" content="2019-02-26T04:40:48.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this的指向">
-<meta name="twitter:description" content="this的指向 1.直接打印this会怎样1234&amp;gt;	console.log(this)&amp;gt;	// 浏览器 =&amp;gt; window&amp;gt;	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn">
+<meta name="twitter:description" content="this的指向 1.直接打印this会怎样1234	console.log(this)	// 浏览器 =&amp;gt; window	// node.js =&amp;gt;  &amp;#123;&amp;#125;&amp;gt;   2.函数中this的指向12345678&amp;gt; function fn() &amp;#123;&amp;gt;   console.log(this)&amp;gt; &amp;#125;&amp;gt; fn()&amp;gt; // 浏览">
 
 
 
@@ -327,7 +327,7 @@
 
       
         <h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><blockquote>
-<p>1.直接打印this会怎样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;	<span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt;	<span class="comment">// 浏览器 =&gt; window</span></span><br><span class="line">&gt;	<span class="comment">// node.js =&gt;  &#123;&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>1.直接打印this会怎样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">	<span class="comment">// 浏览器 =&gt; window</span></span><br><span class="line">	<span class="comment">// node.js =&gt;  &#123;&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p>2.函数中this的指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;   <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; fn()</span><br><span class="line">&gt; <span class="comment">// 浏览器 =&gt; window </span></span><br><span class="line">&gt; <span class="comment">// node.js =&gt; global</span></span><br><span class="line">&gt; <span class="comment">// 严格模式下都是undefined</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
@@ -389,9 +389,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/this/" rel="tag"><i class="fa fa-tag"></i> this</a>
-          
             <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/this/" rel="tag"><i class="fa fa-tag"></i> this</a>
           
         </div>
       
