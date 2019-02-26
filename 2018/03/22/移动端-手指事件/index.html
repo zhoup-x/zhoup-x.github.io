@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="事件,">
 
 
 
@@ -73,16 +73,18 @@
 
 
 
-<meta name="description" content="前端攻城狮">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhou-p的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="移动端的四个手指事件 touchstart 开始触摸时,触发 touchmove 手指滑动的时候,触发 touchend 手指离开屏幕的时候,触发 touchcancel 手指触摸,被一些系统事件打断了,触发  手指事件的事件对象 e.touches 屏幕的所有手指 e.changedTouches 发生改变的所有手指(增减,手指位置变化) e.targetTouches 目标对象上的所有手指">
+<meta name="keywords" content="事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端手指事件">
+<meta property="og:url" content="http://yoursite.com/2018/03/22/移动端-手指事件/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:description" content="移动端的四个手指事件 touchstart 开始触摸时,触发 touchmove 手指滑动的时候,触发 touchend 手指离开屏幕的时候,触发 touchcancel 手指触摸,被一些系统事件打断了,触发  手指事件的事件对象 e.touches 屏幕的所有手指 e.changedTouches 发生改变的所有手指(增减,手指位置变化) e.targetTouches 目标对象上的所有手指">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-26T15:09:57.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhou-p的技术博客">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="移动端手指事件">
+<meta name="twitter:description" content="移动端的四个手指事件 touchstart 开始触摸时,触发 touchmove 手指滑动的时候,触发 touchend 手指离开屏幕的时候,触发 touchcancel 手指触摸,被一些系统事件打断了,触发  手指事件的事件对象 e.touches 屏幕的所有手指 e.changedTouches 发生改变的所有手指(增减,手指位置变化) e.targetTouches 目标对象上的所有手指">
 
 
 
@@ -112,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/">
+  <link rel="canonical" href="http://yoursite.com/2018/03/22/移动端-手指事件/">
 
 
 
 
 
-  <title>Archive | zhou-p的技术博客</title>
+  <title>移动端手指事件 | zhou-p的技术博客</title>
   
 
 
@@ -137,7 +139,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -221,391 +223,195 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/移动端-手指事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">移动端手指事件</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-22T19:10:58+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 27 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/13/ajax-XMLHttpRequest2.0/" itemprop="url">
-              
-                <span itemprop="name">XMLHttpRequest2.0新增</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-13T00:10:24+08:00" content="2018-05-13">
-          05-13
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/23/移动端-点透事件/" itemprop="url">
-              
-                <span itemprop="name">点透事件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-03-23T20:18:01+08:00" content="2018-03-23">
-          03-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/22/移动端-手指事件/" itemprop="url">
-              
-                <span itemprop="name">移动端手指事件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-03-22T19:10:58+08:00" content="2018-03-22">
-          03-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="移动端的四个手指事件"><a href="#移动端的四个手指事件" class="headerlink" title="移动端的四个手指事件"></a>移动端的四个手指事件</h3><ol>
+<li>touchstart 开始触摸时,触发</li>
+<li>touchmove 手指滑动的时候,触发</li>
+<li>touchend 手指离开屏幕的时候,触发</li>
+<li>touchcancel 手指触摸,被一些系统事件打断了,触发</li>
+</ol>
+<h3 id="手指事件的事件对象"><a href="#手指事件的事件对象" class="headerlink" title="手指事件的事件对象"></a>手指事件的事件对象</h3><ol>
+<li>e.touches 屏幕的所有手指</li>
+<li>e.changedTouches 发生改变的所有手指(增减,手指位置变化)</li>
+<li>e.targetTouches 目标对象上的所有手指</li>
+</ol>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/23/其他-并发和并行/" itemprop="url">
-              
-                <span itemprop="name">并发和并行</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-23T20:10:34+08:00" content="2018-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/23/移动端-click事件和tap事件/" itemprop="url">
-              
-                <span itemprop="name">click事件300ms延迟</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-23T12:13:30+08:00" content="2018-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/13/移动端-reset和normalize格式化css的区别/" itemprop="url">
-              
-                <span itemprop="name">reset和normalize的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-13T21:13:23+08:00" content="2018-02-13">
-          02-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/23/ajax-同源和跨域/" itemprop="url">
-              
-                <span itemprop="name">同源和跨域</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-23T10:24:35+08:00" content="2018-01-23">
-          01-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/13/移动端-pc端和移动端有什么区别/" itemprop="url">
-              
-                <span itemprop="name">pc和移动端区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-13T22:55:53+08:00" content="2018-01-13">
-          01-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/13/移动端-less的使用和语法/" itemprop="url">
-              
-                <span itemprop="name">less基本使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-13T22:50:33+08:00" content="2018-01-13">
-          01-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/13/ajax-原生ajax发送请求/" itemprop="url">
-              
-                <span itemprop="name">原生ajax发送请求</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-13T13:00:20+08:00" content="2018-01-13">
-          01-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/事件/" rel="tag"><i class="fa fa-tag"></i> 事件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/23/其他-并发和并行/" rel="next" title="并发和并行">
+                <i class="fa fa-chevron-left"></i> 并发和并行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/23/移动端-点透事件/" rel="prev" title="点透事件">
+                点透事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -613,6 +419,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -633,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -694,6 +516,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端的四个手指事件"><span class="nav-number">1.</span> <span class="nav-text">移动端的四个手指事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手指事件的事件对象"><span class="nav-number">2.</span> <span class="nav-text">手指事件的事件对象</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -847,6 +685,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
