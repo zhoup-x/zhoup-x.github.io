@@ -576,6 +576,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/js-this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/03/js-this/" itemprop="url">this的指向</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T20:08:21+08:00">
+                2017-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><blockquote>
+<p>1.直接打印this会怎样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;	<span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt;	<span class="comment">// 浏览器 =&gt; window</span></span><br><span class="line">&gt;	<span class="comment">// node.js =&gt;  &#123;&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.函数中this的指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;   <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; fn()</span><br><span class="line">&gt; <span class="comment">// 浏览器 =&gt; window </span></span><br><span class="line">&gt; <span class="comment">// node.js =&gt; global</span></span><br><span class="line">&gt; <span class="comment">// 严格模式下都是undefined</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>3.对象中this的指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;  <span class="keyword">const</span> obj = &#123;</span><br><span class="line">&gt;     name: <span class="string">'zs'</span>,</span><br><span class="line">&gt;     fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;         <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&gt;       &#125;</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    obj.fn() </span><br><span class="line">&gt;    <span class="comment">// obj  nod.js,严格模式同</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>4.构造函数中this的指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = <span class="string">'zs'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> p = <span class="keyword">new</span> Person()</span><br><span class="line">  p.age = <span class="number">99</span></span><br><span class="line">  <span class="built_in">console</span>.log(p);</span><br><span class="line">  <span class="comment">//this指向实例p</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>5.<strong>小坑,定时器/延时器中this的指向</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;, <span class="number">3000</span>) </span><br><span class="line">&gt; <span class="comment">// 浏览器 =&gt; window &lt;= 严格模式</span></span><br><span class="line">&gt; <span class="comment">// node.js =&gt; global &lt;= 严格模式</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<h3 id="改变this的指向"><a href="#改变this的指向" class="headerlink" title="改变this的指向"></a>改变this的指向</h3><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;   <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; <span class="comment">// 一般来说 , 这个this指向的是window</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">// 1.call </span></span><br><span class="line">&gt; <span class="comment">// 然后我们调用call方法</span></span><br><span class="line">&gt; fn.call(<span class="string">'yoo'</span>) <span class="comment">// 改变了this的指向,让this指向了'yoo'这个字符串</span></span><br><span class="line">&gt; <span class="comment">// 2.apply </span></span><br><span class="line">&gt; <span class="comment">// 然后我们调用apply方法</span></span><br><span class="line">&gt; fn.apply(<span class="string">'yoo'</span>) <span class="comment">// 改变了this的指向,让this指向了'yoo'这个字符串</span></span><br><span class="line">&gt; <span class="comment">// 3.bind</span></span><br><span class="line">&gt; <span class="comment">// 然后我们调用bind方法</span></span><br><span class="line">&gt; <span class="keyword">const</span> newFn = fn.bind(<span class="string">'yoo'</span>) <span class="comment">// 使用bind方法会返回一个新的函数</span></span><br><span class="line">&gt; newFn()	<span class="comment">//  改变了this的指向,让this指向了'yoo'这个字符串</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+</blockquote>
+<h3 id="call和apply的区别"><a href="#call和apply的区别" class="headerlink" title="call和apply的区别"></a>call和apply的区别</h3><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt;  <span class="keyword">const</span> obj = &#123;</span><br><span class="line">&gt;       name: <span class="string">'yooo'</span></span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;  <span class="function"><span class="keyword">function</span> <span class="title">rename</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">&gt;      <span class="built_in">console</span>.log(x, <span class="keyword">this</span>.name, y);</span><br><span class="line">&gt;  &#125;</span><br><span class="line">   <span class="comment">// rename('a', 'b')  </span></span><br><span class="line">   <span class="comment">// a, b</span></span><br><span class="line">   <span class="comment">// ----------</span></span><br><span class="line">   <span class="comment">// rename.call(obj, 'a', 'b') </span></span><br><span class="line">   <span class="comment">// this指向obj  a, yooo ,b</span></span><br><span class="line">   <span class="comment">// ----------</span></span><br><span class="line">   <span class="comment">// rename.apply(obj, 'a', 'b') </span></span><br><span class="line">   <span class="comment">// 会报错 CreateListFromArrayLike called on non-object </span></span><br><span class="line">   <span class="comment">// 说明apply的参数要传一个参数数组</span></span><br><span class="line">   <span class="comment">// rename.apply(obj, ['a', 'b']) </span></span><br><span class="line">   <span class="comment">// this指向obj  a,yooo ,b</span></span><br><span class="line">   <span class="comment">// ----------</span></span><br><span class="line">   <span class="comment">// const newname = rename.bind(obj, 'a', 'b')</span></span><br><span class="line">   <span class="comment">// newname() // this指向obj ,  a,yooo,b</span></span><br><span class="line">   <span class="comment">// const newname = rename.bind(obj, ['a', 'b'])</span></span><br><span class="line">   <span class="comment">// newname() // ["a","b"],"yoo",undefined</span></span><br><span class="line">   <span class="comment">// b-undefined,说明把数组当成一个整体传递了</span></span><br><span class="line">   <span class="comment">// 所以bind的参数要传一个参数列表</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>综上说述:<br>1.call,apply,bind第一个参数都是this的指向<br>2.call和bind第二个参数都是参数列表<br>3.apply第二个参数是参数数组</p>
+</blockquote>
+<h3 id="bind和call-apply-的区别"><a href="#bind和call-apply-的区别" class="headerlink" title="bind和call,apply 的区别"></a>bind和call,apply 的区别</h3><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;   <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&gt; &#125;</span><br><span class="line">  <span class="keyword">const</span> newFn = fn.bind(<span class="string">'two'</span>)</span><br><span class="line">  newFn()</span><br><span class="line">  <span class="comment">// 我们使用bind改变了this的指向,打印this指向'two'</span></span><br><span class="line">  newFn.call(<span class="string">'one'</span>)</span><br><span class="line">  <span class="comment">// 我们想使用call改变this的指向,打印this还是指向'two'</span></span><br><span class="line">  newFn.apply(<span class="string">'one'</span>)</span><br><span class="line">  <span class="comment">// 我们想使用apply改变this的指向,打印this还是指向'two'</span></span><br><span class="line">  <span class="keyword">const</span> newNewFn = newFn.bind(<span class="string">'one'</span>)</span><br><span class="line">  newNewFn()</span><br><span class="line">  <span class="comment">// 我们想使用bind改变this的指向,打印this还是指向'two'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>综上说述:<br>如果已经用了bind改变了this的指向,再调用call,apply,bind,不会改变this的指向了</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/js-数组-冒泡排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1296,18 +1475,22 @@
         
           
             <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
-5种简单数据类型
+5种简单数据类型(值类型,基本数据类型,原始数据类型)
     1.number
     2.string
     3.boolean
     4.null
     5.undefined
-1种复杂数据类型
+1种复杂数据类型(引用类型)
     1.object
 es6新增了一个symbol数据类型
 所以现在是7种数据类型
 number,string,boolean,null,undefined,object,symbol
-</code></pre><h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><blockquote>
+值类型存的是值,引用类型存的是地址(引用)
+</code></pre><blockquote>
+<p>简单数据类型是没有方法的,为了操作简单数据类型,要把简单数据类型转化包装(转化)成复杂类型,这就是基本包装类型,不过这不需要我们去包装,浏览器会默认包装</p>
+</blockquote>
+<h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><blockquote>
 <p>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢<br>其实这是一个历史遗留问题<br>在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值<br>后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在</p>
 </blockquote>
 <h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><blockquote>
@@ -1570,7 +1753,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1592,7 +1775,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
