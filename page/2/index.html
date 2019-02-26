@@ -422,6 +422,480 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/vue-生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/25/vue-生命周期/" itemprop="url">vue生命周期</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-25T18:46:59+08:00">
+                2017-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="三个阶段"><a href="#三个阶段" class="headerlink" title="三个阶段"></a>三个阶段</h2><p>1.挂载阶段(进入页面)<br>2.更新阶段(数据发生变化)<br>3.销毁阶段(卸载阶段)</p>
+<h3 id="1-挂载阶段"><a href="#1-挂载阶段" class="headerlink" title="1.挂载阶段"></a>1.挂载阶段</h3><p>分为三个阶段<br>1.数据响应式阶段</p>
+<blockquote>
+<p>beforeCreate 拿不到data数据和method方法<br><strong> created 能拿到data数据和method方法 </strong><br>常在created阶段发送ajax请求</p>
+</blockquote>
+<p>2.找模板</p>
+<blockquote>
+<ul>
+<li>找到el指定的边界</li>
+<li>看是否有template标签<br>– 有就使用template里面呢的内容去编译</li>
+<li>没有就添加template标签</li>
+</ul>
+</blockquote>
+<p>3.DOM渲染</p>
+<blockquote>
+<p>beforeMount DOM渲染之前<br><strong> mounted  DOM渲染之后 </strong><br>常在mounted中获取DOM,使用ref</p>
+</blockquote>
+<h3 id="2-更新阶段"><a href="#2-更新阶段" class="headerlink" title="2.更新阶段"></a>2.更新阶段</h3><p>1.beforeUpdate 数据更新前<br>2.updated 数据更新后</p>
+<h3 id="3-销毁阶段"><a href="#3-销毁阶段" class="headerlink" title="3.销毁阶段"></a>3.销毁阶段</h3><p>1.beforeDestory 销毁之前</p>
+<blockquote>
+<p>当销毁的时候,vue会清除自己的内容<br>但是我们手动添加的东西不会销毁,要在这里手动销毁</p>
+</blockquote>
+<p>2.destoryed 销毁之后</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/vue-组件通讯/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/vue-组件通讯/" itemprop="url">vue组件通讯</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T19:48:51+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><p>1.通过属性绑定将数据传递给子组件<br>2.在子组件中,通过配置项props接收数据<br>—例如:在父组件有一条数据list,想传给子组件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"#app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">child</span> <span class="attr">:fatherlist</span>=<span class="string">"list"</span>&gt;</span> <span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">	// 父组件属性绑定传递</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...</span><br><span class="line">// 子组件中使用</span><br><span class="line">props:["fatherlist"] //子组件通过props接收,使用</span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in fatherlist"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>回调函数思想<br>1.父组件提供一个方法,用来接收子组件的数据<br>2.将这个方法传递给子组件,通过自定义事件<br>3.子组件调用这个方法, 使用this.$emit()发射数据<br>—例如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 1.父组件提供一个方法 </span><br><span class="line">parent()&#123;	</span><br><span class="line">&#125;</span><br><span class="line">// 2.通过自定义事件传递给子组件</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"#app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">child</span> @<span class="attr">father</span>=<span class="string">"parent"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">// 3.子组件调用这个方法</span><br><span class="line">son(sondata)&#123;</span><br><span class="line">       this.$emit('father',sondata)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 这样在父组件parent方法中能获取到子组件传递的sondata了</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>this.$emit() 参数1是自定义事件名 参数2是要传递的数据</p>
+</blockquote>
+<h3 id="非父子组件间传递数据"><a href="#非父子组件间传递数据" class="headerlink" title="非父子组件间传递数据"></a>非父子组件间传递数据</h3><p>使用事件总线传递<br>1.注册事件总线对象<br>2.发送数据<br>3.接收数据<br>—例如<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.注册事件总线</span></span><br><span class="line"><span class="keyword">const</span> bus = <span class="keyword">new</span> Vue()</span><br><span class="line"><span class="comment">// 2.发送数据</span></span><br><span class="line">bus.$emit(<span class="string">'通信指令'</span>,数据)</span><br><span class="line"><span class="comment">// 3.接收数据</span></span><br><span class="line">bus.$on(<span class="string">'通信指令'</span>,res =&gt; &#123;</span><br><span class="line">       res =&gt; 数据</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>通信指令名字随便起,要一致</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/vue-双向绑定原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/vue-双向绑定原理/" itemprop="url">vue双向绑定原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T20:28:21+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>底层依据</strong><br>使用的是es5中的 Object.defineProperty()方法</p>
+<blockquote>
+<p>这个方法是用来给对象添加或修改属性的<br>Object.defineProperty(参数1,参数2,参数3)<br>参数1: 要个谁添加属性<br>参数2: 添加什么属性<br>参数3: 属性描述符(定义属性的具体描述)<br>其中属性描述符 有两个方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(newVal)&#123;</span><br><span class="line">       </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 赋值调用set方法</span></span><br><span class="line"><span class="keyword">get</span>()&#123;</span><br><span class="line">       <span class="keyword">return</span> ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取调用get方法</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>V -&gt; M 从视图层到数据层的单向绑定,通过表单的iinput事件就能实现<br>M -&gt; V 难点是从哪个数据层到视图层的单向绑定<br>怎么让视图层知道数据变化了呢<br>可以利用set方法<br><strong>我们使用Object.defineProperty监听属性,当数据改变时,触发set方法,更新view层</strong></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/移动端-h5c3的兼容性问题及解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -694,6 +1168,10 @@
 <blockquote>
 <p>综上说述:<br>如果已经用了bind改变了this的指向,再调用call,apply,bind,不会改变this的指向了</p>
 </blockquote>
+<h3 id="箭头函数this的指向"><a href="#箭头函数this的指向" class="headerlink" title="箭头函数this的指向"></a>箭头函数this的指向</h3><blockquote>
+<p>箭头函数里的this指向不是自己决定的,是所属环境决定的<br>当箭头函数声明的时候,所在环境this指向什么,箭头函数this就指向什么<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 在函数环境里声明箭头函数打印this</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">outer()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 直接在箭头函数里打印this</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>);  <span class="comment">// window</span></span><br><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 在对象里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn() <span class="comment">//window  因为环境是window.obj</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.在对象的方法里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"></span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 调用obj.fn() 这里打印 =&gt; obj</span></span><br><span class="line">        (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">            <span class="comment">// 打印obj 因为所在环境是obj</span></span><br><span class="line">        &#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>箭头函数不能改变this的指向</strong><br>上文我们说到,箭头函数里的this指向不是自己决定的,是所属环境决定的<br>所以箭头函数本身是不能改变this指向的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)</span><br><span class="line">     <span class="comment">// 'yooo' 普通函数可以改变this指向 </span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)  </span><br><span class="line">     <span class="comment">// window 箭头函数不能改变this指向</span></span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1359,346 +1837,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/js-数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/22/js-数据类型/" itemprop="url">js数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:28:31+08:00">
-                2017-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
-5种简单数据类型(值类型,基本数据类型,原始数据类型)
-    1.number
-    2.string
-    3.boolean
-    4.null
-    5.undefined
-1种复杂数据类型(引用类型)
-    1.object
-es6新增了一个symbol数据类型
-所以现在是7种数据类型
-number,string,boolean,null,undefined,object,symbol
-值类型存的是值,引用类型存的是地址(引用)
-</code></pre><blockquote>
-<p>简单数据类型是没有方法的,为了操作简单数据类型,要把简单数据类型转化包装(转化)成复杂类型,这就是基本包装类型,不过这不需要我们去包装,浏览器会默认包装</p>
-</blockquote>
-<h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><blockquote>
-<p>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢<br>其实这是一个历史遗留问题<br>在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值<br>后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在</p>
-</blockquote>
-<h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><blockquote>
-<p>undefined: 一个变量,只声明,未赋值<br>null: 表示一个空对象指针</p>
-</blockquote>
-<h3 id="undefined-null"><a href="#undefined-null" class="headerlink" title="undefined == null"></a>undefined == null</h3><blockquote>
-<p>在没了解到这个之前,我们很容易的想到  undefined转换成布尔值是false,null转换成布尔值也是false,所以undefined == null, 其实这种想法是不对的<br>在javascript规范中提到:<br><strong>在比较相等性之前,不能将null和undefined转换成其他值,并且规定null和undefined是相等的</strong><br>为什么呢,因为规范认为,既然undefined和null的行为很相似,都表示一个无效的值,那么他们所代表的内容也有相似性,所以有undefined == null<br><strong>undefined === null  =&gt; false 数据类型不一样</strong></p>
-</blockquote>
-<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><blockquote>
-<p>属于number类型,代表非数值 Not a Number<br>NaN与任何是都不相等,包括和NaN自身</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/13/移动端-回流与重绘/" itemprop="url">回流与重绘</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
-                2017-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
-2.解析css,生成样式结构体
-3.DOM树和样式结构体结合,构建渲染树
-4.先布局
-5.再渲染
-</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
-发生在第4阶段--布局阶段
-</code></pre><blockquote>
-<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
-</blockquote>
-<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
-发生在第5阶段--渲染阶段
-</code></pre><blockquote>
-<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
-</blockquote>
-<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
-<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1744,7 +1887,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1755,7 +1898,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1766,7 +1909,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

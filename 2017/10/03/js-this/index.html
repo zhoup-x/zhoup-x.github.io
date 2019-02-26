@@ -81,7 +81,7 @@
 <meta property="og:site_name" content="zhou-p的技术博客">
 <meta property="og:description" content="this的指向 1.直接打印this会怎样123console.log(this)// 浏览器 =&amp;gt; window// node.js =&amp;gt;  &amp;#123;&amp;#125;   2.函数中this的指向  1234567function fn() &amp;#123;  console.log(this)&amp;#125;fn()// 浏览器 =&amp;gt; window // node.js =&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T04:51:00.389Z">
+<meta property="og:updated_time" content="2019-02-26T06:52:41.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this的指向">
 <meta name="twitter:description" content="this的指向 1.直接打印this会怎样123console.log(this)// 浏览器 =&amp;gt; window// node.js =&amp;gt;  &amp;#123;&amp;#125;   2.函数中this的指向  1234567function fn() &amp;#123;  console.log(this)&amp;#125;fn()// 浏览器 =&amp;gt; window // node.js =&amp;gt;">
@@ -351,6 +351,10 @@
 <blockquote>
 <p>综上说述:<br>如果已经用了bind改变了this的指向,再调用call,apply,bind,不会改变this的指向了</p>
 </blockquote>
+<h3 id="箭头函数this的指向"><a href="#箭头函数this的指向" class="headerlink" title="箭头函数this的指向"></a>箭头函数this的指向</h3><blockquote>
+<p>箭头函数里的this指向不是自己决定的,是所属环境决定的<br>当箭头函数声明的时候,所在环境this指向什么,箭头函数this就指向什么<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 在函数环境里声明箭头函数打印this</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">outer()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 直接在箭头函数里打印this</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>);  <span class="comment">// window</span></span><br><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 在对象里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn() <span class="comment">//window  因为环境是window.obj</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.在对象的方法里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"></span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 调用obj.fn() 这里打印 =&gt; obj</span></span><br><span class="line">        (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">            <span class="comment">// 打印obj 因为所在环境是obj</span></span><br><span class="line">        &#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>箭头函数不能改变this的指向</strong><br>上文我们说到,箭头函数里的this指向不是自己决定的,是所属环境决定的<br>所以箭头函数本身是不能改变this指向的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)</span><br><span class="line">     <span class="comment">// 'yooo' 普通函数可以改变this指向 </span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)  </span><br><span class="line">     <span class="comment">// window 箭头函数不能改变this指向</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -487,7 +491,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -498,7 +502,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -509,7 +513,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -542,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#this的指向"><span class="nav-number">1.</span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变this的指向"><span class="nav-number">2.</span> <span class="nav-text">改变this的指向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply的区别"><span class="nav-number">3.</span> <span class="nav-text">call和apply的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind和call-apply-的区别"><span class="nav-number">4.</span> <span class="nav-text">bind和call,apply 的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#this的指向"><span class="nav-number">1.</span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变this的指向"><span class="nav-number">2.</span> <span class="nav-text">改变this的指向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply的区别"><span class="nav-number">3.</span> <span class="nav-text">call和apply的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind和call-apply-的区别"><span class="nav-number">4.</span> <span class="nav-text">bind和call,apply 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数this的指向"><span class="nav-number">5.</span> <span class="nav-text">箭头函数this的指向</span></a></li></ol></div>
             
 
           </div>
