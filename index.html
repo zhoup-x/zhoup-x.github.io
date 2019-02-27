@@ -388,6 +388,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/浏览器-垃圾回收机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/浏览器-垃圾回收机制/" itemprop="url">垃圾回收机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T20:39:01+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>1.标记清除法(最常用的方法)<br>    当变量进入环境时,被标记为’进入环境’,离开时标记为’离开环境’,<br>    垃圾回收器会把内存中的所有变量加上标记,<br>    然后会去掉环境中的变量和被环境中的变量引用的变量 这些的标记,<br>    在此之上还有标记的就是需要删除的变量<br>2.引用计数法(不常用)<br>    就是记录每个变量被引用的次数,<br>    当引用次数为0时删除变量</p>
+<h3 id="谷歌浏览器的垃圾回收机制"><a href="#谷歌浏览器的垃圾回收机制" class="headerlink" title="谷歌浏览器的垃圾回收机制"></a>谷歌浏览器的垃圾回收机制</h3><p>谷歌浏览器使用 V8引擎 的 GC算法 分代式 管理内存<br>    将内存空间一分为二,<br>    一半是新生代,<br>    一半是老年代,<br>    新生代里空间较小,生命周期也短,空间一分为二,<br>        一个是使用的,一个是空闲的,<br>        当使用的被内存填满时,GC算法将存活的变量转移到空闲的中,<br>        这样一个来回就是一个新生代的算法过程,<br>        并给每个经历了一个来回的变量做了标记<br>    老年代理空间较大,生命周期也长,<br>        进入老年代的是,<br>        在新生代被打上标记的变量或者是很大的变量<br>        老年代会遍历所有变量,标记所有存活的,<br>        销毁所有失活的<br>    新生代和老年代是同时进行的,<br>    清除变量造成内存碎片,<br>        当碎片过多时会启动压缩算法,压缩碎片,释放内存,<br>        将存活的变量放进去</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/移动端-点透事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -481,7 +628,10 @@
       
         
           
-            
+            <h3 id="移动端点透事件"><a href="#移动端点透事件" class="headerlink" title="移动端点透事件"></a>移动端点透事件</h3><p>模拟场景:<br>    点击屏幕,弹出一个模态框,点击右上角按钮(A)关闭模态框的时候,会把关闭按钮后面的链接或input框等(B)触发</p>
+<h3 id="点透事件的原因"><a href="#点透事件的原因" class="headerlink" title="点透事件的原因"></a>点透事件的原因</h3><p>zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，并且tap事件是冒泡到document上触发的！<br>touchstart事件,当手指触摸屏幕的时候会触发,这时候触发点击关闭模态框的事件,<br>然而由于click事件有300ms延迟,所以当模态框已经关闭的时候,click事件还没有触发,<br>所以click事件触发了模态框下面的链接或input框(绑定了click事件或者有默认click事件)等</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>方案1:<br>    1.当B本身存在默认点击事件<br>    将tap事件换成touchend事件,并禁止B的默认行为,阻止click事件的产生<br>    阻止默认行为: event.preventDefault()<br>方案2:<br>    延迟300ms以后执行关闭模态框的操作,可添加过渡动画遮掩延迟<br>方案3:<br>    去除click事件的300ms延迟<br>    使用fastclick.js</p>
+
           
         
       
@@ -1581,175 +1731,6 @@ cors是浏览器支持,使用简单,不限制请求类型
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-less的使用和语法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/13/移动端-less的使用和语法/" itemprop="url">less基本使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:50:33+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>css预处理器<br>为了代码的可复用性,可维护性<br>less文件需要编译</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre><code>1.注释
-    /**/ 会被编译到css中去
-    //    不会被编译到css中去
-2.变量
-    声明    @变量名:变量值
-3.混入类
-    可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用
-4.函数
-    .类()
-    函数不会被编译到css中去
-    函数可以调用,可传参
-    函数有参数必须传参,不设参数要有默认值
-5.less嵌套
-    后代选择器    直接嵌套编写
-    子代选择器    加上&gt;
-    交集选择器    &amp;表示自己
-    伪元素选择器    &amp;:
-6.导入
-    @impoprt &quot;文件名&quot;    文件后缀名可省略
-    用于大型项目的模块划分
-7.less运算
-    加减乘除
-    内置运算
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1800,7 +1781,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1822,7 +1803,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

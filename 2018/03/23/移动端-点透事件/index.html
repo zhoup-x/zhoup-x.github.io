@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="事件,问题处理,">
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="前端攻城狮">
+<meta name="description" content="移动端点透事件模拟场景:    点击屏幕,弹出一个模态框,点击右上角按钮(A)关闭模态框的时候,会把关闭按钮后面的链接或input框等(B)触发 点透事件的原因zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，并且tap事件是冒泡到document上触发的！touchstart事件,当手指触摸屏幕的时候会触发,这时候触发点击关闭模态框的事件,然而由于">
+<meta name="keywords" content="事件,问题处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="点透事件">
 <meta property="og:url" content="http://yoursite.com/2018/03/23/移动端-点透事件/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:description" content="移动端点透事件模拟场景:    点击屏幕,弹出一个模态框,点击右上角按钮(A)关闭模态框的时候,会把关闭按钮后面的链接或input框等(B)触发 点透事件的原因zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，并且tap事件是冒泡到document上触发的！touchstart事件,当手指触摸屏幕的时候会触发,这时候触发点击关闭模态框的事件,然而由于">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T14:07:43.138Z">
+<meta property="og:updated_time" content="2019-02-27T02:50:45.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="点透事件">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:description" content="移动端点透事件模拟场景:    点击屏幕,弹出一个模态框,点击右上角按钮(A)关闭模态框的时候,会把关闭按钮后面的链接或input框等(B)触发 点透事件的原因zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，并且tap事件是冒泡到document上触发的！touchstart事件,当手指触摸屏幕的时候会触发,这时候触发点击关闭模态框的事件,然而由于">
 
 
 
@@ -325,7 +326,10 @@
       
 
       
-        
+        <h3 id="移动端点透事件"><a href="#移动端点透事件" class="headerlink" title="移动端点透事件"></a>移动端点透事件</h3><p>模拟场景:<br>    点击屏幕,弹出一个模态框,点击右上角按钮(A)关闭模态框的时候,会把关闭按钮后面的链接或input框等(B)触发</p>
+<h3 id="点透事件的原因"><a href="#点透事件的原因" class="headerlink" title="点透事件的原因"></a>点透事件的原因</h3><p>zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，并且tap事件是冒泡到document上触发的！<br>touchstart事件,当手指触摸屏幕的时候会触发,这时候触发点击关闭模态框的事件,<br>然而由于click事件有300ms延迟,所以当模态框已经关闭的时候,click事件还没有触发,<br>所以click事件触发了模态框下面的链接或input框(绑定了click事件或者有默认click事件)等</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>方案1:<br>    1.当B本身存在默认点击事件<br>    将tap事件换成touchend事件,并禁止B的默认行为,阻止click事件的产生<br>    阻止默认行为: event.preventDefault()<br>方案2:<br>    延迟300ms以后执行关闭模态框的操作,可添加过渡动画遮掩延迟<br>方案3:<br>    去除click事件的300ms延迟<br>    使用fastclick.js</p>
+
       
     </div>
     
@@ -352,6 +356,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/事件/" rel="tag"><i class="fa fa-tag"></i> 事件</a>
+          
+            <a href="/tags/问题处理/" rel="tag"><i class="fa fa-tag"></i> 问题处理</a>
+          
+        </div>
+      
 
       
       
@@ -371,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/13/ajax-XMLHttpRequest2.0/" rel="prev" title="XMLHttpRequest2.0新增">
-                XMLHttpRequest2.0新增 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/23/浏览器-垃圾回收机制/" rel="prev" title="垃圾回收机制">
+                垃圾回收机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -428,8 +440,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,7 +465,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -466,7 +487,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -489,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端点透事件"><span class="nav-number">1.</span> <span class="nav-text">移动端点透事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点透事件的原因"><span class="nav-number">2.</span> <span class="nav-text">点透事件的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

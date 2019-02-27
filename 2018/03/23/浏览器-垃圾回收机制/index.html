@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="浏览器机制,">
+  <meta name="keywords" content="垃圾回收机制,">
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
-<meta name="keywords" content="浏览器机制">
+<meta name="description" content="分类1.标记清除法(最常用的方法)    当变量进入环境时,被标记为’进入环境’,离开时标记为’离开环境’,    垃圾回收器会把内存中的所有变量加上标记,    然后会去掉环境中的变量和被环境中的变量引用的变量 这些的标记,    在此之上还有标记的就是需要删除的变量2.引用计数法(不常用)    就是记录每个变量被引用的次数,    当引用次数为0时删除变量 谷歌浏览器的垃圾回收机制谷歌浏览器">
+<meta name="keywords" content="垃圾回收机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回流与重绘">
-<meta property="og:url" content="http://yoursite.com/2017/02/13/移动端-回流与重绘/index.html">
+<meta property="og:title" content="垃圾回收机制">
+<meta property="og:url" content="http://yoursite.com/2018/03/23/浏览器-垃圾回收机制/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta property="og:description" content="分类1.标记清除法(最常用的方法)    当变量进入环境时,被标记为’进入环境’,离开时标记为’离开环境’,    垃圾回收器会把内存中的所有变量加上标记,    然后会去掉环境中的变量和被环境中的变量引用的变量 这些的标记,    在此之上还有标记的就是需要删除的变量2.引用计数法(不常用)    就是记录每个变量被引用的次数,    当引用次数为0时删除变量 谷歌浏览器的垃圾回收机制谷歌浏览器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:52:24.354Z">
+<meta property="og:updated_time" content="2019-02-27T03:37:28.129Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回流与重绘">
-<meta name="twitter:description" content="浏览器解析渲染的步骤1.浏览器解析html,生成DOM树 2.解析css,生成样式结构体 3.DOM树和样式结构体结合,构建渲染树 4.先布局 5.再渲染 回流重新布局 发生在第4阶段--布局阶段  触发回流: 影响到布局属性改变(盒子大小宽高,margin等)  重绘重新绘制渲染 发生在第5阶段--渲染阶段  触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流  每个">
+<meta name="twitter:title" content="垃圾回收机制">
+<meta name="twitter:description" content="分类1.标记清除法(最常用的方法)    当变量进入环境时,被标记为’进入环境’,离开时标记为’离开环境’,    垃圾回收器会把内存中的所有变量加上标记,    然后会去掉环境中的变量和被环境中的变量引用的变量 这些的标记,    在此之上还有标记的就是需要删除的变量2.引用计数法(不常用)    就是记录每个变量被引用的次数,    当引用次数为0时删除变量 谷歌浏览器的垃圾回收机制谷歌浏览器">
 
 
 
@@ -114,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+  <link rel="canonical" href="http://yoursite.com/2018/03/23/浏览器-垃圾回收机制/">
 
 
 
 
 
-  <title>回流与重绘 | zhou-p的技术博客</title>
+  <title>垃圾回收机制 | zhou-p的技术博客</title>
   
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/浏览器-垃圾回收机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">回流与重绘</h1>
+          <h1 class="post-title" itemprop="name headline">垃圾回收机制</h1>
         
 
         <div class="post-meta">
@@ -266,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
-                2017-02-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T20:39:01+08:00">
+                2018-03-23
               </time>
             
 
@@ -326,23 +326,8 @@
       
 
       
-        <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
-2.解析css,生成样式结构体
-3.DOM树和样式结构体结合,构建渲染树
-4.先布局
-5.再渲染
-</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
-发生在第4阶段--布局阶段
-</code></pre><blockquote>
-<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
-</blockquote>
-<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
-发生在第5阶段--渲染阶段
-</code></pre><blockquote>
-<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
-</blockquote>
-<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
-<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
+        <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>1.标记清除法(最常用的方法)<br>    当变量进入环境时,被标记为’进入环境’,离开时标记为’离开环境’,<br>    垃圾回收器会把内存中的所有变量加上标记,<br>    然后会去掉环境中的变量和被环境中的变量引用的变量 这些的标记,<br>    在此之上还有标记的就是需要删除的变量<br>2.引用计数法(不常用)<br>    就是记录每个变量被引用的次数,<br>    当引用次数为0时删除变量</p>
+<h3 id="谷歌浏览器的垃圾回收机制"><a href="#谷歌浏览器的垃圾回收机制" class="headerlink" title="谷歌浏览器的垃圾回收机制"></a>谷歌浏览器的垃圾回收机制</h3><p>谷歌浏览器使用 V8引擎 的 GC算法 分代式 管理内存<br>    将内存空间一分为二,<br>    一半是新生代,<br>    一半是老年代,<br>    新生代里空间较小,生命周期也短,空间一分为二,<br>        一个是使用的,一个是空闲的,<br>        当使用的被内存填满时,GC算法将存活的变量转移到空闲的中,<br>        这样一个来回就是一个新生代的算法过程,<br>        并给每个经历了一个来回的变量做了标记<br>    老年代理空间较大,生命周期也长,<br>        进入老年代的是,<br>        在新生代被打上标记的变量或者是很大的变量<br>        老年代会遍历所有变量,标记所有存活的,<br>        销毁所有失活的<br>    新生代和老年代是同时进行的,<br>    清除变量造成内存碎片,<br>        当碎片过多时会启动压缩算法,压缩碎片,释放内存,<br>        将存活的变量放进去</p>
 
       
     </div>
@@ -372,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器机制/" rel="tag"><i class="fa fa-tag"></i> 浏览器机制</a>
+            <a href="/tags/垃圾回收机制/" rel="tag"><i class="fa fa-tag"></i> 垃圾回收机制</a>
           
         </div>
       
@@ -385,14 +370,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/23/移动端-点透事件/" rel="next" title="点透事件">
+                <i class="fa fa-chevron-left"></i> 点透事件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/23/浏览器-cookie和session/" rel="prev" title="cookie和session">
-                cookie和session <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/13/ajax-XMLHttpRequest2.0/" rel="prev" title="XMLHttpRequest2.0新增">
+                XMLHttpRequest2.0新增 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染的步骤"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析渲染的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回流"><span class="nav-number">2.</span> <span class="nav-text">回流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘"><span class="nav-number">3.</span> <span class="nav-text">重绘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谷歌浏览器的垃圾回收机制"><span class="nav-number">2.</span> <span class="nav-text">谷歌浏览器的垃圾回收机制</span></a></li></ol></div>
             
 
           </div>
