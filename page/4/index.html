@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="移动端,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -73,18 +73,16 @@
 
 
 
-<meta name="description" content="1.屏幕尺寸    pc端 有版心    移动端 百分比适配2.浏览器兼容    pc端 h5c3支持较好    移动端 前缀-webkit-">
-<meta name="keywords" content="移动端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pc和移动端区别">
-<meta property="og:url" content="http://yoursite.com/2018/01/13/移动端-pc端和移动端有什么区别/index.html">
+<meta name="description" content="前端攻城狮">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zhou-p的技术博客">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="1.屏幕尺寸    pc端 有版心    移动端 百分比适配2.浏览器兼容    pc端 h5c3支持较好    移动端 前缀-webkit-">
+<meta property="og:description" content="前端攻城狮">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T02:20:41.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pc和移动端区别">
-<meta name="twitter:description" content="1.屏幕尺寸    pc端 有版心    移动端 百分比适配2.浏览器兼容    pc端 h5c3支持较好    移动端 前缀-webkit-">
+<meta name="twitter:title" content="zhou-p的技术博客">
+<meta name="twitter:description" content="前端攻城狮">
 
 
 
@@ -114,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/13/移动端-pc端和移动端有什么区别/">
+  <link rel="canonical" href="http://yoursite.com/page/4/">
 
 
 
 
 
-  <title>pc和移动端区别 | zhou-p的技术博客</title>
+  <title>zhou-p的技术博客</title>
   
 
 
@@ -139,7 +137,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,9 +221,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -237,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-pc端和移动端有什么区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +253,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pc和移动端区别</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/13/移动端-回流与重绘/" itemprop="url">回流与重绘</a></h1>
         
 
         <div class="post-meta">
@@ -266,8 +267,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:55:53+08:00">
-                2018-01-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T22:10:34+08:00">
+                2017-02-13
               </time>
             
 
@@ -289,8 +290,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
                   </a>
                 </span>
 
@@ -326,8 +327,28 @@
       
 
       
-        <p>1.屏幕尺寸<br>    pc端 有版心<br>    移动端 百分比适配<br>2.浏览器兼容<br>    pc端 h5c3支持较好<br>    移动端 前缀-webkit-</p>
+        
+          
+            <h3 id="浏览器解析渲染的步骤"><a href="#浏览器解析渲染的步骤" class="headerlink" title="浏览器解析渲染的步骤"></a>浏览器解析渲染的步骤</h3><pre><code>1.浏览器解析html,生成DOM树
+2.解析css,生成样式结构体
+3.DOM树和样式结构体结合,构建渲染树
+4.先布局
+5.再渲染
+</code></pre><h3 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h3><pre><code>重新布局
+发生在第4阶段--布局阶段
+</code></pre><blockquote>
+<p>触发回流: 影响到布局属性改变(盒子大小宽高,margin等)</p>
+</blockquote>
+<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><pre><code>重新绘制渲染
+发生在第5阶段--渲染阶段
+</code></pre><blockquote>
+<p>触发重绘: 只要回流,必重绘    只更改样式,没改变布局,只会重绘,不会回流</p>
+</blockquote>
+<p>每个页面至少会触发一次回流与重绘<br>浏览器会自动优化,将引起回流和重绘的操作,放到一个队列中,当到达一定的数量或间隔一定的时间,会对回流和重绘的操作进行批处理,这样就减少了回流和重绘的操作,提升了浏览器的性能<br>获取性操作会打乱队列,为保证获取的准确性</p>
+<p>所以当提及性能优化时,<br>尽可能的减少回流与重绘的次数<br>    1.尽量不要在for循环里进行获取性操作(会打乱浏览器自动优化)<br>    2.直接使用className,少用style设置样式(className可以多个DOM公用)<br>    3.display:none 离线处理(隐藏的元素不会出现在渲染树中,所以回流与重绘不会触发,只有显示隐藏的时候才会触发)<br>    4.定位    脱标只会触发自己的回流与重绘,不会对标准流造成影响<br>每优化一次回流与重绘,可提升15ms页面加载速度</p>
 
+          
+        
       
     </div>
     
@@ -335,14 +356,6 @@
     
 
     <div>
-      
-      <div>
-
-    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-
-</div>
-
-
       
     </div>
 
@@ -354,40 +367,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/移动端/" rel="tag"><i class="fa fa-tag"></i> 移动端</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/01/13/移动端-less的使用和语法/" rel="next" title="less基本使用">
-                <i class="fa fa-chevron-left"></i> less基本使用
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/15/其他-token令牌/" rel="prev" title="token令牌">
-                token令牌 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -397,11 +384,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
 
 
           </div>
@@ -409,13 +399,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -650,10 +633,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

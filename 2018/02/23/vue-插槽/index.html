@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="框架,生命周期,">
+  <meta name="keywords" content="框架,">
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="三个阶段1.挂载阶段(进入页面)2.更新阶段(数据发生变化)3.销毁阶段(卸载阶段) 1.挂载阶段分为三个阶段1.数据响应式阶段  beforeCreate 拿不到data数据和method方法 created 能拿到data数据和method方法 常在created阶段发送ajax请求  2.找模板   找到el指定的边界 看是否有template标签– 有就使用template里面呢的内容去编">
-<meta name="keywords" content="框架,生命周期">
+<meta name="description" content="插槽是什么是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参 插槽与data的区别 1.替换文字用data就能实现 2.替换标签或者组件只能用插槽实现  通俗理解slot标签的作用 1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑 2.域名标签也就是坑有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置">
+<meta name="keywords" content="框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue生命周期">
-<meta property="og:url" content="http://yoursite.com/2017/11/25/vue-生命周期/index.html">
+<meta property="og:title" content="插槽">
+<meta property="og:url" content="http://yoursite.com/2018/02/23/vue-插槽/index.html">
 <meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="三个阶段1.挂载阶段(进入页面)2.更新阶段(数据发生变化)3.销毁阶段(卸载阶段) 1.挂载阶段分为三个阶段1.数据响应式阶段  beforeCreate 拿不到data数据和method方法 created 能拿到data数据和method方法 常在created阶段发送ajax请求  2.找模板   找到el指定的边界 看是否有template标签– 有就使用template里面呢的内容去编">
+<meta property="og:description" content="插槽是什么是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参 插槽与data的区别 1.替换文字用data就能实现 2.替换标签或者组件只能用插槽实现  通俗理解slot标签的作用 1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑 2.域名标签也就是坑有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T08:57:41.574Z">
+<meta property="og:updated_time" content="2019-02-27T12:04:59.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue生命周期">
-<meta name="twitter:description" content="三个阶段1.挂载阶段(进入页面)2.更新阶段(数据发生变化)3.销毁阶段(卸载阶段) 1.挂载阶段分为三个阶段1.数据响应式阶段  beforeCreate 拿不到data数据和method方法 created 能拿到data数据和method方法 常在created阶段发送ajax请求  2.找模板   找到el指定的边界 看是否有template标签– 有就使用template里面呢的内容去编">
+<meta name="twitter:title" content="插槽">
+<meta name="twitter:description" content="插槽是什么是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参 插槽与data的区别 1.替换文字用data就能实现 2.替换标签或者组件只能用插槽实现  通俗理解slot标签的作用 1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑 2.域名标签也就是坑有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置">
 
 
 
@@ -114,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/25/vue-生命周期/">
+  <link rel="canonical" href="http://yoursite.com/2018/02/23/vue-插槽/">
 
 
 
 
 
-  <title>vue生命周期 | zhou-p的技术博客</title>
+  <title>插槽 | zhou-p的技术博客</title>
   
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/vue-生命周期/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/vue-插槽/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue生命周期</h1>
+          <h1 class="post-title" itemprop="name headline">插槽</h1>
         
 
         <div class="post-meta">
@@ -266,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-25T18:46:59+08:00">
-                2017-11-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T21:42:27+08:00">
+                2018-02-23
               </time>
             
 
@@ -326,29 +326,21 @@
       
 
       
-        <h2 id="三个阶段"><a href="#三个阶段" class="headerlink" title="三个阶段"></a>三个阶段</h2><p>1.挂载阶段(进入页面)<br>2.更新阶段(数据发生变化)<br>3.销毁阶段(卸载阶段)</p>
-<h3 id="1-挂载阶段"><a href="#1-挂载阶段" class="headerlink" title="1.挂载阶段"></a>1.挂载阶段</h3><p>分为三个阶段<br>1.数据响应式阶段</p>
-<blockquote>
-<p>beforeCreate 拿不到data数据和method方法<br><strong> created 能拿到data数据和method方法 </strong><br>常在created阶段发送ajax请求</p>
-</blockquote>
-<p>2.找模板</p>
-<blockquote>
-<ul>
-<li>找到el指定的边界</li>
-<li>看是否有template标签<br>– 有就使用template里面呢的内容去编译</li>
-<li>没有就添加template标签</li>
+        <h3 id="插槽是什么"><a href="#插槽是什么" class="headerlink" title="插槽是什么"></a>插槽是什么</h3><p>是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参</p>
+<h3 id="插槽与data的区别"><a href="#插槽与data的区别" class="headerlink" title="插槽与data的区别"></a>插槽与data的区别</h3><ul>
+<li>1.替换文字用data就能实现</li>
+<li>2.替换标签或者组件只能用插槽实现</li>
 </ul>
-</blockquote>
-<p>3.DOM渲染</p>
-<blockquote>
-<p>beforeMount DOM渲染之前<br><strong> mounted  DOM渲染之后 </strong><br>常在mounted中获取DOM,使用ref</p>
-</blockquote>
-<h3 id="2-更新阶段"><a href="#2-更新阶段" class="headerlink" title="2.更新阶段"></a>2.更新阶段</h3><p>1.beforeUpdate 数据更新前<br>2.updated 数据更新后</p>
-<h3 id="3-销毁阶段"><a href="#3-销毁阶段" class="headerlink" title="3.销毁阶段"></a>3.销毁阶段</h3><p>1.beforeDestory 销毁之前</p>
-<blockquote>
-<p>当销毁的时候,vue会清除自己的内容<br>但是我们手动添加的东西不会销毁,要在这里手动销毁</p>
-</blockquote>
-<p>2.destoryed 销毁之后</p>
+<h3 id="通俗理解slot标签的作用"><a href="#通俗理解slot标签的作用" class="headerlink" title="通俗理解slot标签的作用"></a>通俗理解slot标签的作用</h3><ul>
+<li>1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑</li>
+<li>2.域名标签也就是坑<slot name="myslot">有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置对应内容</slot></li>
+</ul>
+<h3 id="1-匿名插槽"><a href="#1-匿名插槽" class="headerlink" title="1.匿名插槽"></a>1.匿名插槽</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用说明:<br> 在组件模板中使用slot占位,在使用组件标签时会把</p><p>标签自动填充到对应模板占位的位置</p>
+<h3 id="2-域名插槽"><a href="#2-域名插槽" class="headerlink" title="2.域名插槽"></a>2.域名插槽</h3><p>也叫具名插槽<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用说明:<br> 在组件模板中,为占位的slot标签起个名字,在p标签中使用slot=”名字”相对应</p>
+<h3 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3.作用域插槽"></a>3.作用域插槽</h3><p>如果子节点(类似上文的p标签)想访问组件的数据,默认是访问不到的<br>这时候就要使用作用域插槽,用子传父的方式,实现通讯<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span> <span class="attr">:fmsg</span>=<span class="string">"fmsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`,</span><br><span class="line">data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">           fmsg: '组件中的数据'</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		&#123;&#123; scope &#125;&#125;       =&gt; &#123;&#123; "fmsg": "我是父级组件的数据" &#125;&#125;</span><br><span class="line">		&#123;&#123; scope.fmsg &#125;&#125;  =&gt; 我是父级组件的数据</span><br><span class="line">	<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用说明:<br> 1.将要传的值绑定在slot标签上<br> 2.在p标签外面加上一个template标签<br> 3.在template标签中添加slot-scope=”scope”<br> 4.就可以在p标签内使用数据了<br> 注: <strong>scope是一个对象,里面存着传过来数据</strong></p>
 
       
     </div>
@@ -380,8 +372,6 @@
           
             <a href="/tags/框架/" rel="tag"><i class="fa fa-tag"></i> 框架</a>
           
-            <a href="/tags/生命周期/" rel="tag"><i class="fa fa-tag"></i> 生命周期</a>
-          
         </div>
       
 
@@ -393,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/vue-组件通讯/" rel="next" title="vue组件通讯">
-                <i class="fa fa-chevron-left"></i> vue组件通讯
+              <a href="/2018/02/23/其他-并发和并行/" rel="next" title="并发和并行">
+                <i class="fa fa-chevron-left"></i> 并发和并行
               </a>
             
           </div>
@@ -403,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/13/移动端-三种布局方式/" rel="prev" title="三种布局方式">
-                三种布局方式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/22/移动端-手指事件/" rel="prev" title="移动端手指事件">
+                移动端手指事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -540,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三个阶段"><span class="nav-number">1.</span> <span class="nav-text">三个阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-挂载阶段"><span class="nav-number">1.1.</span> <span class="nav-text">1.挂载阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-更新阶段"><span class="nav-number">1.2.</span> <span class="nav-text">2.更新阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-销毁阶段"><span class="nav-number">1.3.</span> <span class="nav-text">3.销毁阶段</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#插槽是什么"><span class="nav-number">1.</span> <span class="nav-text">插槽是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插槽与data的区别"><span class="nav-number">2.</span> <span class="nav-text">插槽与data的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通俗理解slot标签的作用"><span class="nav-number">3.</span> <span class="nav-text">通俗理解slot标签的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-匿名插槽"><span class="nav-number">4.</span> <span class="nav-text">1.匿名插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-域名插槽"><span class="nav-number">5.</span> <span class="nav-text">2.域名插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-作用域插槽"><span class="nav-number">6.</span> <span class="nav-text">3.作用域插槽</span></a></li></ol></div>
             
 
           </div>
