@@ -392,6 +392,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/浏览器-储存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/14/浏览器-储存/" itemprop="url">cookie,localStorage,sessionStorage</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-14T12:48:30+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">大小</th>
+<th style="text-align:center">生命周期</th>
+<th style="text-align:center">数据是否可以多页面共享</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cookie</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">默认一个会话,可设置,关闭当前窗口,就销毁了</td>
+<td style="text-align:center">多页面共享</td>
+</tr>
+<tr>
+<td style="text-align:center">localStorage</td>
+<td style="text-align:center">5M</td>
+<td style="text-align:center"><strong>永久储存</strong>,只要用户不手动删除</td>
+<td style="text-align:center">可以多页面共享</td>
+</tr>
+<tr>
+<td style="text-align:center">sessionStorage</td>
+<td style="text-align:center">5M</td>
+<td style="text-align:center">一个会话,关闭当前窗口,就销毁了</td>
+<td style="text-align:center">不能多页面共享</td>
+</tr>
+<tr>
+<td style="text-align:center">indexedDB</td>
+<td style="text-align:center">取决于计算机硬件大小</td>
+<td style="text-align:center">永久储存</td>
+<td style="text-align:center">可以多页面共享</td>
+</tr>
+</tbody>
+</table>
+<h3 id="localStorage的api"><a href="#localStorage的api" class="headerlink" title="localStorage的api"></a>localStorage的api</h3><p>数据在本地储存的格式是json字符串<br>1.设置</p>
+<ul>
+<li>localStorage.setItem(‘key’,’value’)</li>
+</ul>
+<p>2.获取</p>
+<ul>
+<li>localStorage.getItem(‘key’)</li>
+</ul>
+<p>3.移除</p>
+<ul>
+<li>localStorage.removeItem(‘key’)</li>
+</ul>
+<p>4.清空(所有)</p>
+<ul>
+<li>localStorage.clear()</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/ajax-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1192,6 +1389,153 @@ number,string,boolean,null,undefined,object,symbol
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/浏览器-cookie和session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/23/浏览器-cookie和session/" itemprop="url">cookie和session</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-23T11:58:31+08:00">
+                2017-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h2><h3 id="cookie和session的区别"><a href="#cookie和session的区别" class="headerlink" title="cookie和session的区别"></a>cookie和session的区别</h3><p>cookie是储存在浏览器端的<br>session是储存在服务器端的</p>
+<h3 id="session机制"><a href="#session机制" class="headerlink" title="session机制"></a>session机制</h3><p>当浏览器第一次发送请求时,<br>对应的服务器中会生成一个sessionid来匹配请求的数据,<br>然后把数据和sessionid响应给浏览器,<br>浏览器把sessionid储存在cookie中<br>当浏览器第二次发送请求时,<br>会把cookie中的sessionid放在请求头中,<br>服务器拿到session后,<br>和保存在服务器中的sessionid对比,找到相匹配的数据,响应给浏览器</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/移动端-回流与重绘/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1391,7 +1735,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1402,7 +1746,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1413,7 +1757,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
