@@ -236,6 +236,300 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/es6-解构赋值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/25/es6-解构赋值/" itemprop="url">解构赋值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T20:48:58+08:00">
+                2017-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    id: <span class="number">99</span>,</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    my_age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是我们es5使用的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.id = obj.id</span><br><span class="line">    <span class="keyword">this</span>.name = obj.name</span><br><span class="line">    <span class="comment">// 想把my_age改成使用变量myAge接收</span></span><br><span class="line">    <span class="keyword">this</span>.myAge = obj.my_age</span><br><span class="line">    <span class="built_in">console</span>.log(id, name, myAge)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy(obj) // 99 '小明'  18</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是es6解构赋值语法</span></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    id,</span><br><span class="line">    name,</span><br><span class="line">    <span class="comment">// 想把my_age改成使用变量myAge接收</span></span><br><span class="line">    my_age: myAge</span><br><span class="line">&#125; = obj</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(id, name, myAge)</span><br></pre></td></tr></table></figure>
+<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 想要在数组内前面或后面添加一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es5的做法</span></span><br><span class="line">arr.push(<span class="string">'a'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1,2,3,'a']</span></span><br><span class="line"></span><br><span class="line">arr.unshift(<span class="string">'b'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ['b',1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6语法</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [...arr, <span class="string">'a'</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// [1,2,3,'a']</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="string">'b'</span>, ...arr]</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// ['b',1,2,3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 想把两个数组合并成一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es5语法</span></span><br><span class="line"><span class="keyword">const</span> arr3 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">const</span> arr4 = arr.concat(arr3)</span><br><span class="line"><span class="built_in">console</span>.log(arr4); <span class="comment">// [1,2,3,4,5,6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6语法</span></span><br><span class="line"><span class="keyword">const</span> arr3 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">const</span> arr4 = [...arr, ...arr3]</span><br><span class="line"><span class="built_in">console</span>.log(arr4); <span class="comment">// // [1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/ajax-json/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/20/ajax-json/" itemprop="url">JSON</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-20T13:24:10+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><pre><code>全名:js对象标记法
+</code></pre><h3 id="JSON对象和JS对象区别"><a href="#JSON对象和JS对象区别" class="headerlink" title="JSON对象和JS对象区别"></a>JSON对象和JS对象区别</h3><pre><code>JSON对象的属性名必须加双引号
+</code></pre><h3 id="JSON字符串和JS对象的转化"><a href="#JSON字符串和JS对象的转化" class="headerlink" title="JSON字符串和JS对象的转化"></a>JSON字符串和JS对象的转化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JS -&gt; <span class="built_in">JSON</span>   <span class="built_in">JSON</span>.stringify(JS对象)</span><br><span class="line"><span class="built_in">JSON</span> -&gt; JS	 <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>字符串)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/js-数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1234,7 +1528,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1256,7 +1550,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
