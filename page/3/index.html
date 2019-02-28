@@ -236,6 +236,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/vue-双向绑定原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/vue-双向绑定原理/" itemprop="url">vue双向绑定原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T20:28:21+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>底层依据</strong><br>使用的是es5中的 Object.defineProperty()方法</p>
+<blockquote>
+<p>这个方法是用来给对象添加或修改属性的<br>Object.defineProperty(参数1,参数2,参数3)<br>参数1: 要个谁添加属性<br>参数2: 添加什么属性<br>参数3: 属性描述符(定义属性的具体描述)<br>其中属性描述符 有两个方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(newVal)&#123;</span><br><span class="line">       </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 赋值调用set方法</span></span><br><span class="line"><span class="keyword">get</span>()&#123;</span><br><span class="line">       <span class="keyword">return</span> ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取调用get方法</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>V -&gt; M 从视图层到数据层的单向绑定,通过表单的iinput事件就能实现<br>M -&gt; V 难点是从哪个数据层到视图层的单向绑定<br>怎么让视图层知道数据变化了呢<br>可以利用set方法<br><strong>我们使用Object.defineProperty监听属性,当数据改变时,触发set方法,更新view层</strong></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/移动端-h5c3的兼容性问题及解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -917,6 +1069,597 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/其他-http和https/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/12/其他-http和https/" itemprop="url">http和https</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T13:05:39+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="http和https区别"><a href="#http和https区别" class="headerlink" title="http和https区别"></a>http和https区别</h3><p>http 是明文传输,数据未加密,安全性差<br>https 是加密传输,数据加密,安全性好<br>http和https之间不能相互访问</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/其他-SEO优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/10/其他-SEO优化/" itemprop="url">前端seo优化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T21:00:20+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前端seo优化"><a href="#前端seo优化" class="headerlink" title="前端seo优化"></a>前端seo优化</h3><p>1.创建唯一且准确的网页标题<title><br>2.meta标签的网页描述信息准确总结网页内容<br>3.使用H5语义化标签<br>4.合理使用<img>的alt属性<br>5.将重要的内容放在html代码的前面<br>6.扁平化网页结构,减少嵌套结构</title></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/es6-promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/es6-promise/" itemprop="url">promise</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-29T21:58:53+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h3><p>以前处理异步操作,我们使用的是回调函数的方式<br>这样的话存在一个问题,如果简单的还好,如果异步操作麻烦,可能会出现回调地狱的问题<br>如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">// 发送ajax请求数据时:</span></span><br><span class="line"><span class="comment">// 第一个请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">  url: <span class="string">''</span>,</span><br><span class="line">  type: <span class="string">''</span>,</span><br><span class="line">  success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 第二个请求</span></span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">      url: <span class="string">''</span>,</span><br><span class="line">      type: <span class="string">''</span>,</span><br><span class="line">      success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 第三个请求</span></span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">          url: <span class="string">''</span>,</span><br><span class="line">          type: <span class="string">''</span>,</span><br><span class="line">          success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 第四个请求</span></span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">              url: <span class="string">''</span>,</span><br><span class="line">              type: <span class="string">''</span>,</span><br><span class="line">              success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;&#125;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样一层套一层,不直观,理解起来困难</p>
+<h3 id="es6的promise"><a href="#es6的promise" class="headerlink" title="es6的promise"></a>es6的promise</h3><p>所以es6提出了promise语法,想用同步编写代码的方式,来处理异步操作<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promise</span><br><span class="line">.then(第一个请求)</span><br><span class="line">.then(第二个请求)</span><br><span class="line">.then(第三个请求)</span><br></pre></td></tr></table></figure></p>
+<p>优雅直观,修改代码也方便</p>
+<h3 id="promise的封装原理"><a href="#promise的封装原理" class="headerlink" title="promise的封装原理"></a>promise的封装原理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    resolve()  <span class="comment">// 成功调用resolve方法</span></span><br><span class="line">    reject()   <span class="comment">// 失败调用reject方法</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">	p</span><br><span class="line">	.then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="comment">// 成功</span></span><br><span class="line">	&#125;)</span><br><span class="line">	.catsh( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="comment">// 失败</span></span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 1.p就是Promise实例对象</span></span><br><span class="line">	<span class="comment">// 2.只有Promise实例对象才可以在后面 .then</span></span><br><span class="line">	<span class="comment">// 3.例如 vue中发送ajax请求使用axios:</span></span><br><span class="line">		axios</span><br><span class="line">		.get()</span><br><span class="line">		.then()</span><br><span class="line">		<span class="comment">// 这里的axios.get()就是一个promise实例对象</span></span><br><span class="line">		<span class="comment">// xxx.then  xxx就是promise实例对象</span></span><br></pre></td></tr></table></figure>
+<h3 id="all和race"><a href="#all和race" class="headerlink" title="all和race"></a>all和race</h3><p>all<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span></span><br><span class="line">.all()</span><br><span class="line">.then()</span><br><span class="line"><span class="comment">// 等all里所有的异步操作全部完成后,才会执行then里的操作</span></span><br></pre></td></tr></table></figure></p>
+<p>race<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span></span><br><span class="line">.race()</span><br><span class="line">.then()</span><br><span class="line"><span class="comment">// 只要race里有一个异步操作完成,就会执行then里的操作</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="promise的三个状态"><a href="#promise的三个状态" class="headerlink" title="promise的三个状态"></a>promise的三个状态</h3><p>pending: 等待<br>resolved: 成功调用<br>rejected: 失败调用</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/es6-解构赋值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhou-p的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/25/es6-解构赋值/" itemprop="url">解构赋值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T20:48:58+08:00">
+                2017-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    id: <span class="number">99</span>,</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    my_age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是我们es5使用的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.id = obj.id</span><br><span class="line">    <span class="keyword">this</span>.name = obj.name</span><br><span class="line">    <span class="comment">// 想把my_age改成使用变量myAge接收</span></span><br><span class="line">    <span class="keyword">this</span>.myAge = obj.my_age</span><br><span class="line">    <span class="built_in">console</span>.log(id, name, myAge)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy(obj) // 99 '小明'  18</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是es6解构赋值语法</span></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    id,</span><br><span class="line">    name,</span><br><span class="line">    <span class="comment">// 想把my_age改成使用变量myAge接收</span></span><br><span class="line">    my_age: myAge</span><br><span class="line">&#125; = obj</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(id, name, myAge)</span><br></pre></td></tr></table></figure>
+<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 想要在数组内前面或后面添加一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es5的做法</span></span><br><span class="line">arr.push(<span class="string">'a'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1,2,3,'a']</span></span><br><span class="line"></span><br><span class="line">arr.unshift(<span class="string">'b'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ['b',1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6语法</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [...arr, <span class="string">'a'</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// [1,2,3,'a']</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="string">'b'</span>, ...arr]</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// ['b',1,2,3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 想把两个数组合并成一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es5语法</span></span><br><span class="line"><span class="keyword">const</span> arr3 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">const</span> arr4 = arr.concat(arr3)</span><br><span class="line"><span class="built_in">console</span>.log(arr4); <span class="comment">// [1,2,3,4,5,6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6语法</span></span><br><span class="line"><span class="keyword">const</span> arr3 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">const</span> arr4 = [...arr, ...arr3]</span><br><span class="line"><span class="built_in">console</span>.log(arr4); <span class="comment">// // [1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/ajax-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1052,805 +1795,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/js-数组/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/24/js-数组/" itemprop="url">数组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T12:08:31+08:00">
-                2017-05-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="数组合并的方法"><a href="#数组合并的方法" class="headerlink" title="数组合并的方法"></a>数组合并的方法</h3><p><strong>es5</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> a2 = [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> a = a1.concat(a2)</span><br><span class="line">a =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
-<p><strong>es6</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a1 = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> a2 = [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> a = [ ...a1 , ...a2 ]</span><br><span class="line">a =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
-<h3 id="数组去重的方法"><a href="#数组去重的方法" class="headerlink" title="数组去重的方法"></a>数组去重的方法</h3><p><strong>es5</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> newArr = []</span><br><span class="line">arr.forEach( <span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">// indexOf: 查找数组中某个元素第一次出现的位置,若找不到,返回 -1</span></span><br><span class="line">       <span class="keyword">if</span>(newArr.indexOf(item) === <span class="number">-1</span>)&#123;</span><br><span class="line">       	<span class="comment">// 如果newArr中没有这一项,就把这一项添加到newArr中</span></span><br><span class="line">           newArr.push(item)</span><br><span class="line">       &#125;</span><br><span class="line">&#125;)</span><br><span class="line">newArr =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure></p>
-<p><strong>es6</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = <span class="keyword">new</span> <span class="built_in">Set</span>(arr)</span><br><span class="line"><span class="comment">// 重复元素在Set中自动被过滤</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="数组的增删"><a href="#数组的增删" class="headerlink" title="数组的增删"></a>数组的增删</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组后面添加一个'a'</span></span><br><span class="line">arr.push(<span class="string">'a'</span>)  =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组前面添加一个'b'</span></span><br><span class="line">arr.unshift(<span class="string">'b'</span>) =&gt; [<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组后面删除一位</span></span><br><span class="line">arr.pop()	=&gt;	[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组前面删除一位</span></span><br><span class="line">arr.shift()	=&gt;	[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="数组翻转"><a href="#数组翻转" class="headerlink" title="数组翻转"></a>数组翻转</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr.reverse()  =&gt; [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="数组拼通过连接符接成字符串"><a href="#数组拼通过连接符接成字符串" class="headerlink" title="数组拼通过连接符接成字符串"></a>数组拼通过连接符接成字符串</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.join(<span class="string">'-'</span>)  =&gt; <span class="number">1</span><span class="number">-2</span><span class="number">-3</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组查找元素"><a href="#数组查找元素" class="headerlink" title="数组查找元素"></a>数组查找元素</h3><blockquote>
-<p>indexOf 从前往后找,第一次出现的位置,找不到返回 -1<br>lastIndexOf 从后往前找</p>
-</blockquote>
-<h3 id="截取数组"><a href="#截取数组" class="headerlink" title="截取数组"></a>截取数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.slice(<span class="number">0</span>,<span class="number">2</span>) </span><br><span class="line">newArr =&gt; 返回截取的内容,从下标第<span class="number">0</span>项,截取长度<span class="number">2</span>,返回一个新数组 =&gt; [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">const</span> n2 = arr.slice(<span class="number">2</span>) <span class="comment">// =&gt; 从下标第2项,截取到最后 =&gt; [2,3,4]</span></span><br><span class="line"><span class="keyword">const</span> n3 = arr.slice()	<span class="comment">// =&gt; 截取全部 =&gt; [0,1,2,3,4]</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组splice方法"><a href="#数组splice方法" class="headerlink" title="数组splice方法"></a>数组splice方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 1.删除</span></span><br><span class="line">arr.splice(起始下标,删几个)</span><br><span class="line">	arr.splice(<span class="number">2</span>,<span class="number">2</span>) <span class="comment">// [1,2,5]</span></span><br><span class="line"><span class="comment">// 2.替换</span></span><br><span class="line">arr.splice(起始下标,删几个,替换的内容)</span><br><span class="line">	arr.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>) <span class="comment">// [1,'a',4,5]</span></span><br><span class="line"><span class="comment">// 3.添加 (注意添加到的位置)</span></span><br><span class="line">arr.splice(起始下标,<span class="number">0</span>,添加的内容)</span><br><span class="line">	arr.splice(<span class="number">3</span>,<span class="number">0</span>,<span class="string">'b'</span>) <span class="comment">// [1,2,3,'b',4,5]</span></span><br></pre></td></tr></table></figure>
-<h3 id="清空数组的几种方式"><a href="#清空数组的几种方式" class="headerlink" title="清空数组的几种方式"></a>清空数组的几种方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(<span class="number">0</span>,arr.length) <span class="comment">// 从下标0开始,删除数组的长度个,即删除全部</span></span><br><span class="line">arr.length = <span class="number">0</span> <span class="comment">// 将数组长度赋值为0</span></span><br><span class="line">arr = [] <span class="comment">// 将数组赋值为一个空数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><blockquote>
-<p><a href="https://zhoup-x.github.io/2017/09/23/js-%E6%95%B0%E7%BB%84-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_blank" rel="noopener">冒泡排序</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/js-语句/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/23/js-语句/" itemprop="url">if,switch,while,continue,break,for</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T22:08:41+08:00">
-                2017-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><blockquote>
-<p>太常用太简单,不说了</p>
-</blockquote>
-<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>( n )&#123;</span><br><span class="line">       <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">       	执行代码块<span class="number">1</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">       	执行代码块<span class="number">2</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">default</span>: n 与case1 case2不同执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>原理: n的值会与每个case的值作比较,如果匹配,会执行相应的代码块,否则不会执行,往下继续运行<br>每句结束必须要break</p>
-</blockquote>
-<h3 id="while-和-do-while"><a href="#while-和-do-while" class="headerlink" title="while 和 do while"></a>while 和 do while</h3><blockquote>
-<p>语法: while(条件){  循环体  }<br>    do { 循环体 } while (条件)<br>do while 和 while 不同的是. 他会保证让循环体至少会执行一次, 因为他是先执行代码然后在判断条件</p>
-</blockquote>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><blockquote>
-<p>太常用太简单,不说了</p>
-</blockquote>
-<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><blockquote>
-<p>break是彻底结束当前循环,直接执行循环体后面的代码<br>continue是逃过本次循环,然后整个循环体会继续执行</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/js-数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/22/js-数据类型/" itemprop="url">js数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:28:31+08:00">
-                2017-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
-5种简单数据类型(值类型,基本数据类型,原始数据类型)
-    1.number
-    2.string
-    3.boolean
-    4.null
-    5.undefined
-1种复杂数据类型(引用类型)
-    1.object
-es6新增了一个symbol数据类型
-所以现在是7种数据类型
-number,string,boolean,null,undefined,object,symbol
-值类型存的是值,引用类型存的是地址(引用)
-</code></pre><blockquote>
-<p>简单数据类型是没有方法的,为了操作简单数据类型,要把简单数据类型转化包装(转化)成复杂类型,这就是基本包装类型,不过这不需要我们去包装,浏览器会默认包装</p>
-</blockquote>
-<h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><blockquote>
-<p>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢<br>其实这是一个历史遗留问题<br>在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值<br>后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在</p>
-</blockquote>
-<h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><blockquote>
-<p>undefined: 一个变量,只声明,未赋值<br>null: 表示一个空对象指针</p>
-</blockquote>
-<h3 id="undefined-null"><a href="#undefined-null" class="headerlink" title="undefined == null"></a>undefined == null</h3><blockquote>
-<p>在没了解到这个之前,我们很容易的想到  undefined转换成布尔值是false,null转换成布尔值也是false,所以undefined == null, 其实这种想法是不对的<br>在javascript规范中提到:<br><strong>在比较相等性之前,不能将null和undefined转换成其他值,并且规定null和undefined是相等的</strong><br>为什么呢,因为规范认为,既然undefined和null的行为很相似,都表示一个无效的值,那么他们所代表的内容也有相似性,所以有undefined == null<br><strong>undefined === null  =&gt; false 数据类型不一样</strong></p>
-</blockquote>
-<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><blockquote>
-<p>属于number类型,代表非数值 Not a Number<br>NaN与任何是都不相等,包括和NaN自身</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/23/css-经典布局的实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/23/css-经典布局的实现/" itemprop="url">经典布局</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-23T20:08:51+08:00">
-                2017-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="两边固定-中间自适应"><a href="#两边固定-中间自适应" class="headerlink" title="两边固定,中间自适应"></a>两边固定,中间自适应</h2><p><strong>就是所谓的圣杯布局,双飞翼布局</strong></p>
-<p>这种两边固定,中间自适应的布局<br>我整理了三种常用的方法:<br><strong>注意:实现这种布局时,要先写主体部分(自适应的部分),再写固定的部分</strong></p>
-<h3 id="1-使用浮动"><a href="#1-使用浮动" class="headerlink" title="1.使用浮动"></a>1.使用浮动</h3><blockquote>
-<p>1.两边设置一左一右浮动<br>2.主体部分设置overflow:hidden</p>
-</blockquote>
-<h3 id="2-使用定位"><a href="#2-使用定位" class="headerlink" title="2.使用定位"></a>2.使用定位</h3><blockquote>
-<p>1.两边设置定位,分别定在左上角和右上角<br>2.给父盒子设置padding,长度是固定盒子的宽度</p>
-</blockquote>
-<h3 id="3-使用flex布局"><a href="#3-使用flex布局" class="headerlink" title="3.使用flex布局"></a>3.使用flex布局</h3><blockquote>
-<p>1.给父盒子设置display-flex<br>2.给主体部分设置 flex:1</p>
-</blockquote>
-<h3 id="圣杯布局和双飞翼布局的不同点"><a href="#圣杯布局和双飞翼布局的不同点" class="headerlink" title="圣杯布局和双飞翼布局的不同点"></a>圣杯布局和双飞翼布局的不同点</h3><p>圣杯布局和双飞翼实现的效果是一样的,<br>但是使用方法不一样,<br>圣杯布局使用的是定位+padding,<br>双飞翼布局使用的是定位+负margin</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/浏览器-cookie和session/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/23/浏览器-cookie和session/" itemprop="url">cookie和session</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-23T11:58:31+08:00">
-                2017-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h2><h3 id="cookie和session的区别"><a href="#cookie和session的区别" class="headerlink" title="cookie和session的区别"></a>cookie和session的区别</h3><p>cookie是储存在浏览器端的<br>session是储存在服务器端的</p>
-<h3 id="session机制"><a href="#session机制" class="headerlink" title="session机制"></a>session机制</h3><p>当浏览器第一次发送请求时,<br>对应的服务器中会生成一个sessionid来匹配请求的数据,<br>然后把数据和sessionid响应给浏览器,<br>浏览器把sessionid储存在cookie中<br>当浏览器第二次发送请求时,<br>会把cookie中的sessionid放在请求头中,<br>服务器拿到session后,<br>和保存在服务器中的sessionid对比,找到相匹配的数据,响应给浏览器</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1901,7 +1845,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1912,7 +1856,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1923,7 +1867,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
