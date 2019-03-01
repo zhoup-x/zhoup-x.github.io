@@ -73,16 +73,16 @@
 
 
 
-<meta name="description" content="前端攻城狮">
+<meta name="description" content="沃德">
 <meta property="og:type" content="website">
-<meta property="og:title" content="zhou-p的技术博客">
+<meta property="og:title" content="沃德的技术博客">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:site_name" content="沃德的技术博客">
+<meta property="og:description" content="沃德">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhou-p的技术博客">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="沃德的技术博客">
+<meta name="twitter:description" content="沃德">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <title>zhou-p的技术博客</title>
+  <title>沃德的技术博客</title>
   
 
 
@@ -149,12 +149,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zhou-p的技术博客</span>
+        <span class="site-title">沃德的技术博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">前端知识整理</p>
+        <p class="site-subtitle">知识整理</p>
       
   </div>
 
@@ -236,6 +236,1062 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/vue-插槽/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/vue-插槽/" itemprop="url">插槽</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T21:42:27+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="插槽是什么"><a href="#插槽是什么" class="headerlink" title="插槽是什么"></a>插槽是什么</h3><p>是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参</p>
+<h3 id="插槽与data的区别"><a href="#插槽与data的区别" class="headerlink" title="插槽与data的区别"></a>插槽与data的区别</h3><ul>
+<li>1.替换文字用data就能实现</li>
+<li>2.替换标签或者组件只能用插槽实现</li>
+</ul>
+<h3 id="通俗理解slot标签的作用"><a href="#通俗理解slot标签的作用" class="headerlink" title="通俗理解slot标签的作用"></a>通俗理解slot标签的作用</h3><ul>
+<li>1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑</li>
+<li>2.域名标签也就是坑<slot name="myslot">有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置对应内容</slot></li>
+</ul>
+<h3 id="1-匿名插槽"><a href="#1-匿名插槽" class="headerlink" title="1.匿名插槽"></a>1.匿名插槽</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用说明:<br> 在组件模板中使用slot占位,在使用组件标签时会把</p><p>标签自动填充到对应模板占位的位置</p>
+<h3 id="2-域名插槽"><a href="#2-域名插槽" class="headerlink" title="2.域名插槽"></a>2.域名插槽</h3><p>也叫具名插槽<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用说明:<br> 在组件模板中,为占位的slot标签起个名字,在p标签中使用slot=”名字”相对应</p>
+<h3 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3.作用域插槽"></a>3.作用域插槽</h3><p>如果子节点(类似上文的p标签)想访问组件的数据,默认是访问不到的<br>这时候就要使用作用域插槽,用子传父的方式,实现通讯<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span> <span class="attr">:fmsg</span>=<span class="string">"fmsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`,</span><br><span class="line">data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">           fmsg: '组件中的数据'</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		&#123;&#123; scope &#125;&#125;       =&gt; &#123;&#123; "fmsg": "我是父级组件的数据" &#125;&#125;</span><br><span class="line">		&#123;&#123; scope.fmsg &#125;&#125;  =&gt; 我是父级组件的数据</span><br><span class="line">	<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用说明:<br> 1.将要传的值绑定在slot标签上<br> 2.在p标签外面加上一个template标签<br> 3.在template标签中添加slot-scope=”scope”<br> 4.就可以在p标签内使用数据了<br> 注: <strong>scope是一个对象,里面存着传过来数据</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/其他-并发和并行/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/其他-并发和并行/" itemprop="url">并发和并行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T20:10:34+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器机制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><p>​    并发 同时发出去多条任务, 但是始终只有一条任务在执行<br>​    并行 同时发出去多条任务,所有的任务同时执行<br>​    并行是有限的,吃硬件,到极限会出现堵塞,并发不会,但并发比不过并行的效率</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/移动端-click事件和tap事件/" itemprop="url">click事件300ms延迟</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T12:13:30+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对于移动端来讲,click事件会有300ms延迟</p>
+<blockquote>
+<p>原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕</p>
+</blockquote>
+<p>解决方案:<br>    1.设置视口,禁用用户缩放<br>    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/移动端-reset和normalize格式化css的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/移动端-reset和normalize格式化css的区别/" itemprop="url">reset和normalize的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T21:13:23+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>reset.css<br>    将浏览器所有的默认样式都覆盖<br>normalize<br>    保留了许多浏览器的默认样式,如果有需要,再手动配置,更推荐这种方法</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/移动端-2倍图和视口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/移动端-2倍图和视口/" itemprop="url">2倍图和视口</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T19:00:23+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="2倍图"><a href="#2倍图" class="headerlink" title="2倍图"></a>2倍图</h3><pre><code>比如说:
+原图是一个是30px*30px的PNG图片
+2倍图一个是60px*60px的PNG图片 
+3倍图一个是90px*90px的PNG图片 
+</code></pre><p><strong> 倍图设计的目的是为了让屏幕质量更高的手机,显示更清晰,所以需要准备大图片 </strong></p>
+<h3 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h3><pre><code>1.宽度默认是980px
+2.可以缩放
+</code></pre><p>视口是一个介于html网页和手机浏览器的一个容器,<br>是乔布斯提出的<br>目的是为了让移动端访问pc网页的时候,不出现横向滚动条<br>设置视口宽度为设备宽度    device-width<br><strong> 移动开发必须设置视口 </strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/vue-事件修饰符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/vue-事件修饰符/" itemprop="url">事件修饰符</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T20:38:10+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="常用的按键修饰符"><a href="#常用的按键修饰符" class="headerlink" title="常用的按键修饰符"></a>常用的按键修饰符</h3><p>@keyup.enter=”fn”</p>
+<h3 id="常用事件修饰符"><a href="#常用事件修饰符" class="headerlink" title="常用事件修饰符"></a>常用事件修饰符</h3><p>@click.prevent=’ ‘    阻止默认行为(a标签的跳转等)<br>@click.once=’ ‘  只会触发一次事件 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/vue-key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/vue-key/" itemprop="url">为什么v-for要搭配key使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T20:01:09+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> vue推荐: 使用v-for的时候,添加key属性 </strong><br>为什么呢?</p>
+<ul>
+<li>因为vue有 “就地复用”策略:</li>
+<li>如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用</li>
+<li>所以v-for的时候,添加一个属性 key</li>
+<li>一般使用 id 而不是index , 因为顺序变了使用index就不准确了</li>
+<li>:key = ‘item.id’<br>以后使用v-for的时候请务必加上key值 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span> <span class="attr">:key</span>=<span class="string">"item.id&gt;&lt;/p&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/vue-vue常用指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +1301,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -356,6 +1412,7 @@
 <li>所以如果显示与隐藏’比较频繁的话’,使用v-show</li>
 <li>不频繁的话,使用v-if</li>
 </ul>
+<h3 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">     &lt;!-- 三种情况的 --&gt;</span><br><span class="line">&lt;h1 v-<span class="keyword">if</span>=<span class="string">'age &gt;= 30'</span>&gt;老年人&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">&lt;h1 v-else-if='age &gt;= 18 &amp;&amp; age &lt; 30'&gt;成年人&lt;/</span>h1&gt;</span><br><span class="line">&lt;h1 v-<span class="keyword">else</span>&gt;未成年&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">---html---</span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">    age : 2</span></span><br><span class="line"><span class="regexp"> &#125;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -417,7 +1474,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -588,7 +1645,7 @@ cors是浏览器支持,使用简单,不限制请求类型
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -712,1144 +1769,11 @@ cors是浏览器支持,使用简单,不限制请求类型
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-pc端和移动端有什么区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/13/移动端-pc端和移动端有什么区别/" itemprop="url">pc和移动端区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:55:53+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.屏幕尺寸<br>    pc端 有版心<br>    移动端 百分比适配<br>2.浏览器兼容<br>    pc端 h5c3支持较好<br>    移动端 前缀-webkit-</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/移动端-less的使用和语法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/13/移动端-less的使用和语法/" itemprop="url">less基本使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T22:50:33+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>css预处理器<br>为了代码的可复用性,可维护性<br>less文件需要编译</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre><code>1.注释
-    /**/ 会被编译到css中去
-    //    不会被编译到css中去
-2.变量
-    声明    @变量名:变量值
-3.混入类
-    可以将类当成函数,在其他类中调用,不能传参,为了实现类的复用
-4.函数
-    .类()
-    函数不会被编译到css中去
-    函数可以调用,可传参
-    函数有参数必须传参,不设参数要有默认值
-5.less嵌套
-    后代选择器    直接嵌套编写
-    子代选择器    加上&gt;
-    交集选择器    &amp;表示自己
-    伪元素选择器    &amp;:
-6.导入
-    @impoprt &quot;文件名&quot;    文件后缀名可省略
-    用于大型项目的模块划分
-7.less运算
-    加减乘除
-    内置运算
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/ajax-原生ajax发送请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/13/ajax-原生ajax发送请求/" itemprop="url">原生ajax发送请求</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T13:00:20+08:00">
-                2018-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">ajax</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="form和ajax区别"><a href="#form和ajax区别" class="headerlink" title="form和ajax区别"></a>form和ajax区别</h2><pre><code>0.都可以给后台发送请求
-1.form发出去的请求是同步的,ajax是异步的
-2.form发出请求后,页面会发生跳转,ajax不会发出跳转
-</code></pre><h2 id="js原生实现ajax发送请求"><a href="#js原生实现ajax发送请求" class="headerlink" title="js原生实现ajax发送请求"></a>js原生实现ajax发送请求</h2><h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequest对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php?name=zs&amp;age=18'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	<span class="comment">// get请求可以忽略</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="literal">null</span>)</span><br><span class="line">	<span class="comment">// get请求,写null或不写</span></span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>实例化xmlhttprequeat对象</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</span><br><span class="line"><span class="number">2.</span>设置请求行</span><br><span class="line">	xhr.open(<span class="string">'post'</span>,<span class="string">'demo.php'</span>)</span><br><span class="line"><span class="number">3.</span>设置请求头</span><br><span class="line">	xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">	<span class="comment">// post请求设置请求的目的是让服务器知道请求中有参数,是表单的编码类型,不写的话服务器拿不到数据</span></span><br><span class="line"><span class="number">4.</span>设置请求主体,并发送数据</span><br><span class="line">	xhr.send(<span class="string">'name=zs&amp;age=19'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="共有的最后一步"><a href="#共有的最后一步" class="headerlink" title="共有的最后一步"></a>共有的最后一步</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.</span>监听响应</span><br><span class="line">	<span class="comment">// 触发条件:当readystate状态发生变化的时候(只有当状态码是2,3,4的时候才会触发)</span></span><br><span class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">              	<span class="comment">// 状态码为4,请求和响应完成</span></span><br><span class="line">                  <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">                  	<span class="comment">// 状态码200,请求和响应成功</span></span><br><span class="line">                      <span class="keyword">var</span> res = xhr.responseText</span><br><span class="line">                      	<span class="comment">// responseText 获取响应的主体的内容</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="get请求和post请求的区别"><a href="#get请求和post请求的区别" class="headerlink" title="get请求和post请求的区别:"></a>get请求和post请求的区别:</h2><pre><code>1.get请求的参数在地址栏中,在请求行中,在地址栏中,不安全,有长度限制
-2.post请求的参数不在地址栏中显示,在请求主体中,相对安全,没有长度限制
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/移动端-三种移动开发分类/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/10/移动端-三种移动开发分类/" itemprop="url">三种移动开发分类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-10T12:50:33+08:00">
-                2018-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-原生App"><a href="#1-原生App" class="headerlink" title="1.原生App"></a>1.原生App</h3><pre><code>直接基于操作系统进行开发的应用程序
-优点:
-    1.运行在操作系统送,性能好
-    2.可访问手机的硬件设备
-    3.可以离线访问
-缺点:
-    1.成本高
-    2.跨平台性差
-    3.更新维护麻烦
-</code></pre><h3 id="2-webApp"><a href="#2-webApp" class="headerlink" title="2.webApp"></a>2.webApp</h3><pre><code>直接运行在浏览器中,使用html/css/js开发
-优点: 
-    1.跨平台性好,只要游浏览器就可以运行
-    2.成本低
-    3.更新维护方便
-缺点:
-    1.依赖网络,不能离线访问
-    2.性能相对来说差
-    3.不能直接访问手机硬件设备
-</code></pre><h3 id="3-混合App"><a href="#3-混合App" class="headerlink" title="3.混合App"></a>3.混合App</h3><pre><code>结合,webApp外层套了一个原生App的壳
-优点:
-    1.跨平台性好
-    2.成本低
-    3.可直接访问手机硬件设备
-缺点:
-    要更新版本
-</code></pre><p><strong>一般开发流程:</strong><br>    webApp —(套个壳)&gt;&gt; 混合App —(高性能)&gt;&gt; 原生App</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/其他-模块化和组件化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/01/其他-模块化和组件化/" itemprop="url">模块化和组件化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-01T20:37:20+08:00">
-                2018-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/模块化和组件化/" itemprop="url" rel="index">
-                    <span itemprop="name">模块化和组件化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于前端页面和逻辑越来越复杂,<br>于是模块化,组件化相继而生<br>为了代码的可复用性</p>
-<h3 id="模块化和组件化的区别"><a href="#模块化和组件化的区别" class="headerlink" title="模块化和组件化的区别"></a>模块化和组件化的区别</h3><blockquote>
-<p>关注的重点不同<br>模块化: 关注代码逻辑<br>组件化: 关注UI界面</p>
-</blockquote>
-<h3 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h3><p>1.AMD  </p>
-<pre><code>- require.js 异步 依赖前置
-</code></pre><p>2.CMD </p>
-<pre><code>- sea.js 有同步也有异步 依赖后置
-</code></pre><p>3.commonJS</p>
-<pre><code>- node.js 同步的
-</code></pre><p>4.ES6标准模块化规范</p>
-<h3 id="require和import的区别"><a href="#require和import的区别" class="headerlink" title="require和import的区别"></a>require和import的区别</h3><pre><code>- require出现在AMD,CMD,commonJS中
-- import是ES6提出的模块化规范
-- 我的理解是require是非官方提出的模块化规范,
-- import是官方提出的模块化规范
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/23/移动端-dpr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/23/移动端-dpr/" itemprop="url">dpr-设备像素比</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-23T23:53:50+08:00">
-                2017-12-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="设备无关像素"><a href="#设备无关像素" class="headerlink" title="设备无关像素"></a>设备无关像素</h3><pre><code>就是css像素,是 乔布斯提出的
-</code></pre><h2 id="dpr-设备像素比"><a href="#dpr-设备像素比" class="headerlink" title="dpr    设备像素比"></a>dpr    设备像素比</h2><pre><code>dpr = 物理像素 / css像素
-获取dpr    `window.devicePixelRatio`
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/移动端-三种布局方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/13/移动端-三种布局方式/" itemprop="url">三种布局方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T20:10:33+08:00">
-                2017-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h2><pre><code>1.高度写死,宽度自适应(宽度百分比)
-2.对大屏幕不友好,会拉长
-</code></pre><h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><pre><code>1.一套代码,多终端适配
-</code></pre><blockquote>
-<p><strong>原理:</strong>动态检测屏幕的宽度变化,给不同的盒子设置宽高或显示隐藏的样式,来实现多终端适配<br><strong>屏幕大小分类:</strong></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">屏幕分类</th>
-<th style="text-align:center">大小</th>
-<th style="text-align:center">设备</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">超小屏幕</td>
-<td style="text-align:center">0~768px</td>
-<td style="text-align:center">手机</td>
-</tr>
-<tr>
-<td style="text-align:center">小屏幕</td>
-<td style="text-align:center">768~992px</td>
-<td style="text-align:center">平板</td>
-</tr>
-<tr>
-<td style="text-align:center">中屏幕</td>
-<td style="text-align:center">992~1200px</td>
-<td style="text-align:center">老式机</td>
-</tr>
-<tr>
-<td style="text-align:center">大屏幕</td>
-<td style="text-align:center">&gt;1200px</td>
-<td style="text-align:center">笔记本电脑</td>
-</tr>
-</tbody>
-</table>
-<h2 id="rem布局"><a href="#rem布局" class="headerlink" title="rem布局"></a>rem布局</h2><pre><code>1.能适配所有的屏幕
-</code></pre><blockquote>
-<p>rem是个相对单位,相对html根字体大小(16px)<br>em是相对自身父标签的字体大小<br><strong>原理:</strong>以rem为单位,根据html跟字体大小,转化为rem,动态设置不同屏幕的html跟字体大小<br><strong>基准值:</strong> 设计图下的尺寸中html跟字体大小<br><strong>怎么确定基准值是多少:</strong><br>当前屏幕宽 / 设计图尺寸 = html跟字体标签 / 基准值<br><strong>使用媒体查询实现rem适配,性能好,但不能一次性适配所有屏幕</strong><br><strong>使用原生js实现rem适配,可以一次性适配所有屏幕,实时适配,性能不好</strong><br><strong>使用淘宝flexible</strong> 定义的基准值 = 设计图尺寸 / 10</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1885,7 +1809,7 @@ cors是浏览器支持,使用简单,不限制请求类型
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">zhou-p</p>
-              <p class="site-description motion-element" itemprop="description">前端攻城狮</p>
+              <p class="site-description motion-element" itemprop="description">沃德</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1895,7 +1819,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1906,7 +1830,7 @@ cors是浏览器支持,使用简单,不限制请求类型
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

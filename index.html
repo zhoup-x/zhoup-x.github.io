@@ -73,16 +73,16 @@
 
 
 
-<meta name="description" content="前端攻城狮">
+<meta name="description" content="沃德">
 <meta property="og:type" content="website">
-<meta property="og:title" content="zhou-p的技术博客">
+<meta property="og:title" content="沃德的技术博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="前端攻城狮">
+<meta property="og:site_name" content="沃德的技术博客">
+<meta property="og:description" content="沃德">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhou-p的技术博客">
-<meta name="twitter:description" content="前端攻城狮">
+<meta name="twitter:title" content="沃德的技术博客">
+<meta name="twitter:description" content="沃德">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <title>zhou-p的技术博客</title>
+  <title>沃德的技术博客</title>
   
 
 
@@ -149,12 +149,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zhou-p的技术博客</span>
+        <span class="site-title">沃德的技术博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">前端知识整理</p>
+        <p class="site-subtitle">知识整理</p>
       
   </div>
 
@@ -236,6 +236,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/18/vue-异步DOM更新/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/18/vue-异步DOM更新/" itemprop="url">异步DOM更新</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-18T19:30:10+08:00">
+                2018-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="造成的现象"><a href="#造成的现象" class="headerlink" title="造成的现象"></a>造成的现象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button @click="fn"&gt; 按钮 &lt;/</span>button&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">        num: 1</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">        fn() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 点击按钮获取DOM中的值</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/  此处还没有点击,所以获取的是  1</span></span><br><span class="line"><span class="regexp">            console.log(document.querySelector('h1').innerText)   </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/  -&gt; 1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            this.num++   /</span><span class="regexp">/ 每次点击让num+1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快**</span></span><br><span class="line"><span class="regexp">            console.log(document.querySelector('h1').innerText)   </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ -&gt; 1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">			/</span><span class="regexp">/ 若是给个延迟,可以获取到2</span></span><br><span class="line"><span class="regexp">            setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="regexp">                console.log(document.querySelector('h1').innerText)  </span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ -&gt; 2</span></span><br><span class="line"><span class="regexp">            &#125;, 1000)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="解决的方案"><a href="#解决的方案" class="headerlink" title="解决的方案"></a>解决的方案</h3><ul>
+<li>1.如上,给个延迟,但有缺点,不能确定异步执行的时间,无法确定延时器的时间</li>
+<li>2.使用 this.$nextTick( ( ) =&gt; {  }  ) </li>
+</ul>
+<h3 id="this-nexTick-的使用"><a href="#this-nexTick-的使用" class="headerlink" title="this.$nexTick()的使用"></a>this.$nexTick()的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button @click="fn"&gt; 按钮 &lt;/</span>button&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">        num: 1</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">        fn() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 点击按钮获取DOM中的值</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/  此处还没有点击,所以获取的是  1</span></span><br><span class="line"><span class="regexp">            console.log(document.querySelector('h1').innerText)   </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/  -&gt; 1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            this.num++   /</span><span class="regexp">/ 每次点击让num+1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快**</span></span><br><span class="line"><span class="regexp">            console.log(document.querySelector('h1').innerText)    </span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ -&gt; 1</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">			/</span><span class="regexp">/ 使用this.$nextTick()</span></span><br><span class="line"><span class="regexp">			/</span><span class="regexp">/ **DOM更新数据后**,会自动执行这个方法里的回调</span></span><br><span class="line"><span class="regexp">			this.$nextTick( () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">                console.log(document.querySelector('h1').innerText)   </span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ -&gt; 2</span></span><br><span class="line"><span class="regexp">			&#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="异步DOM更新的总结"><a href="#异步DOM更新的总结" class="headerlink" title="异步DOM更新的总结:"></a>异步DOM更新的总结:</h3><ul>
+<li>vue中DOM更新是异步的</li>
+<li>vue中的数据发生改变,不会立刻将改变的数据更新到DOM中,而是确定数据不再变化了,一次性更新到视图中</li>
+<li>为什么要异步DOM更新?<ul>
+<li>性能的考虑,操作DOM会引起回流与重绘,消耗性能</li>
+</ul>
+</li>
+<li>一般情况下,在vue中不会通过DOM操作页面中的数据<ul>
+<li>如果有需要的话,在this.$nextTick() 中获取DOM进行操作</li>
+</ul>
+</li>
+<li>this.$nextTick( ( )=&gt; {  } ) ,在当前数据改变后DOM异步更新完毕会自动调用该方法里的回调</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/ajax-XMLHttpRequest2.0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +409,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -388,6 +552,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/vue-计算属性computed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/vue-计算属性computed/" itemprop="url">计算属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T21:08:21+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ul>
+<li>把计算属性写在computed里面</li>
+<li>写起来想一个方法,用起来像一个属性<br>代码:<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; num &#125;&#125;</span><br><span class="line">---html---</span><br><span class="line">data: &#123;</span><br><span class="line">        num1: <span class="number">2</span>,</span><br><span class="line">        num2: <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">        num() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.num1 + <span class="keyword">this</span>.num2</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>一定要有返回值,返回的值就是在页面中显示的值</li>
+<li>可以使用已知data里的数据</li>
+<li><strong>只要跟计算属性’相关的数据’发生了变化,该计算属性就会重新计算,里面的代码会重新执行</strong></li>
+</ul>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ul>
+<li><strong>一定要有返回值</strong></li>
+<li><strong>不要拿计算属性当方法用,他就是一个属性</strong></li>
+<li><strong>计算属性的名字,不能和data里的数据的名字一样</strong></li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li>想要根据data里已知的数据,得到一个新值</li>
+<li>这个新值,要求会随着相关的数据的改变而改变</li>
+</ul>
+<h3 id="为什么使用计算属性-使用计算属性的优点"><a href="#为什么使用计算属性-使用计算属性的优点" class="headerlink" title="为什么使用计算属性(使用计算属性的优点)"></a>为什么使用计算属性(使用计算属性的优点)</h3><ul>
+<li>如果使用 插值表达式双花括号 或者 methods的话,每次数据变化就会引起指令和表达式的重新计算,太浪费性能,而计算属性只会让与计算属性有关联的数据重新计算</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/14/es8-async-await/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -397,7 +728,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -535,6 +866,489 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/vue-computed和watch的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/13/vue-computed和watch的区别/" itemprop="url">computed计算属性和watch监听的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T22:19:32+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="写法区别"><a href="#写法区别" class="headerlink" title="写法区别"></a>写法区别</h3><p>1.计算属性</p>
+<ul>
+<li>写在copmputed里面,写起来像个方法,用起来像个属性,计算属性是个属性,不是方法</li>
+<li>特点:<br>– 1.必须有返回值<br>– 2..可以使用data里已有的数据</li>
+<li>只会随着’相关的属性’数据的变化而变化</li>
+</ul>
+<p>2.监听</p>
+<ul>
+<li>写在watch里面</li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>1.什么时候用计算属性</p>
+<ul>
+<li>由data中一直的值,得到一个’新值’,可以使用计算属性</li>
+<li>计算属性只会根相关的属性有关,时刻更新</li>
+<li>别人影响自己</li>
+</ul>
+<p>2.什么时候使用监听器</p>
+<ul>
+<li>监听自己发生的变化</li>
+<li>监听data里的’已知的值’</li>
+<li>监听自己,影响别人</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/vue-响应式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/13/vue-响应式/" itemprop="url">响应式问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T21:58:09+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是vue的响应式"><a href="#什么是vue的响应式" class="headerlink" title="什么是vue的响应式"></a>什么是vue的响应式</h3><p>可以正常的进行双向数据绑定,这就叫实现了响应式</p>
+<h3 id="响应式出现的问题"><a href="#响应式出现的问题" class="headerlink" title="响应式出现的问题"></a>响应式出现的问题</h3><ul>
+<li>如果在data里有一个对象,忘了给对象添加属性,在methods中想要添加一个属性,在html插值表达式中使用了这个属性,会造成无法正常完成响应式的问题</li>
+<li>例:<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 1.双向数据绑定了obj的name属性,可是data里的obj没有name属性 </span></span><br><span class="line"> &lt;input type=<span class="string">"text"</span> v-model=<span class="string">'obj.name'</span>&gt;  </span><br><span class="line"> &lt;button @click=<span class="string">'fn'</span>&gt;按钮&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"> /</span><span class="regexp">/ 1.1想要点击按钮,添加属性</span></span><br><span class="line"><span class="regexp">---html---</span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">    obj: &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 0.data里的obj对象里 忘了写属性</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">    fn() &#123;</span></span><br><span class="line"><span class="regexp">    	/</span><span class="regexp">/ 2.想在事件中添加这个属性</span></span><br><span class="line"><span class="regexp">        this.obj.name = 'zssss'</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"> /</span><span class="regexp">/ 结果: 双向绑定失效,无法正常响应式</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li><p>使用this.$set( ) 方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fn()&#123;</span><br><span class="line">    <span class="keyword">this</span>.$<span class="keyword">set</span>(this.obj, 'name', 'zsssss')</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用说明:</p>
+</li>
+<li>第一个参数 : 把属性添加到哪里 this.obj</li>
+<li>第一个参数 : 添加什么属性 ‘name’</li>
+<li>第三个参数 : 属性值</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/vue-watch监听/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沃德的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/13/vue-watch监听/" itemprop="url">watch监听</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T20:01:12+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><ul>
+<li>可以监听一个数据发生的变化</li>
+</ul>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">"fn()"</span>&gt;点击num+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">---html--</span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">    num: 2</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">    fn() &#123;</span></span><br><span class="line"><span class="regexp">        this.num++</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">watch: &#123;</span></span><br><span class="line"><span class="regexp">    num(newVal, oldVal) &#123;</span></span><br><span class="line"><span class="regexp">        console.log('新值', newVal); /</span><span class="regexp">/ 3</span></span><br><span class="line"><span class="regexp">        console.log('旧值', oldVal); /</span><span class="regexp">/ 2</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="监听一个对象"><a href="#监听一个对象" class="headerlink" title="监听一个对象"></a>监听一个对象</h3><p>如果监听的数据是一个对象<br>例如:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">    obj: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        isShow: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj(newVal)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>因为对象是复杂数据类型,所以监听的是一个地址</li>
+<li>所以监听数据应该怎么做?<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 方式1: 通过监听对象, 拿到对象里最新的值</span></span><br><span class="line">obj: &#123;</span><br><span class="line">    <span class="comment">// 深度监听</span></span><br><span class="line">    deep: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 立马监听</span></span><br><span class="line">    immediate: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理</span></span><br><span class="line">    handler(newVal) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(newVal.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式2 : 可以直接监听对象里的属性</span></span><br><span class="line"><span class="string">'obj.name'</span>(newVal)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/浏览器-垃圾回收机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -544,7 +1358,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -691,7 +1505,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -839,7 +1653,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -973,764 +1787,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/vue-插槽/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/vue-插槽/" itemprop="url">插槽</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T21:42:27+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="插槽是什么"><a href="#插槽是什么" class="headerlink" title="插槽是什么"></a>插槽是什么</h3><p>是对组件的扩展,实现对组件或html结构的复用,可以通过slot插槽向组件内部指定位置传递内容,通过slot可以父子传参</p>
-<h3 id="插槽与data的区别"><a href="#插槽与data的区别" class="headerlink" title="插槽与data的区别"></a>插槽与data的区别</h3><ul>
-<li>1.替换文字用data就能实现</li>
-<li>2.替换标签或者组件只能用插槽实现</li>
-</ul>
-<h3 id="通俗理解slot标签的作用"><a href="#通俗理解slot标签的作用" class="headerlink" title="通俗理解slot标签的作用"></a>通俗理解slot标签的作用</h3><ul>
-<li>1.就是占坑,在组件结构占好位置,使用组件标签时自动填坑</li>
-<li>2.域名标签也就是坑<slot name="myslot">有名字时,组件标签中使用slot=”myslot”的元素就会替换该位置对应内容</slot></li>
-</ul>
-<h3 id="1-匿名插槽"><a href="#1-匿名插槽" class="headerlink" title="1.匿名插槽"></a>1.匿名插槽</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用说明:<br> 在组件模板中使用slot占位,在使用组件标签时会把</p><p>标签自动填充到对应模板占位的位置</p>
-<h3 id="2-域名插槽"><a href="#2-域名插槽" class="headerlink" title="2.域名插槽"></a>2.域名插槽</h3><p>也叫具名插槽<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>使用说明:<br> 在组件模板中,为占位的slot标签起个名字,在p标签中使用slot=”名字”相对应</p>
-<h3 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3.作用域插槽"></a>3.作用域插槽</h3><p>如果子节点(类似上文的p标签)想访问组件的数据,默认是访问不到的<br>这时候就要使用作用域插槽,用子传父的方式,实现通讯<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">组件模板:</span><br><span class="line">template:`</span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"n1"</span> <span class="attr">:fmsg</span>=<span class="string">"fmsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">`,</span><br><span class="line">data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">           fmsg: '组件中的数据'</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line">html结构:</span><br><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"n1"</span>&gt;</span>插槽的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		&#123;&#123; scope &#125;&#125;       =&gt; &#123;&#123; "fmsg": "我是父级组件的数据" &#125;&#125;</span><br><span class="line">		&#123;&#123; scope.fmsg &#125;&#125;  =&gt; 我是父级组件的数据</span><br><span class="line">	<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>使用说明:<br> 1.将要传的值绑定在slot标签上<br> 2.在p标签外面加上一个template标签<br> 3.在template标签中添加slot-scope=”scope”<br> 4.就可以在p标签内使用数据了<br> 注: <strong>scope是一个对象,里面存着传过来数据</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/其他-并发和并行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/其他-并发和并行/" itemprop="url">并发和并行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T20:10:34+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><p>​    并发 同时发出去多条任务, 但是始终只有一条任务在执行<br>​    并行 同时发出去多条任务,所有的任务同时执行<br>​    并行是有限的,吃硬件,到极限会出现堵塞,并发不会,但并发比不过并行的效率</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/移动端-click事件和tap事件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/移动端-click事件和tap事件/" itemprop="url">click事件300ms延迟</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T12:13:30+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>对于移动端来讲,click事件会有300ms延迟</p>
-<blockquote>
-<p>原因: 移动端有双击缩放的功能,浏览器并不能判断你是想单击两次还是要双击缩放,所以,有个延迟300s,让浏览器判断用户是否再次点击了屏幕</p>
-</blockquote>
-<p>解决方案:<br>    1.设置视口,禁用用户缩放<br>    2.若想保留用户缩放功能,将click事件改为使用tap轻触事件</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/移动端-reset和normalize格式化css的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/13/移动端-reset和normalize格式化css的区别/" itemprop="url">reset和normalize的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T21:13:23+08:00">
-                2018-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>reset.css<br>    将浏览器所有的默认样式都覆盖<br>normalize<br>    保留了许多浏览器的默认样式,如果有需要,再手动配置,更推荐这种方法</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/vue-key/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/26/vue-key/" itemprop="url">为什么v-for要搭配key使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T20:01:09+08:00">
-                2018-01-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong> vue推荐: 使用v-for的时候,添加key属性 </strong><br>为什么呢?</p>
-<ul>
-<li>因为vue有 “就地复用”策略:</li>
-<li>如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用</li>
-<li>所以v-for的时候,添加一个</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1766,7 +1827,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">zhou-p</p>
-              <p class="site-description motion-element" itemprop="description">前端攻城狮</p>
+              <p class="site-description motion-element" itemprop="description">沃德</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1776,7 +1837,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1787,7 +1848,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

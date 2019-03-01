@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="框架,">
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个">
+<meta name="description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个属性 key 一般使用 id 而不是index , 因为顺序变了使用index就不准确了 :key = ‘item.id’以后使用v-for的时候请务必加上key值 1&amp;lt">
+<meta name="keywords" content="框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为什么v-for要搭配key使用">
 <meta property="og:url" content="http://yoursite.com/2018/01/26/vue-key/index.html">
-<meta property="og:site_name" content="zhou-p的技术博客">
-<meta property="og:description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个">
+<meta property="og:site_name" content="沃德的技术博客">
+<meta property="og:description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个属性 key 一般使用 id 而不是index , 因为顺序变了使用index就不准确了 :key = ‘item.id’以后使用v-for的时候请务必加上key值 1&amp;lt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-28T15:30:16.664Z">
+<meta property="og:updated_time" content="2019-03-01T07:08:35.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么v-for要搭配key使用">
-<meta name="twitter:description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个">
+<meta name="twitter:description" content="vue推荐: 使用v-for的时候,添加key属性 为什么呢?  因为vue有 “就地复用”策略: 如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用 所以v-for的时候,添加一个属性 key 一般使用 id 而不是index , 因为顺序变了使用index就不准确了 :key = ‘item.id’以后使用v-for的时候请务必加上key值 1&amp;lt">
 
 
 
@@ -119,7 +120,7 @@
 
 
 
-  <title>为什么v-for要搭配key使用 | zhou-p的技术博客</title>
+  <title>为什么v-for要搭配key使用 | 沃德的技术博客</title>
   
 
 
@@ -149,12 +150,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zhou-p的技术博客</span>
+        <span class="site-title">沃德的技术博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">前端知识整理</p>
+        <p class="site-subtitle">知识整理</p>
       
   </div>
 
@@ -245,7 +246,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhou-p的技术博客">
+      <meta itemprop="name" content="沃德的技术博客">
     </span>
 
     
@@ -329,7 +330,10 @@
 <ul>
 <li>因为vue有 “就地复用”策略:</li>
 <li>如果不加key的话,在数组的前面添加,一个对象,文本框里的内容会根据 索引 实现一个就地复用</li>
-<li>所以v-for的时候,添加一个</li>
+<li>所以v-for的时候,添加一个属性 key</li>
+<li>一般使用 id 而不是index , 因为顺序变了使用index就不准确了</li>
+<li>:key = ‘item.id’<br>以后使用v-for的时候请务必加上key值 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span> <span class="attr">:key</span>=<span class="string">"item.id&gt;&lt;/p&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -358,6 +362,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/框架/" rel="tag"><i class="fa fa-tag"></i> 框架</a>
+          
+        </div>
+      
 
       
       
@@ -377,8 +387,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/13/移动端-reset和normalize格式化css的区别/" rel="prev" title="reset和normalize的区别">
-                reset和normalize的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/08/vue-事件修饰符/" rel="prev" title="事件修饰符">
+                事件修饰符 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -440,7 +450,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">zhou-p</p>
-              <p class="site-description motion-element" itemprop="description">前端攻城狮</p>
+              <p class="site-description motion-element" itemprop="description">沃德</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -450,7 +460,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -461,7 +471,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
