@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="web储存,">
+  <meta name="keywords" content="网络状态,">
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="比较   类型 大小 生命周期 数据是否可以多页面共享     cookie 4K 默认一个会话,可设置,关闭当前窗口,就销毁了 多页面共享   localStorage 5M 永久储存,只要用户不手动删除 可以多页面共享   sessionStorage 5M 一个会话,关闭当前窗口,就销毁了 不能多页面共享   indexedDB 取决于计算机硬件大小 永久储存 可以多页面共享    loca">
-<meta name="keywords" content="web储存">
+<meta name="description" content="判断是否在线navigator.onLine 切换网络状态触发的事件onLine  切换到在线时触发offLine  切换到离线时触发1234567window.addEventListener(&quot;onLine&quot;, () =&amp;gt; &amp;#123;    console.log(&quot;切换到在线时触发&quot;);&amp;#125;)window.addEventListener(&quot;offLine&quot;, () =&amp;gt">
+<meta name="keywords" content="网络状态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookie,localStorage,sessionStorage">
-<meta property="og:url" content="http://yoursite.com/2017/09/14/浏览器-储存/index.html">
+<meta property="og:title" content="网络状态">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/H5-网络状态/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="比较   类型 大小 生命周期 数据是否可以多页面共享     cookie 4K 默认一个会话,可设置,关闭当前窗口,就销毁了 多页面共享   localStorage 5M 永久储存,只要用户不手动删除 可以多页面共享   sessionStorage 5M 一个会话,关闭当前窗口,就销毁了 不能多页面共享   indexedDB 取决于计算机硬件大小 永久储存 可以多页面共享    loca">
+<meta property="og:description" content="判断是否在线navigator.onLine 切换网络状态触发的事件onLine  切换到在线时触发offLine  切换到离线时触发1234567window.addEventListener(&quot;onLine&quot;, () =&amp;gt; &amp;#123;    console.log(&quot;切换到在线时触发&quot;);&amp;#125;)window.addEventListener(&quot;offLine&quot;, () =&amp;gt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T01:40:16.891Z">
+<meta property="og:updated_time" content="2019-03-02T02:02:55.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cookie,localStorage,sessionStorage">
-<meta name="twitter:description" content="比较   类型 大小 生命周期 数据是否可以多页面共享     cookie 4K 默认一个会话,可设置,关闭当前窗口,就销毁了 多页面共享   localStorage 5M 永久储存,只要用户不手动删除 可以多页面共享   sessionStorage 5M 一个会话,关闭当前窗口,就销毁了 不能多页面共享   indexedDB 取决于计算机硬件大小 永久储存 可以多页面共享    loca">
+<meta name="twitter:title" content="网络状态">
+<meta name="twitter:description" content="判断是否在线navigator.onLine 切换网络状态触发的事件onLine  切换到在线时触发offLine  切换到离线时触发1234567window.addEventListener(&quot;onLine&quot;, () =&amp;gt; &amp;#123;    console.log(&quot;切换到在线时触发&quot;);&amp;#125;)window.addEventListener(&quot;offLine&quot;, () =&amp;gt">
 
 
 
@@ -114,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/14/浏览器-储存/">
+  <link rel="canonical" href="http://yoursite.com/2017/12/13/H5-网络状态/">
 
 
 
 
 
-  <title>cookie,localStorage,sessionStorage | 博客</title>
+  <title>网络状态 | 博客</title>
   
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/浏览器-储存/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/H5-网络状态/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhou-p">
@@ -254,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cookie,localStorage,sessionStorage</h1>
+          <h1 class="post-title" itemprop="name headline">网络状态</h1>
         
 
         <div class="post-meta">
@@ -266,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-14T12:48:30+08:00">
-                2017-09-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T20:31:10+08:00">
+                2017-12-13
               </time>
             
 
@@ -289,8 +289,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浏览器机制/" itemprop="url" rel="index">
-                    <span itemprop="name">浏览器机制</span>
+                  <a href="/categories/H5/" itemprop="url" rel="index">
+                    <span itemprop="name">H5</span>
                   </a>
                 </span>
 
@@ -326,58 +326,8 @@
       
 
       
-        <h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">大小</th>
-<th style="text-align:center">生命周期</th>
-<th style="text-align:center">数据是否可以多页面共享</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">cookie</td>
-<td style="text-align:center">4K</td>
-<td style="text-align:center">默认一个会话,可设置,关闭当前窗口,就销毁了</td>
-<td style="text-align:center">多页面共享</td>
-</tr>
-<tr>
-<td style="text-align:center">localStorage</td>
-<td style="text-align:center">5M</td>
-<td style="text-align:center"><strong>永久储存</strong>,只要用户不手动删除</td>
-<td style="text-align:center">可以多页面共享</td>
-</tr>
-<tr>
-<td style="text-align:center">sessionStorage</td>
-<td style="text-align:center">5M</td>
-<td style="text-align:center">一个会话,关闭当前窗口,就销毁了</td>
-<td style="text-align:center">不能多页面共享</td>
-</tr>
-<tr>
-<td style="text-align:center">indexedDB</td>
-<td style="text-align:center">取决于计算机硬件大小</td>
-<td style="text-align:center">永久储存</td>
-<td style="text-align:center">可以多页面共享</td>
-</tr>
-</tbody>
-</table>
-<h3 id="localStorage的api"><a href="#localStorage的api" class="headerlink" title="localStorage的api"></a>localStorage的api</h3><p>数据在本地储存的格式是json字符串<br>1.设置</p>
-<ul>
-<li>localStorage.setItem(‘key’,’value’)</li>
-</ul>
-<p>2.获取</p>
-<ul>
-<li>localStorage.getItem(‘key’)</li>
-</ul>
-<p>3.移除</p>
-<ul>
-<li>localStorage.removeItem(‘key’)</li>
-</ul>
-<p>4.清空(所有)</p>
-<ul>
-<li>localStorage.clear()</li>
-</ul>
+        <h3 id="判断是否在线"><a href="#判断是否在线" class="headerlink" title="判断是否在线"></a>判断是否在线</h3><p>navigator.onLine</p>
+<h3 id="切换网络状态触发的事件"><a href="#切换网络状态触发的事件" class="headerlink" title="切换网络状态触发的事件"></a>切换网络状态触发的事件</h3><p>onLine  切换到在线时触发<br>offLine  切换到离线时触发<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"onLine"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"切换到在线时触发"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"offLine"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"切换到离线时触发"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web储存/" rel="tag"><i class="fa fa-tag"></i> web储存</a>
+            <a href="/tags/网络状态/" rel="tag"><i class="fa fa-tag"></i> 网络状态</a>
           
         </div>
       
@@ -420,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/12/其他-http和https/" rel="next" title="http和https">
-                <i class="fa fa-chevron-left"></i> http和https
+              <a href="/2017/12/13/移动端-三种布局方式/" rel="next" title="三种布局方式">
+                <i class="fa fa-chevron-left"></i> 三种布局方式
               </a>
             
           </div>
@@ -430,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/23/移动端-bootstrap简单使用/" rel="prev" title="bootstrap简单使用">
-                bootstrap简单使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/13/H5-地理位置定位/" rel="prev" title="地理位置定位">
+                地理位置定位 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +462,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -523,7 +473,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -534,7 +484,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -567,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">1.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage的api"><span class="nav-number">2.</span> <span class="nav-text">localStorage的api</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是否在线"><span class="nav-number">1.</span> <span class="nav-text">判断是否在线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换网络状态触发的事件"><span class="nav-number">2.</span> <span class="nav-text">切换网络状态触发的事件</span></a></li></ol></div>
             
 
           </div>
