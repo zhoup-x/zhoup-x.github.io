@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F03%2F06%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[异步DOM更新]]></title>
     <url>%2F2018%2F06%2F18%2Fvue-%E5%BC%82%E6%AD%A5DOM%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[造成的现象123456789101112131415161718192021222324252627282930&lt;div id="app"&gt; &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;/h1&gt; &lt;button @click="fn"&gt; 按钮 &lt;/button&gt;&lt;/div&gt;data: &#123; num: 1 &#125;,methods: &#123; fn() &#123; // 点击按钮获取DOM中的值 // 此处还没有点击,所以获取的是 1 console.log(document.querySelector('h1').innerText) // -&gt; 1 this.num++ // 每次点击让num+1 // **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快** console.log(document.querySelector('h1').innerText) // -&gt; 1 // 若是给个延迟,可以获取到2 setTimeout(() =&gt; &#123; console.log(document.querySelector('h1').innerText) // -&gt; 2 &#125;, 1000) &#125; &#125; 解决的方案 1.如上,给个延迟,但有缺点,不能确定异步执行的时间,无法确定延时器的时间 2.使用 this.$nextTick( ( ) =&gt; { } ) this.$nexTick()的使用12345678910111213141516171819202122232425262728293031&lt;div id="app"&gt; &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;/h1&gt; &lt;button @click="fn"&gt; 按钮 &lt;/button&gt;&lt;/div&gt;data: &#123; num: 1 &#125;,methods: &#123; fn() &#123; // 点击按钮获取DOM中的值 // 此处还没有点击,所以获取的是 1 console.log(document.querySelector('h1').innerText) // -&gt; 1 this.num++ // 每次点击让num+1 // **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快** console.log(document.querySelector('h1').innerText) // -&gt; 1 // 使用this.$nextTick() // **DOM更新数据后**,会自动执行这个方法里的回调 this.$nextTick( () =&gt; &#123; console.log(document.querySelector('h1').innerText) // -&gt; 2 &#125;) &#125; &#125; 异步DOM更新的总结: vue中DOM更新是异步的 vue中的数据发生改变,不会立刻将改变的数据更新到DOM中,而是确定数据不再变化了,一次性更新到视图中 为什么要异步DOM更新? 性能的考虑,操作DOM会引起回流与重绘,消耗性能 一般情况下,在vue中不会通过DOM操作页面中的数据 如果有需要的话,在this.$nextTick() 中获取DOM进行操作 this.$nextTick( ( )=&gt; { } ) ,在当前数据改变后DOM异步更新完毕会自动调用该方法里的回调]]></content>
@@ -208,8 +213,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>ajax</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -434,8 +439,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>this</tag>
         <tag>js</tag>
+        <tag>this</tag>
       </tags>
   </entry>
   <entry>
@@ -559,8 +564,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>数据类型</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>

@@ -265,6 +265,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/js-数组-冒泡排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/js-数组-冒泡排序/" itemprop="url">冒泡排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T21:18:21+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  576
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
+<p>在此之前,先看一下这些<br><strong> 1. 如何 交换 两个数据的顺序 </strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">let</span> temp = a  <span class="comment">// temp = 1 </span></span><br><span class="line">a = b  <span class="comment">// a = 2</span></span><br><span class="line">b = temp  <span class="comment">// b = 1</span></span><br><span class="line">   <span class="comment">// a,2 b,1</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong> 2.如何把一个最大值放到数组的最后 </strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">       <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">           <span class="keyword">let</span> temp = arr[i]</span><br><span class="line">           arr[i] = arr[i+<span class="number">1</span>]</span><br><span class="line">           arr[i+<span class="number">1</span>] = temp</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// arr =&gt; [3,2,1,4]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 3.假设成立法 </strong></p>
+<blockquote>
+<p>判断数组中的数是否都是奇数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">7</span>]</span><br><span class="line"><span class="comment">// 1.假设都是奇数</span></span><br><span class="line"><span class="keyword">let</span> flag = <span class="literal">true</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">       <span class="keyword">if</span>( arr[i] % <span class="number">2</span> == <span class="number">0</span> )&#123;</span><br><span class="line">           <span class="comment">// 2.找到打脸的,他是奇数 </span></span><br><span class="line">           flag = <span class="literal">false</span></span><br><span class="line">       &#125;	</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">// 3.判断</span></span><br><span class="line">   <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'都是奇数'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">   	 <span class="built_in">console</span>.log(<span class="string">'不都是奇数,有偶数'</span>)</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong> 4.冒泡排序 </strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">               <span class="keyword">let</span> temp = arr[i]</span><br><span class="line">               arr[i] = arr[i+<span class="number">1</span>]</span><br><span class="line">               arr[i+<span class="number">1</span>] = temp</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果只执行里面的fori循环 只比较一次 </span></span><br><span class="line"><span class="comment">// 把最大值放到了最后面  arr =&gt; [2,4,1,8] </span></span><br><span class="line"><span class="comment">// 所以在外面要在套一个for循环,进行遍历次数(比较几次)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// arr =&gt; [1,2,4,8]</span></span><br><span class="line"><span class="comment">// 每一次循环,都把最大值放到后面</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 5.优化冒泡排序 </strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line"><span class="comment">// 	其实只要进行三次比较,就能排好序</span></span><br><span class="line"><span class="comment">// 1.[2,4,1,8] 2.[2,1,4,8] 3.[1,2,4,8]</span></span><br><span class="line"><span class="comment">// 所以外循环可以少遍历一次</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++)&#123;</span><br><span class="line">	<span class="comment">// 第一次少遍历一次,往后每一次都少遍历j次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span> - j; i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">               <span class="keyword">let</span> temp = arr[i]</span><br><span class="line">               arr[i] = arr[i+<span class="number">1</span>]</span><br><span class="line">               arr[i+<span class="number">1</span>] = temp</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong> 6.使用假设成立法再优化冒泡排序 </strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line"><span class="comment">// 1.假设排好序了</span></span><br><span class="line"><span class="keyword">let</span> flag = <span class="literal">true</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span>; j++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span> - j; i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">           <span class="comment">// 2.找到打脸的,他没排好序</span></span><br><span class="line">               <span class="keyword">let</span> temp = arr[i]</span><br><span class="line">               arr[i] = arr[i+<span class="number">1</span>]</span><br><span class="line">               arr[i+<span class="number">1</span>] = temp</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">           <span class="comment">// 3.判断</span></span><br><span class="line">           <span class="comment">// 如果排好序了,就终止循环</span></span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果没有排好序,就继续执行,直到都排好了执行break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/移动端-bootstrap简单使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1962,210 +2149,6 @@ hidden-xs    超小平隐藏
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/js-数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/22/js-数据类型/" itemprop="url">js数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:28:31+08:00">
-                2017-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  512
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><pre><code>js有6种数据类型
-5种简单数据类型(值类型,基本数据类型,原始数据类型)
-    1.number
-    2.string
-    3.boolean
-    4.null
-    5.undefined
-1种复杂数据类型(引用类型)
-    1.object
-es6新增了一个symbol数据类型
-所以现在是7种数据类型
-number,string,boolean,null,undefined,object,symbol
-值类型存的是值,引用类型存的是地址(引用)
-</code></pre><blockquote>
-<p>简单数据类型是没有方法的,为了操作简单数据类型,要把简单数据类型转化包装(转化)成复杂类型,这就是基本包装类型,不过这不需要我们去包装,浏览器会默认包装</p>
-</blockquote>
-<h3 id="为什么typeof-null-‘object’"><a href="#为什么typeof-null-‘object’" class="headerlink" title="为什么typeof null === ‘object’"></a>为什么typeof null === ‘object’</h3><blockquote>
-<p>按道理来说,null是简单数据类型,object是复杂数据类型,是属于不同的数据类型,那为什么null的数据类型是object呢<br>其实这是一个历史遗留问题<br>在js刚出来的时候,只有5种数据类型,有object类型,没有null类型,只是把null当做object的一种特殊值<br>后来null独立出来了,那时候为什么没有吧null和object分开呢,这是为了兼容以前的代码,所以这个问题就被遗留到了现在</p>
-</blockquote>
-<h3 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h3><blockquote>
-<p>undefined: 一个变量,只声明,未赋值<br>null: 表示一个空对象指针</p>
-</blockquote>
-<h3 id="undefined-null"><a href="#undefined-null" class="headerlink" title="undefined == null"></a>undefined == null</h3><blockquote>
-<p>在没了解到这个之前,我们很容易的想到  undefined转换成布尔值是false,null转换成布尔值也是false,所以undefined == null, 其实这种想法是不对的<br>在javascript规范中提到:<br><strong>在比较相等性之前,不能将null和undefined转换成其他值,并且规定null和undefined是相等的</strong><br>为什么呢,因为规范认为,既然undefined和null的行为很相似,都表示一个无效的值,那么他们所代表的内容也有相似性,所以有undefined == null<br><strong>undefined === null  =&gt; false 数据类型不一样</strong></p>
-</blockquote>
-<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><blockquote>
-<p>属于number类型,代表非数值 Not a Number<br>NaN与任何是都不相等,包括和NaN自身</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2216,7 +2199,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
