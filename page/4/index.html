@@ -265,6 +265,401 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/22/其他-项目上线/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/22/其他-项目上线/" itemprop="url">项目上线处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-22T20:20:59+08:00">
+                2017-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  364
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.项目上线命令<br>    npm run build<br>生成一个dist文件夹,放到服务器</p>
+<p>2.文件太大处理</p>
+<ul>
+<li>1.app入口文件的处理  router.js</li>
+<li><ul>
+<li>按需加载,需要哪一个组件,才加载哪一个组件,而不是一次性全部加载</li>
+</ul>
+</li>
+<li><ul>
+<li>首屏加载,打开的首页(如登录页)不需要按需加载</li>
+</ul>
+</li>
+<li><ul>
+<li>具体操作: 使用路由懒加载,异步加载模块</li>
+</ul>
+</li>
+<li><ul>
+<li>以前引入组件是 import Home from ‘path’</li>
+</ul>
+</li>
+<li><ul>
+<li>现在是 const Home = ( ) =&gt; import(‘path’)</li>
+</ul>
+</li>
+<li><p>2.vendor第三方库太大<br>– 原因: 开发阶段这些包是下载到了本地的,打包时也一起打包了<br>– 解决方案: 使用CDN引入这些包<br>– 具体操作: 在index页面引入CDN链接(包括js,css),在build&gt;base.conf.js里添加如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">   <span class="comment">// 前面是包名,后面是全局变量名</span></span><br><span class="line">   <span class="comment">// 例如</span></span><br><span class="line">   vue: <span class="string">'Vue'</span>,</span><br><span class="line">   <span class="string">'vue-router'</span>: <span class="string">'VueRouter'</span>,</span><br><span class="line">   <span class="string">'element-ui'</span>: <span class="string">'ELEMENT'</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 一定要注意,原来在里面导入的js可以不注释掉,但是一定要把原来css的导入给注释掉 </strong></p>
+</li>
+</ul>
+<p>3.网站图标放到上线文件中</p>
+<ul>
+<li>具体操作</li>
+<li><p>在开发阶段,是在index.html中引入了图标(一般来说图标是放在根目录下)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在build&gt;dev.conf.js中配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">	  ...</span><br><span class="line">     favicon: path.join(<span class="string">'favicon.ico'</span>)</span><br><span class="line">   &#125;),</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只不过,上线时把配置在build&gt;pro.conf.js中再配置一下</li>
+<li>同上面配置操作</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/H5-地理位置定位/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/13/H5-地理位置定位/" itemprop="url">地理位置定位</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T21:10:58+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/H5/" itemprop="url" rel="index">
+                    <span itemprop="name">H5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  53
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前地理位置</span></span><br><span class="line">navigator.geolocation.getCurrentPosition(</span><br><span class="line">    <span class="comment">// 成功的回调</span></span><br><span class="line">    (position) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"获取地理位置成功"</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(position);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 失败的回调</span></span><br><span class="line">    (error) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"获取地理位置失败"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/H5-网络状态/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1766,401 +2161,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/H5语义化标签/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/03/H5语义化标签/" itemprop="url">语义化标签</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T21:00:32+08:00">
-                2017-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/H5/" itemprop="url" rel="index">
-                    <span itemprop="name">H5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  168
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="新增语义化标签"><a href="#新增语义化标签" class="headerlink" title="新增语义化标签"></a>新增语义化标签</h3><p>header,nav,aslide,footer,section…</p>
-<h3 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h3><p>ie8及以下不支持</p>
-<p>1.原生解决方案</p>
-<ul>
-<li>1.在浏览器解析html新标签元素之前,动态创建新标签元素</li>
-<li>2.动态创建出来的标签是行内元素,要手动转成块级<br>2.使用html5shiv<ul>
-<li>使用条件注释(: 只有ie9及以下版本认识,专用解决ie的兼容问题)</li>
-<li>lte小于等于 lt小于 gt大于 gte大于等于</li>
-<li>在小与等于ie8的浏览器中,使用兼容处理 </li>
-<li>底层还是动态创建标签<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></span><br><span class="line"><span class="comment">  &lt;script src="./html5shiv.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/js-this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou-p">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/03/js-this/" itemprop="url">this的指向</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T20:08:21+08:00">
-                2017-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  957
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><blockquote>
-<p>1.直接打印this会怎样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line"><span class="comment">// 浏览器 =&gt; window</span></span><br><span class="line"><span class="comment">// node.js =&gt;  &#123;&#125;</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>2.函数中this的指向</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">fn()</span><br><span class="line"><span class="comment">// 浏览器 =&gt; window </span></span><br><span class="line"><span class="comment">// node.js =&gt; global</span></span><br><span class="line"><span class="comment">// 严格模式下都是undefined</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>3.对象中this的指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">   name: <span class="string">'zs'</span>,</span><br><span class="line">   fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> obj.fn() </span><br><span class="line">  <span class="comment">// obj  nod.js,严格模式同</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>4.构造函数中this的指向<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = <span class="string">'zs'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">const</span> p = <span class="keyword">new</span> Person()</span><br><span class="line"> p.age = <span class="number">99</span></span><br><span class="line"> <span class="built_in">console</span>.log(p);</span><br><span class="line"> <span class="comment">//this指向实例p</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>5.<strong>小坑,定时器/延时器中this的指向</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;, <span class="number">3000</span>) </span><br><span class="line"> <span class="comment">// 浏览器 =&gt; window &lt;= 严格模式</span></span><br><span class="line"> <span class="comment">// node.js =&gt; global &lt;= 严格模式</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="改变this的指向"><a href="#改变this的指向" class="headerlink" title="改变this的指向"></a>改变this的指向</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一般来说 , 这个this指向的是window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.call </span></span><br><span class="line"><span class="comment">// 然后我们调用call方法</span></span><br><span class="line">fn.call(<span class="string">'yoo'</span>) <span class="comment">// 改变了this的指向,让this指向了'yoo'这个字符串</span></span><br><span class="line"><span class="comment">// 2.apply </span></span><br><span class="line"><span class="comment">// 然后我们调用apply方法</span></span><br><span class="line">fn.apply(<span class="string">'yoo'</span>) <span class="comment">// 改变了this的指向,让this指向了'yoo'这个字符串</span></span><br><span class="line"><span class="comment">// 3.bind</span></span><br><span class="line"><span class="comment">// 然后我们调用bind方法</span></span><br><span class="line"><span class="keyword">const</span> newFn = fn.bind(<span class="string">'yoo'</span>) <span class="comment">// 使用bind方法会返回一个新的函数</span></span><br><span class="line">newFn()	<span class="comment">//  改变了this的指向,让this指向了'yoo'这个字符串</span></span><br></pre></td></tr></table></figure>
-<h3 id="call和apply的区别"><a href="#call和apply的区别" class="headerlink" title="call和apply的区别"></a>call和apply的区别</h3> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">     name: <span class="string">'yooo'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rename</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(x, <span class="keyword">this</span>.name, y);</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">// rename('a', 'b')  </span></span><br><span class="line"> <span class="comment">// a, b</span></span><br><span class="line"> <span class="comment">// ----------</span></span><br><span class="line"> <span class="comment">// rename.call(obj, 'a', 'b') </span></span><br><span class="line"> <span class="comment">// this指向obj  a, yooo ,b</span></span><br><span class="line"> <span class="comment">// ----------</span></span><br><span class="line"> <span class="comment">// rename.apply(obj, 'a', 'b') </span></span><br><span class="line"> <span class="comment">// 会报错 CreateListFromArrayLike called on non-object </span></span><br><span class="line"> <span class="comment">// 说明apply的参数要传一个参数数组</span></span><br><span class="line"> <span class="comment">// rename.apply(obj, ['a', 'b']) </span></span><br><span class="line"> <span class="comment">// this指向obj  a,yooo ,b</span></span><br><span class="line"> <span class="comment">// ----------</span></span><br><span class="line"> <span class="comment">// const newname = rename.bind(obj, 'a', 'b')</span></span><br><span class="line"> <span class="comment">// newname() // this指向obj ,  a,yooo,b</span></span><br><span class="line"> <span class="comment">// const newname = rename.bind(obj, ['a', 'b'])</span></span><br><span class="line"> <span class="comment">// newname() // ["a","b"],"yoo",undefined</span></span><br><span class="line"> <span class="comment">// b-undefined,说明把数组当成一个整体传递了</span></span><br><span class="line"> <span class="comment">// 所以bind的参数要传一个参数列表</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>综上说述:<br>1.call,apply,bind第一个参数都是this的指向<br>2.call和bind第二个参数都是参数列表<br>3.apply第二个参数是参数数组</p>
-</blockquote>
-<h3 id="bind和call-apply-的区别"><a href="#bind和call-apply-的区别" class="headerlink" title="bind和call,apply 的区别"></a>bind和call,apply 的区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"> <span class="keyword">const</span> newFn = fn.bind(<span class="string">'two'</span>)</span><br><span class="line"> newFn()</span><br><span class="line"> <span class="comment">// 我们使用bind改变了this的指向,打印this指向'two'</span></span><br><span class="line"> newFn.call(<span class="string">'one'</span>)</span><br><span class="line"> <span class="comment">// 我们想使用call改变this的指向,打印this还是指向'two'</span></span><br><span class="line"> newFn.apply(<span class="string">'one'</span>)</span><br><span class="line"> <span class="comment">// 我们想使用apply改变this的指向,打印this还是指向'two'</span></span><br><span class="line"> <span class="keyword">const</span> newNewFn = newFn.bind(<span class="string">'one'</span>)</span><br><span class="line"> newNewFn()</span><br><span class="line"> <span class="comment">// 我们想使用bind改变this的指向,打印this还是指向'two'</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>综上说述:<br>如果已经用了bind改变了this的指向,再调用call,apply,bind,不会改变this的指向了</p>
-</blockquote>
-<h3 id="箭头函数this的指向"><a href="#箭头函数this的指向" class="headerlink" title="箭头函数this的指向"></a>箭头函数this的指向</h3><blockquote>
-<p>箭头函数里的this指向不是自己决定的,是所属环境决定的<br>当箭头函数声明的时候,所在环境this指向什么,箭头函数this就指向什么<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 在函数环境里声明箭头函数打印this</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">outer()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 直接在箭头函数里打印this</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"环境中的this指向:"</span>, <span class="keyword">this</span>);  <span class="comment">// window</span></span><br><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"箭头函数的this指向:"</span>, <span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 在对象里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn() <span class="comment">//window  因为环境是window.obj</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.在对象的方法里声明箭头函数打印this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"></span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 调用obj.fn() 这里打印 =&gt; obj</span></span><br><span class="line">        (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">            <span class="comment">// 打印obj 因为所在环境是obj</span></span><br><span class="line">        &#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn()</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p><strong>箭头函数不能改变this的指向</strong><br>上文我们说到,箭头函数里的this指向不是自己决定的,是所属环境决定的<br>所以箭头函数本身是不能改变this指向的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)</span><br><span class="line">     <span class="comment">// 'yooo' 普通函数可以改变this指向 </span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> obj = &#123;</span><br><span class="line">         name: <span class="string">'zs'</span>,</span><br><span class="line">         fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     obj.fn.call(<span class="string">'yooo'</span>)  </span><br><span class="line">     <span class="comment">// window 箭头函数不能改变this指向</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2211,7 +2211,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2233,7 +2233,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2284,7 +2284,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.7k</span>
+    <span title="Site words total count">13.8k</span>
   
 </div>
 

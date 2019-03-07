@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F03%2F06%2F%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[异步DOM更新]]></title>
     <url>%2F2018%2F06%2F18%2Fvue-%E5%BC%82%E6%AD%A5DOM%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[造成的现象123456789101112131415161718192021222324252627282930&lt;div id="app"&gt; &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;/h1&gt; &lt;button @click="fn"&gt; 按钮 &lt;/button&gt;&lt;/div&gt;data: &#123; num: 1 &#125;,methods: &#123; fn() &#123; // 点击按钮获取DOM中的值 // 此处还没有点击,所以获取的是 1 console.log(document.querySelector('h1').innerText) // -&gt; 1 this.num++ // 每次点击让num+1 // **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快** console.log(document.querySelector('h1').innerText) // -&gt; 1 // 若是给个延迟,可以获取到2 setTimeout(() =&gt; &#123; console.log(document.querySelector('h1').innerText) // -&gt; 2 &#125;, 1000) &#125; &#125; 解决的方案 1.如上,给个延迟,但有缺点,不能确定异步执行的时间,无法确定延时器的时间 2.使用 this.$nextTick( ( ) =&gt; { } ) this.$nexTick()的使用12345678910111213141516171819202122232425262728293031&lt;div id="app"&gt; &lt;h1&gt; &#123;&#123; num &#125;&#125; &lt;/h1&gt; &lt;button @click="fn"&gt; 按钮 &lt;/button&gt;&lt;/div&gt;data: &#123; num: 1 &#125;,methods: &#123; fn() &#123; // 点击按钮获取DOM中的值 // 此处还没有点击,所以获取的是 1 console.log(document.querySelector('h1').innerText) // -&gt; 1 this.num++ // 每次点击让num+1 // **如果此处获取,获取的还是1,因为DOM更新是异步的,没有更新这么快** console.log(document.querySelector('h1').innerText) // -&gt; 1 // 使用this.$nextTick() // **DOM更新数据后**,会自动执行这个方法里的回调 this.$nextTick( () =&gt; &#123; console.log(document.querySelector('h1').innerText) // -&gt; 2 &#125;) &#125; &#125; 异步DOM更新的总结: vue中DOM更新是异步的 vue中的数据发生改变,不会立刻将改变的数据更新到DOM中,而是确定数据不再变化了,一次性更新到视图中 为什么要异步DOM更新? 性能的考虑,操作DOM会引起回流与重绘,消耗性能 一般情况下,在vue中不会通过DOM操作页面中的数据 如果有需要的话,在this.$nextTick() 中获取DOM进行操作 this.$nextTick( ( )=&gt; { } ) ,在当前数据改变后DOM异步更新完毕会自动调用该方法里的回调]]></content>
@@ -25,6 +20,18 @@
       </categories>
       <tags>
         <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跨域总结]]></title>
+    <url>%2F2018%2F04%2F27%2Fajax-%E8%B7%A8%E5%9F%9F%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[为什么要用跨域浏览器有同源机制,不同源的网站(协议名,域名,端口号三者有一处不同视为非同源)之间资源不能共享而我们向服务器发送请求获取数据,由于受同源限制,数据被浏览器拦截,所以需要跨域 跨域的三种方式 1.jsonp - 原理: 利用script标签的src属性不受同源政策的影响,类似img的src属性也不受同源的影响一样,将声明的函数名拼接在src后面,发送给服务器,服务器相应数据返回这个函数的调用,即对应的数据 - 所以jsonp需要前端同后台配合,确定声明的函数名 只支持get请求 2.cors 跨域资源共享 原理是在请求头中添加origin字段,指定域名,由浏览器提供跨域支持 IE10+才支持 3.反向代理 客户端发送请求之后,被反向代理服务器拦截,处理之后,发送给服务器; 服务器之后响应数据,被反向代理服务器拦截,经过处理,再发送给客户端 意思就是我们请求是发给反向代理服务器的,反向代理服务器配置规则,匹配服务器 常用]]></content>
+      <categories>
+        <category>ajax</category>
+      </categories>
+      <tags>
+        <tag>跨域</tag>
+        <tag>反向代理</tag>
       </tags>
   </entry>
   <entry>
@@ -115,6 +122,18 @@
       </categories>
       <tags>
         <tag>事件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[闭包和内存泄漏]]></title>
+    <url>%2F2018%2F03%2F20%2Fjs-%E9%97%AD%E5%8C%85%E5%92%8C%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%2F</url>
+    <content type="text"><![CDATA[什么是闭包一个函数的内部包含着另一个函数,内部函数访问了外部函数声明的变量,这样就产生了一个闭包 栗子假如我们在函数内声明了一个变量,想要在函数外部访问这个变量,肯定会报错的,会说 not defined,因为作用域的问题,局部变量只能在函数内部使用.这就相当于我们声明了这个变量但是没有使用,而浏览器有垃圾回收机制,所以这个只声明没有使用的变量会被垃圾回收机制回收,因此我们要想在函数外访问这个变量,就要先在函数内部创建一个闭包,将变量保存在内存中,不要让他被垃圾回收机制回收,这样我们就可以在函数外部访问这个变量了 闭包的好处防止全局污染 闭包的缺点由于闭包会把变量保存在内存中,这样会占用内存,所以滥用闭包会引起性能问题,在IE中可能会造成内存泄漏 内存泄漏通俗理解就是不再使用的变量,没有及时回收 什么操作会造成内存泄漏1.闭包2.全局变量3.dom移除,但是没有清除对应的事件4.定时器,延时器 内存溢出内存不够用了 内存泄漏和内存溢出的关系 内存泄漏的累积会造成内存溢出]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>闭包</tag>
+        <tag>内存泄漏</tag>
       </tags>
   </entry>
   <entry>
@@ -213,8 +232,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>ajax</tag>
         <tag>http</tag>
+        <tag>ajax</tag>
       </tags>
   </entry>
   <entry>
@@ -316,6 +335,17 @@
       </categories>
       <tags>
         <tag>像素</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[项目上线处理]]></title>
+    <url>%2F2017%2F12%2F22%2F%E5%85%B6%E4%BB%96-%E9%A1%B9%E7%9B%AE%E4%B8%8A%E7%BA%BF%2F</url>
+    <content type="text"><![CDATA[1.项目上线命令 npm run build生成一个dist文件夹,放到服务器 2.文件太大处理 1.app入口文件的处理 router.js 按需加载,需要哪一个组件,才加载哪一个组件,而不是一次性全部加载 首屏加载,打开的首页(如登录页)不需要按需加载 具体操作: 使用路由懒加载,异步加载模块 以前引入组件是 import Home from ‘path’ 现在是 const Home = ( ) =&gt; import(‘path’) 2.vendor第三方库太大– 原因: 开发阶段这些包是下载到了本地的,打包时也一起打包了– 解决方案: 使用CDN引入这些包– 具体操作: 在index页面引入CDN链接(包括js,css),在build&gt;base.conf.js里添加如下 1234567externals: &#123; // 前面是包名,后面是全局变量名 // 例如 vue: 'Vue', 'vue-router': 'VueRouter', 'element-ui': 'ELEMENT' &#125; 一定要注意,原来在里面导入的js可以不注释掉,但是一定要把原来css的导入给注释掉 3.网站图标放到上线文件中 具体操作 在开发阶段,是在index.html中引入了图标(一般来说图标是放在根目录下) 1&lt;link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /&gt; 在build&gt;dev.conf.js中配置 1234new HtmlWebpackPlugin(&#123; ... favicon: path.join('favicon.ico') &#125;), 只不过,上线时把配置在build&gt;pro.conf.js中再配置一下 同上面配置操作]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>项目上线</tag>
       </tags>
   </entry>
   <entry>
@@ -439,8 +469,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>this</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -564,8 +594,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>数据类型</tag>
         <tag>js</tag>
+        <tag>数据类型</tag>
       </tags>
   </entry>
   <entry>

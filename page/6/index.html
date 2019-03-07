@@ -265,6 +265,390 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/js-数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/24/js-数组/" itemprop="url">数组</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T12:08:31+08:00">
+                2017-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  540
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数组合并的方法"><a href="#数组合并的方法" class="headerlink" title="数组合并的方法"></a>数组合并的方法</h3><p><strong>es5</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> a2 = [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> a = a1.concat(a2)</span><br><span class="line">a =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<p><strong>es6</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a1 = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> a2 = [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> a = [ ...a1 , ...a2 ]</span><br><span class="line">a =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<h3 id="数组去重的方法"><a href="#数组去重的方法" class="headerlink" title="数组去重的方法"></a>数组去重的方法</h3><p><strong>es5</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> newArr = []</span><br><span class="line">arr.forEach( <span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">// indexOf: 查找数组中某个元素第一次出现的位置,若找不到,返回 -1</span></span><br><span class="line">       <span class="keyword">if</span>(newArr.indexOf(item) === <span class="number">-1</span>)&#123;</span><br><span class="line">       	<span class="comment">// 如果newArr中没有这一项,就把这一项添加到newArr中</span></span><br><span class="line">           newArr.push(item)</span><br><span class="line">       &#125;</span><br><span class="line">&#125;)</span><br><span class="line">newArr =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure></p>
+<p><strong>es6</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = <span class="keyword">new</span> <span class="built_in">Set</span>(arr)</span><br><span class="line"><span class="comment">// 重复元素在Set中自动被过滤</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="数组的增删"><a href="#数组的增删" class="headerlink" title="数组的增删"></a>数组的增删</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组后面添加一个'a'</span></span><br><span class="line">arr.push(<span class="string">'a'</span>)  =&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组前面添加一个'b'</span></span><br><span class="line">arr.unshift(<span class="string">'b'</span>) =&gt; [<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组后面删除一位</span></span><br><span class="line">arr.pop()	=&gt;	[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在数组前面删除一位</span></span><br><span class="line">arr.shift()	=&gt;	[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="数组翻转"><a href="#数组翻转" class="headerlink" title="数组翻转"></a>数组翻转</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr.reverse()  =&gt; [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="数组拼通过连接符接成字符串"><a href="#数组拼通过连接符接成字符串" class="headerlink" title="数组拼通过连接符接成字符串"></a>数组拼通过连接符接成字符串</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.join(<span class="string">'-'</span>)  =&gt; <span class="number">1</span><span class="number">-2</span><span class="number">-3</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组查找元素"><a href="#数组查找元素" class="headerlink" title="数组查找元素"></a>数组查找元素</h3><blockquote>
+<p>indexOf 从前往后找,第一次出现的位置,找不到返回 -1<br>lastIndexOf 从后往前找</p>
+</blockquote>
+<h3 id="截取数组"><a href="#截取数组" class="headerlink" title="截取数组"></a>截取数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.slice(<span class="number">0</span>,<span class="number">2</span>) </span><br><span class="line">newArr =&gt; 返回截取的内容,从下标第<span class="number">0</span>项,截取长度<span class="number">2</span>,返回一个新数组 =&gt; [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">const</span> n2 = arr.slice(<span class="number">2</span>) <span class="comment">// =&gt; 从下标第2项,截取到最后 =&gt; [2,3,4]</span></span><br><span class="line"><span class="keyword">const</span> n3 = arr.slice()	<span class="comment">// =&gt; 截取全部 =&gt; [0,1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组splice方法"><a href="#数组splice方法" class="headerlink" title="数组splice方法"></a>数组splice方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 1.删除</span></span><br><span class="line">arr.splice(起始下标,删几个)</span><br><span class="line">	arr.splice(<span class="number">2</span>,<span class="number">2</span>) <span class="comment">// [1,2,5]</span></span><br><span class="line"><span class="comment">// 2.替换</span></span><br><span class="line">arr.splice(起始下标,删几个,替换的内容)</span><br><span class="line">	arr.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>) <span class="comment">// [1,'a',4,5]</span></span><br><span class="line"><span class="comment">// 3.添加 (注意添加到的位置)</span></span><br><span class="line">arr.splice(起始下标,<span class="number">0</span>,添加的内容)</span><br><span class="line">	arr.splice(<span class="number">3</span>,<span class="number">0</span>,<span class="string">'b'</span>) <span class="comment">// [1,2,3,'b',4,5]</span></span><br></pre></td></tr></table></figure>
+<h3 id="清空数组的几种方式"><a href="#清空数组的几种方式" class="headerlink" title="清空数组的几种方式"></a>清空数组的几种方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(<span class="number">0</span>,arr.length) <span class="comment">// 从下标0开始,删除数组的长度个,即删除全部</span></span><br><span class="line">arr.length = <span class="number">0</span> <span class="comment">// 将数组长度赋值为0</span></span><br><span class="line">arr = [] <span class="comment">// 将数组赋值为一个空数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><blockquote>
+<p><a href="https://zhoup-x.github.io/2017/09/23/js-%E6%95%B0%E7%BB%84-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_blank" rel="noopener">冒泡排序</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/js-语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhou-p">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/23/js-语句/" itemprop="url">if,switch,while,continue,break,for</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T22:08:41+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  204
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><blockquote>
+<p>太常用太简单,不说了</p>
+</blockquote>
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>( n )&#123;</span><br><span class="line">       <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">       	执行代码块<span class="number">1</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">       	执行代码块<span class="number">2</span></span><br><span class="line">       	<span class="keyword">break</span></span><br><span class="line">       <span class="keyword">default</span>: n 与case1 case2不同执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原理: n的值会与每个case的值作比较,如果匹配,会执行相应的代码块,否则不会执行,往下继续运行<br>每句结束必须要break</p>
+</blockquote>
+<h3 id="while-和-do-while"><a href="#while-和-do-while" class="headerlink" title="while 和 do while"></a>while 和 do while</h3><blockquote>
+<p>语法: while(条件){  循环体  }<br>    do { 循环体 } while (条件)<br>do while 和 while 不同的是. 他会保证让循环体至少会执行一次, 因为他是先执行代码然后在判断条件</p>
+</blockquote>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><blockquote>
+<p>太常用太简单,不说了</p>
+</blockquote>
+<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><blockquote>
+<p>break是彻底结束当前循环,直接执行循环体后面的代码<br>continue是逃过本次循环,然后整个循环体会继续执行</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/js-数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1065,7 +1449,7 @@ number,string,boolean,null,undefined,object,symbol
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1087,7 +1471,7 @@ number,string,boolean,null,undefined,object,symbol
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1138,7 +1522,7 @@ number,string,boolean,null,undefined,object,symbol
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.7k</span>
+    <span title="Site words total count">13.8k</span>
   
 </div>
 
